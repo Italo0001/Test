@@ -48,7 +48,6 @@ body {
 }
 .QuintaDaBoaVista
 {
-
     display: block; /* Inicialmente escondido */
     position: absolute;
     margin-top: 240vh;
@@ -67,7 +66,9 @@ body {
 .QuintaDaBoaVista h3
 {
     position: relative;
-    left: 5vw;
+    text-align: justify;
+    width: 100%;
+    left: 0;
 }
 
 .QuintaDaBoaVista .image-row {

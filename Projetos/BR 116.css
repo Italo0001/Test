@@ -57,13 +57,21 @@ body {
     width: 80%; /* Ajusta a largura conforme necessário */
     background-color: rgb(255, 255, 255); /* Cor de fundo */
     border-radius: 15px; /* Raio de borda arredondado */
-    padding: 20px;
     margin-left: 0;
     margin-right: 0;
-    text-align: left;
     z-index: 11; /* Garante que o texto fique sobre outros conteúdos */
+    justify-content: center; /* Espaçamento igual entre imagens */
+    text-align: left;
 
 }
+.BR116Dutra ul h3
+{
+    position: relative;
+    text-align: justify;
+    width: 100%;
+    left: 0;
+}
+
 .BR116Dutra .image-row {
     display: flex; /* Alinha imagens lado a lado */
     justify-content: center; /* Espaçamento igual entre imagens */

@@ -66,6 +66,13 @@ body {
     
 
 }
+.BR465RJ ul h3 
+{
+    position: relative;
+    text-align: justify;
+    width: 100%;
+    left: 0;
+}
 .BR465RJ
  .image-row {
     display: flex; /* Alinha imagens lado a lado */

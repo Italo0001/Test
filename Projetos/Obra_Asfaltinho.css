@@ -63,6 +63,13 @@ body {
     text-align: left;
     z-index: 11; /* Garante que o texto fique sobre outros conteúdos */
 }
+.ObraAsfaltinho ul h3 
+{
+    position: relative;
+    text-align: justify;
+    width: 100%;
+    left: 0;
+}
 .ObraAsfaltinho .image-row {
     display: flex; /* Alinha imagens lado a lado */
     justify-content: center; /* Espaçamento igual entre imagens */

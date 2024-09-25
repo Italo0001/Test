@@ -62,6 +62,13 @@ body {
     text-align: left;
     z-index: 11; /* Garante que o texto fique sobre outros conteúdos */
 }
+.SDUAEROPORTO ul h3 
+{
+    position: relative;
+    text-align: justify;
+    width: 100%;
+    left: 0;
+}
 .SDUAEROPORTO .image-row {
     display: flex; /* Alinha imagens lado a lado */
     justify-content: center; /* Espaçamento igual entre imagens */
