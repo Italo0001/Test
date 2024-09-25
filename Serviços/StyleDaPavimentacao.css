@@ -57,6 +57,8 @@ body {
 }
 .Introducao
 {
+    text-align: justify;
+
     padding-left: 50px;
     padding-right: 50px;
     position: absolute;
@@ -102,9 +104,6 @@ body {
     padding: 0;
 
   }
-
-
-
 
   .Equipamentos ul h3 {
     font-size: medium;
@@ -339,6 +338,7 @@ body {
     color: white;
     cursor: pointer;
 }
+
 @media (max-width:1100px)
 {
     .logo

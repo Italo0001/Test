@@ -57,6 +57,7 @@ body {
 }
 .Introducao
 {
+    text-align: justify;
     padding-left: 50px;
     padding-right: 50px;
     position: absolute;
