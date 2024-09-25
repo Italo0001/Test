@@ -270,7 +270,7 @@ body {
 .TextoResponsivo
 {
     text-align: justify;
-    width: 80%;
+    width: 65%;
     left: 50%;
     transform: translate(-50%, -0%); /* Ajusta a posição para o centro */
     position: relative;
@@ -291,9 +291,8 @@ body {
     position: relative;
     display: flex;
     justify-content: center; /* Centraliza a imagem dentro da div imagem */
-    width:50%;
+    width:100%;
     border-radius: 15px;
-    transform: translate(50%, 0); /* Ajusta a posição para o centro */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 5); /* Sombra */
 
 }
@@ -354,15 +353,15 @@ body {
 }
 #Usina
 {
-    scroll-margin-top: 100px; /* Ajuste conforme a altura do seu rodapé */
+    scroll-margin-top: 50px; /* Ajuste conforme a altura do seu rodapé */
 }
 #Equipe
 {
-    scroll-margin-top: 100px; /* Ajuste conforme a altura do seu rodapé */
+    scroll-margin-top: 50px; /* Ajuste conforme a altura do seu rodapé */
 }
 #RefComeciais
 {
-    scroll-margin-top: 100px; /* Ajuste conforme a altura do seu rodapé */
+    scroll-margin-top: 50px; /* Ajuste conforme a altura do seu rodapé */
 }
 /* Mobile */
 .Contatos {
@@ -379,8 +378,47 @@ body {
 body > *:not(.Contatos) {
     margin-top: 0; /* Remove margens superiores do próximo elemento */
 }
+.whatsapp img
+{
+    display: none;
+    right: 5%;
+    top: 85%;
+    position: fixed;
+    width: 15%;
+    z-index: 11;
+}
 @media (max-width: 1200px)
 {
+    .TextoResponsivo
+    {
+        width: 80%;
+    }
+
+    #curriculum-header {
+        display: none; /* Esconde o cabeçalho "Trabalhe Conosco" */
+    }
+    .Contatos ul a
+    {
+        display: none;
+    }
+    .Contatos ul h2
+    {
+        text-align: justify;
+        display: flex;
+        justify-content: space-between; /* Alinha o texto nas pontas */
+        padding: 10%; /* Espaçamento interno */
+        border-radius: 5px; /* Bordas arredondadas, se desejado */
+    }
+    .Contatos ul h4
+    {
+        width: 80vw;
+        text-align: justify;
+    }
+    
+    .whatsapp img
+    {
+        display: flex;
+    }
     #desktop-menu 
     {
         display: none;
