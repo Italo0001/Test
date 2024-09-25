@@ -196,37 +196,49 @@
 </ul>
 <ul>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d453265.5027241348!2d-43.94668259744893!3d-22.724568678843262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x995b85644571b7%3A0x4da4f90ddc1976bd!2sUsina%20de%20Asfalto%20-%20V3%20Constru%C3%A7%C3%B5es!5e1!3m2!1spt-BR!2sbr!4v1723567561767!5m2!1spt-BR!2sbr" width="95%" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
 </div>
+
+
+
 <div class="Contatos" id="contact">
-    <ul><h1>Entre em contato</h1></ul> 
-         <ul>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=paulo@v3construtora.com.br" target="_blank">Enviar e-mail</a>
+    <ul id="contact-header"><h1>Entre em contato</h1></ul> 
+    <ul>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=paulo@v3construtora.com.br" target="_blank">Enviar E-mail</a>
+        <a href="https://wa.me/5521991135458?text=Olá,%20preciso%20de%20mais%20informações.">WhatsApp</a>
+    </ul>
+    <ul>
+        <h4>Email: paulo@v3construtora.com.br</h4> 
+    </ul>
+    <ul>
+        <h4>Número: (21) 3799-8249  (21) 96498-6471   (21) 99113-5458</h4>
+    </ul>
+    <ul id="curriculum-header"><h1>Trabalhe Conosco</h1></ul>
+    <ul>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=paulo@v3construtora.com.br&su=Contato%20V3%20Construções&body=Olá,%20gostaria%20de%20mais%20informações." target="_blank">Enviar e-mail</a>
+        <a href="https://wa.me/5521991135458?text=Olá,%20preciso%20de%20mais%20informações.">WhatsApp</a>
+    </ul>
+</div>
+
+<!-- // Reponsividade da div de contatos -->
+<script>
+    function updateContactHeader() {
+        const contactHeader = document.getElementById('contact-header');
+        if (window.innerWidth < 1000) {
+            contactHeader.innerHTML = '<h2>Contate-nos para o envio de currículos e mais detalhes sobre nossos serviços.</h2>';
+        } else {
+            contactHeader.innerHTML = '<h1>Entre em contato</h1>';
+        }
+    }
+
+    window.addEventListener('resize', updateContactHeader);
+    window.addEventListener('load', updateContactHeader); // Atualiza no carregamento
+</script>
 
 
+ <a href="https://wa.me/5521991135458?text=Olá,%20preciso%20de%20mais%20informações." class="whatsapp">
 
-            <a href="https://wa.me/5521991135458?text=Olá,%20preciso%20de%20mais%20informações.">whatsapp</a></ul>
-      <ul>
-             <h4>Email: paulo@v3construtora.com.br
-             </h4> 
-         </ul>
-         <ul>
-            <h4>
-                Numero: (21) 3799-8249  (21) 96498-6471   (21) 99113-5458
-            </h4>
-         </ul>
-         <ul><h1>Trabalhe Conosco</h1></ul>
- 
- 
-         <ul>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=paulo@v3construtora.com.br&su=Contato%20V3%20Construções&body=Olá,%20gostaria%20de%20mais%20informações." target="_blank">Enviar e-mail</a>
-
-
-
-
-            <a href="https://wa.me/5521991135458?text=Olá,%20preciso%20de%20mais%20informações.">whatsapp</a></ul>
- </div>    
-
-
+    <img src="Imagens/Whatsapp.png" alt="">
+    
+    </a>
 </body>
 </html>
