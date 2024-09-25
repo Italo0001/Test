@@ -1,0 +1,545 @@
+/* Configurações básicas do corpo */
+html
+{
+    background-color: #ffffff;
+    scroll-behavior: smooth;
+
+}
+body {
+    background-color: #ffffff;
+    box-sizing: border-box;
+    overflow-y: auto; /* Permite a rolagem se necessário */
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+#header {
+    background-color: #000000;
+    position: fixed;
+    width: 100%; /* Ajusta a largura do cabeçalho para 100% da largura da viewport */
+    height: 8%; /* Mantém a altura do cabeçalho como uma porcentagem da altura da viewport */
+    min-height: 40px;
+    top: 0;
+    z-index: 100; /* Garante que o cabeçalho fique sobre outros conteúdos */
+    padding: 0;
+    margin: 0;
+}
+#header nav 
+{
+   top: 2.5%;
+   font-size: larger;
+}
+.h2
+{
+    padding: 0;    
+    width: 100%;
+}
+.BR116
+{
+    position: absolute;
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: 4px solid #fffb00; /* Linha sublinhada com 2px de espessura e cor preta */
+    text-align: center;
+
+
+}
+.BR116Dutra
+{
+    display: block; /* Inicialmente escondido */
+    position: absolute;
+    margin-top: 420vh;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
+    width: 80%; /* Ajusta a largura conforme necessário */
+    background-color: rgb(255, 255, 255); /* Cor de fundo */
+    border-radius: 15px; /* Raio de borda arredondado */
+    padding: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+    z-index: 11; /* Garante que o texto fique sobre outros conteúdos */
+
+}
+.BR116Dutra .image-row {
+    display: flex; /* Alinha imagens lado a lado */
+    justify-content: center; /* Espaçamento igual entre imagens */
+    padding: 0;
+    list-style: none; /* Remove marcadores da lista */
+    top: 1%;
+
+}
+.BR116Dutra h3
+{
+    position: relative;
+    left: 5vw;
+}
+
+.logo{
+    height: 100%;
+    width: auto;
+}
+.Menor {
+    margin: 1%;
+    border-radius: 15px;
+    width: 45%; /* Ajusta a largura das imagens menores */
+}
+
+.Maior {
+    border-radius: 15px;
+    margin: 1%;
+    position: relative;
+    width: 90%; 
+
+}
+
+
+.Contatos {
+    display: flex; /* Usa flexbox para o alinhamento do conteúdo */
+    flex-direction: column; /* Alinha os itens em coluna (verticalmente) */
+    justify-content: center; /* Centraliza verticalmente o conteúdo dentro do container */
+    align-items: center; /* Centraliza horizontalmente o conteúdo dentro do container */
+    position: relative; /* Fixa o elemento no viewport */
+    bottom: 0; /* Posiciona o elemento na parte inferior da página */
+    left: 50%; /* Move o elemento para o meio horizontalmente */
+    transform: translateX(-50%); /* Ajusta a posição horizontal para centralizar exata */
+    width: 98vw; /* Largura total da viewport */
+    height: 70vh; /* Altura ajustada */
+    background-color: rgb(2, 2, 2); /* Cor de fundo */
+    color: aliceblue; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    z-index: 11; /* Garante que o conteúdo fique sobre outros conteúdos */
+    padding: 0;
+    margin: 0;
+    top: 70vh;
+    border-radius: 15px;
+
+}
+
+.Contatos h1 {
+    margin: 0; /* Remove a margem do título */
+}
+
+.Contatos ul {
+    margin: 5vh 0 0 0; /* Margem superior */
+    padding: 0; /* Remove o padding */
+    height: 5vh; /* Altura ajustada */
+    width: 100%; /* Largura total do container */
+    display: flex; /* Usa flexbox para alinhamento dos itens da lista */
+    align-items: center; /* Alinha os itens ao centro verticalmente */
+    justify-content: center; /* Alinha os itens ao centro horizontalmente */
+}
+
+.Contatos ul a {
+    transition: background-color 0.3s; /* Corrige a propriedade de transição e define uma duração mais curta */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    padding: 10px 15px; /* Espaçamento interno */
+    color: #ffffff; /* Cor do texto dos links */
+    margin: 0 10px; /* Margem lateral */
+}
+
+.Contatos ul a:hover {
+    background-color: rgb(59, 59, 59); /* Cor de fundo ao passar o mouse */
+}
+
+
+.Contatos ul a:hover {
+    background-color: rgb(59, 59, 59); /* Cor de fundo ao passar o mouse */
+}
+
+
+/* Menu de desktop */
+#desktop-menu {
+    position: fixed;
+    top: 0;
+    right: 2vw; /* Ajusta a posição do menu com base na largura da viewport */
+    background-color: #000000;
+    color: white;
+ /* Ajusta o padding com base na altura e largura da viewport */
+    display: flex;
+    align-items: center;
+}
+
+#desktop-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.5s;
+}
+#desktop-menu ul :hover{
+    background-color: #242424;
+}
+
+
+#desktop-menu ul li {
+
+    margin: 0 1vw; /* Ajusta a margem com base na largura da viewport */
+}
+
+#desktop-menu ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 1vh 2vw; /* Ajusta o padding com base na altura e largura da viewport */
+    
+}
+
+/* Menu de hambúrguer */
+#menu-burguer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%; /* Ajusta a largura do menu de hambúrguer para 50% da largura da viewport */
+    height: 100%; /* Ajusta a altura do menu para 100% da altura da viewport */
+    background-color: #000000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 0.5s ease;
+    z-index: 1000;
+    
+}
+
+#menu-burguer nav ul {
+    top:2px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+#menu-burguer nav ul li {
+    margin: 2vh 0; /* Ajusta a margem com base na altura da viewport */
+    transition: background-color 0.3s;
+}
+
+#menu-burguer nav ul li:hover {
+    background-color: #181818;
+}
+
+#menu-burguer nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 2vh 2vw; /* Ajusta o padding com base na altura e largura da viewport */
+}
+
+
+#menu-burguer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #000000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+#menu-burguer nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+#menu-burguer nav ul li {
+    margin: 20px 0;
+    transition: background-color 0.3s;
+}
+#menu-burguer nav ul li :hover
+{
+    background-color: #181818;
+}
+#menu-burguer nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+}
+
+
+/* Botões de abrir e fechar menu */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.open-btn 
+{
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 2vw;
+    font-size: 150%;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+@media (max-width: 1200px)
+{
+
+    #desktop-menu 
+    {
+        display: none;
+    }
+
+    .open-btn 
+    {
+        display: block;
+    }
+    #menu-burguer.show 
+    {
+        transform: translateX(0);
+    }
+    #desktop-menu 
+    {
+        display: none;
+    }
+    #header
+    {
+        height: 5vh;
+    }
+    .logo{
+        height: 5vh;
+        width: auto;
+    }
+    .open-btn
+    {
+        height: 2vh;
+        top: 1vh;
+    }
+    .BR116
+    {
+        margin-top: 20vh;
+        text-align: center;
+    }
+    .BR116Dutra
+    {
+        width: 80vw;
+        margin-top: 200vh;
+    }
+    .Contatos
+    {
+        border-radius: 15px;
+        margin-top: -40vh;
+        border-radius: 15px;
+    }
+}
+@media (max-width:900px)
+{
+    .h2
+    {
+        margin: 0;
+        padding: 0;
+    }
+    .BR116
+    {
+        margin-top: 200px;
+        text-align: center;
+        width: 85%;
+    }
+    .BR116Dutra
+    {
+    margin-top: 2210px ;
+    width: 85%;
+    }
+    .Contatos
+    {
+        border-radius: 15px;
+        margin-top: -40vh;     
+    }
+}
+@media (max-width: 600px)
+{
+    .open-btn
+    {
+        height: 2vh;
+        top: 0;
+    }
+    .h2
+    {
+        margin: 0;
+        padding: 0;
+    }
+    .BR116
+    {
+        text-align: center;
+        width: 85%;
+    }
+    .BR116Dutra
+    {
+        width: 85%;
+        margin-top: 200px;
+
+    }  
+}
+@media (max-width:500px)
+{
+    .open-btn
+    {
+       top: 3px;
+    }
+    .logo
+    {
+        height: 100%;
+    }
+    .h2
+    {
+        margin: 0;
+        padding: 0;
+    }
+    .BR116
+    {
+        margin-top: 200px;
+        text-align: center;
+        width: 85%;
+    }
+    .BR116Dutra
+    {
+        margin-top: 1600px;
+        width: 85%;
+    }
+    .Contatos
+    {
+        border-radius: 15px;
+        margin-top: -40vh;
+    }
+}
+@media (max-width:400px)
+{
+    .open-btn
+    {
+        top: 0;
+    }
+    .logo
+    {
+        height: 100%;
+    }
+    .h2
+    {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .BR116
+    {
+        text-align: center;
+        margin-top: 100px;
+        width: 80%;
+    }
+    .BR116Dutra
+    {
+        width:85%;    
+        margin-top: 1450px;
+    }
+    .Contatos
+    {
+        border-radius: 15px;
+        margin-top: -40vh ;
+        width: 100%;
+    }
+}
+@media only screen and (orientation: landscape) and (max-width: 1300px) 
+{
+    .BR116
+    {
+        text-align: center;
+        margin-top: 200px;
+    }
+    .BR116Dutra
+    {
+        width: 80vw;    
+        margin-top: 3050px;
+    }
+}
+@media only screen and (orientation: landscape) and (max-width:1100px){
+    .logo
+    {
+        height: 100%;
+    }
+    .BR116
+    {
+        text-align: center;
+        margin-top: 100px;
+    }
+    .BR116Dutra
+    {
+        width: 80vw;    
+        margin-top: 2400px;
+    }
+}
+
+@media only screen and (orientation: landscape) and (max-width: 1000px) 
+{
+    .logo
+    {
+        height: 100%;
+    }
+    .BR116
+    {
+        text-align: center;
+        margin-top: 100px;
+    }
+    .BR116Dutra
+    {
+        width: 80vw;    
+        margin-top: 2100px;
+    }
+}
+@media only screen and (orientation: landscape) and (max-width: 900px) {
+    .logo
+    {
+        height: 100%;
+    }
+    .BR116
+    {
+        margin-top: 100px;
+        text-align: center;
+        width: 70%;
+    }
+    .BR116Dutra
+    {
+        width: 80vw;    
+        margin-top: 2000px;
+    }
+}
+@media only screen and (orientation: landscape) and (max-width: 800px) {
+    header
+    {
+        width: 100%;
+    }
+    .logo
+    {
+        height: 100%;
+    }
+    .BR116
+    {
+        margin: 0;
+        text-align: center;
+        margin-top: 100px;
+    }
+    .BR116Dutra
+    {
+        width: 80%;
+        margin-top: 1770px;
+    }
+}
