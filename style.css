@@ -994,6 +994,7 @@ h4
     }
     .Contatos ul h4
     {
+        width: 80%;
         text-align: justify;
     }
     
