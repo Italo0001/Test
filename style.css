@@ -298,7 +298,7 @@ h4
     left: 50%; /* Move o elemento para o meio horizontalmente */
     transform: translateX(-50%); /* Ajusta a posição horizontal para centralizar exata */
     width: 100%; /* Largura total da viewport */
-    height: 70vh; /* Altura ajustada */
+    height: 85vh; /* Altura ajustada */
     background-color: rgb(2, 2, 2); /* Cor de fundo */
     color: aliceblue; /* Cor do texto */
     text-align: center; /* Centraliza o texto */
