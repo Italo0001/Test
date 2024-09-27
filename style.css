@@ -298,7 +298,7 @@ h4
     left: 50%; /* Move o elemento para o meio horizontalmente */
     transform: translateX(-50%); /* Ajusta a posição horizontal para centralizar exata */
     width: 100%; /* Largura total da viewport */
-    height: 85vh; /* Altura ajustada */
+    height: 95vh; /* Altura ajustada */
     background-color: rgb(2, 2, 2); /* Cor de fundo */
     color: aliceblue; /* Cor do texto */
     text-align: center; /* Centraliza o texto */
@@ -883,10 +883,43 @@ h4
 /* Media Queries para diferentes tamanhos de tela */
 @media only screen and (orientation: portrait) and (max-width:1100px) 
 {
+
+    #curriculum-header {
+        display: none; /* Esconde o cabeçalho "Trabalhe Conosco" */
+    }
+    .Contatos ul a
+    {
+        display: none;
+    }
+    .Contatos ul h2
+    {
+        text-align: justify;
+        display: flex;
+        justify-content: space-between; /* Alinha o texto nas pontas */
+        padding: 10%; /* Espaçamento interno */
+        border-radius: 5px; /* Bordas arredondadas, se desejado */
+    }
+    .Contatos ul h4
+    {
+        width: 80vw;
+        text-align: justify;
+    }
     .servico
     {
         margin-top: 25vh;
         height: 25%;
+    }
+    .servico ul img
+    {
+        filter: brightness(70%);
+    }
+    .servico ul:hover a
+    {
+        background-color: transparent;
+    }
+    .btn-overlay
+    {
+        font-size: 4vh;
     }
     .clientes
     {
@@ -1262,7 +1295,7 @@ h4
 
     .clientes
     {
-        top: 50vh;
+        top: 55vh;
     }
     #Valores
     {
@@ -1286,26 +1319,31 @@ h4
         list-style-type: none; /* Remove os marcadores padrão */
         display: inline-block;
         width: 30%;
+        height: 10%;
     }
     .servico ul h3
     {
         font-size:  100%;
 
     }
-    .servico ul a
+    .servico ul a 
     {
+        height: 25vh;
+        border-radius: 15;
         opacity: 1;
         left: -50%;
         width: 100%;
-        top: 0vh;
-        height: 4vh;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
+        top: -25vh;
+        height: 25vh;
+        color: #fff;
+    }
+    .servico ul a:hover 
+    {
+        background-color: transparent;
     }
     .servico ul img 
     {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
+        border-radius: 15px;
     }
     .servico ul:hover img
     {
@@ -1318,16 +1356,18 @@ h4
         position: relative;
         background-color: #ffffff;
         text-align: center;
-        top: 40VH; /* Posição relativa */
+        top: 45vh; /* Posição relativa */
         margin: 0;
     }
     .btn-overlay
     {
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
         position: relative;
-        width:100%;
-        height: 100%;
+        width: 25vw;
+        border-radius: 0;
+        opacity: 0;
+        top: -10vh;
+        background-color: transparent;
+        
     }   .slide-content {
         display: flex;
         flex-direction: row;
@@ -1394,8 +1434,7 @@ h4
         top: -5%;
         max-width: 85%; /* Garante que a imagem não ultrapasse a largura do item */
         height: auto; /* Mantém a proporção da imagem */
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
+        border-radius: 15px;
     }
 
     .image-gallery h3
@@ -1427,11 +1466,24 @@ h4
     }
     .image-item a 
     {
+        position: relative;
+        color: #fff;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
-        top: 25vh;
-        opacity: 1;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        top:-10vh;
         width: 85%;
+        opacity: 1;    
+        z-index: 11; 
+        height: 20px;
+        font-size: 25px;
+        font-weight: bold; 
+        font-size: 5vw;
+    }
+    .image-item a:hover
+    {
+        background-color: transparent;
     }
     .toggle-btn 
     {
@@ -1445,7 +1497,31 @@ h4
     {
         left: 55%;
     }
- 
+    .btn 
+    {
+        background-color: transparent;
+        padding: 50% 0px; /* Aumenta a altura e o espaçamento horizontal */
+        height: 500px;
+        opacity: 1;
+        width: 100vw;
+    }
+    .image-item h3
+    {
+        color: #000;
+        top: -5vh;
+    }
+    #Valores
+    {
+        top: 25vh;
+    }
+    .Contatos ul h2 
+    {
+        font-size: 5vh;
+    }
+    .Contatos ul h4
+    {
+        font-size: 3vh;
+    }
 }
 @media (max-width: 800px)
 {
@@ -1509,18 +1585,17 @@ h4
     }
     .servico ul img
     {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
+        border-radius: 15px;
     }
     .servico ul a 
     {
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
+        height: 25vh;
+        border-radius: 15;
         opacity: 1;
         left: -50%;
         width: 100%;
-        top: 0vh;
-        height: 5vh;
+        top: -20vh;
+        height: 20vh;
     }
     .servico ul:hover img
     {
@@ -1569,7 +1644,6 @@ h4
     
     .image-item 
     {
-        top: -85vh;
         text-align: center;
         flex: 0 0 auto; /* Mantém o tamanho fixo dos itens */
         width: 55vw; /* Ajusta a largura para 80% da largura da viewport */
@@ -1581,35 +1655,49 @@ h4
         justify-content: center; /* Alinha horizontalmente ao centro */
         scroll-snap-align: start; /* Faz com que o item se alinhe ao iniciar a rolagem */
         margin: 0 5%; /* Adiciona margem horizontal para espaçamento */
+        margin-top: 20vh;
     }
     .content h2
     {
         margin: 0;
     }
-    
     .image-item img
     {
         top: -5%;
         width: 85%; /* Garante que a imagem não ultrapasse a largura do item */
         height: auto; /* Mantém a proporção da imagem */
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
+        border-radius: 15px;
     }
     .image-gallery h3
     {
-        top: 20vh;
+        top: -10vh;
         font-size: 4vw;
         width: 35vw;
         height: 100%;
         margin: 0;
+        color: #000;
     }
+
     .image-item a
     {
-        border-top-left-radius:0;
-        border-top-right-radius:0;
-        opacity: 1;
-        top: 25vh;
+        position: relative;
+        color: #fff;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        top:-15vh;
         width: 85%;
+        opacity: 1;    
+        z-index: 11; 
+        height: 20px;
+        font-size: 25px;
+        font-weight: bold; 
+        font-size: 5vw;
+    }
+    .image-item a:hover 
+    {
+        background-color: transparent;
     }
     .image-item:hover h3
     {
@@ -1617,7 +1705,15 @@ h4
     }
     .clientes
     {
-        top: 40vh;
+        top: 55vh;
+    }
+    .btn 
+    {
+        background-color: transparent;
+        padding: 50% 0px; /* Aumenta a altura e o espaçamento horizontal */
+        height: 500px;
+        opacity: 1;
+        width: 100vw;
     }
 }
 
@@ -1901,11 +1997,11 @@ h4
       }
       .btn-overlay
       {
-          border-bottom-left-radius: 15px;
-          border-bottom-right-radius: 15px;
-          position: relative;
-          width:100%;
-          height: 100%;
+        position: relative;
+        width: 25vw;
+        opacity: 0;
+        top: -10vh;
+        background-color: transparent;
       }
 }
 @media (max-width:500px)
@@ -1915,13 +2011,26 @@ h4
         position: relative;
         width: 25vw;
         opacity: 0;
-        top: -5vh;
+        top: -10vh;
+        background-color: transparent;
     }
     .toggle-btn
     {
         top: 10vh;
     }
-
+    .btn 
+    {
+        background-color: transparent;
+        padding: 100px 0px; /* Aumenta a altura e o espaçamento horizontal */
+        height: 500px;
+        opacity: 1;
+        width: 100vw;
+    }
+    .btn:hover
+    {
+        background-color: transparent;
+        border-radius: 15px;
+    }
     body {
         box-sizing: border-box;
         overflow-y: auto; /* Permite a rolagem se necessário */
@@ -1952,6 +2061,7 @@ h4
         list-style-type: none; /* Remove os marcadores padrão */
         display: inline-block;
         width: 30%;
+        height: 60%;
     }
     .servico ul h3
     {
@@ -1963,18 +2073,26 @@ h4
     }
     .servico ul a 
     {
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        opacity: 1;
-        left: -50%;
+        text-align: center; /* Centraliza horizontalmente todos os elementos filhos, se o botão tiver display inline-block */
+        transform: translateX(50%);
+        justify-content: center;
+        margin-top: 0;
+        top: -120px;
+        height: 120px;
         width: 100%;
-        top: 100%;
-        height: 3vh;
+        border-radius: none;
+        background-color: none;
+        color: #fff;
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+    .servico ul a:hover 
+    {
+        background-color: transparent;
     }
     .servico ul img
     {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
+        border-radius: 15px;
     }
     .servico ul:hover img
     {
@@ -1984,7 +2102,6 @@ h4
     {
         top:25vh;
     }
-
     .clientes
     {
         top: 55vh;
@@ -2074,7 +2191,8 @@ h4
     }
     .image-item h3
     {
-        top: 10vh;
+        color: #000;
+        top: -35px;
         font-size: 4vw;
     }
     .image-item:hover h3
@@ -2086,8 +2204,7 @@ h4
         top: -10%;
         max-width: 85%; /* Garante que a imagem não ultrapasse a largura do item */
         height: auto; /* Mantém a proporção da imagem */
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
+        border-radius: 15px;
     }
     .image-gallery
     {
@@ -2100,14 +2217,20 @@ h4
     }
     .image-item a
     {
+        position: relative;
+        color: #fff;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
-        top: 25vh;
-        opacity: 1;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        top: 0vh;
         width: 85%;
+        opacity: 1;    
+        z-index: 11; 
+        height: 50px;
+        font-size: 25px;
+        font-weight: bold; 
     }
-
-
     #Valores
     {
         text-align: center;
@@ -2129,8 +2252,10 @@ h4
     {
         position: relative;
         width: 25vw;
+        border-radius: 0;
         opacity: 0;
-        top: -5vh;
+        top: -10vh;
+        background-color: transparent;
     }
     .toggle-btn
     {
@@ -2168,26 +2293,38 @@ h4
         display: inline-block;
         width: 20%;
         width: 100px;
+        height: 125px;
+        border-radius: 15px;
+        margin: 0;
     }
     .servico ul h3
     {
         font-size:  75%;
-
     }
     .servico ul a 
     {
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        opacity: 1;
-        left: -50%;
+        text-align: center; /* Centraliza horizontalmente todos os elementos filhos, se o botão tiver display inline-block */
+        transform: translateX(50%);
+        justify-content: center;
+        margin-top: 0;
+        top: -120px;
+        height: 120px;
         width: 100%;
-        height: 4vh;
-        top: 100%;
+        border-radius: none;
+        background-color: none;
+        color: #fff;
+        font-weight: bold;
+        margin-bottom: 0;
     }
+    .servico ul a:hover 
+    {
+        background-color: transparent;
+    }
+
     .servico ul img
     {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
+        filter: brightness(80%); /* Ajuste o valor para escurecer mais ou menos */
+        border-radius: 15px;
     }
     .servico ul:hover img
     {
@@ -2221,8 +2358,9 @@ h4
         position: relative;
         background-color: #ffffff;
         text-align: center;
-        margin-top: 240vh; /* Posição relativa */
+        margin-top: 245vh; /* Posição relativa */
         margin: 0;
+
     }
     .slide-content {
         display: flex;
@@ -2263,15 +2401,16 @@ h4
         align-items: center; /* Alinha verticalmente ao centro */
         justify-content: flex-start; /* Alinha horizontalmente ao início */
         scroll-snap-type: x mandatory; /* Facilita a rolagem em itens */
+        padding-top: 100px; /* Ajuste conforme necessário */
+
     }
     
-    .image-item 
-    {
-        top: -85vh;
+    .image-item {
+        margin-top: 150px; /* Aumente para 150px ou mais, conforme necessário */
         text-align: center;
         flex: 0 0 auto; /* Mantém o tamanho fixo dos itens */
-        width: 65vw; /* Ajusta a largura para 80% da largura da viewport */
-        height: 1%; /* Ajusta a altura para 60% da altura da viewport */
+        width: 65vw; /* Ajusta a largura para 65% da largura da viewport */
+        height: 1%; /* Ajusta a altura */
         box-sizing: border-box;
         display: flex; /* Usa flexbox para centralizar o conteúdo */
         flex-direction: column; /* Organiza o conteúdo verticalmente */
@@ -2280,6 +2419,7 @@ h4
         scroll-snap-align: start; /* Faz com que o item se alinhe ao iniciar a rolagem */
         margin: 0 5%; /* Adiciona margem horizontal para espaçamento */
     }
+    
     .content h2
     {
         margin: 0;
@@ -2290,13 +2430,14 @@ h4
         top: -5%;
         width: 110%; /* Garante que a imagem não ultrapasse a largura do item */
         height: auto; /* Mantém a proporção da imagem */
-        border-bottom-left-radius: 0px;
-        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
     }
 
     .image-gallery h3
     {
-        top: 100px;
+        color: #000;       
+        top: -50px;
         font-size: 15px;
         width: 200px;
         height: 100%;
@@ -2309,18 +2450,31 @@ h4
 
     .image-item a
     {
+        position: relative;
+        color: #fff;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
-        top: 25vh;
-        height: 70px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        top: -10vh;
         width: 85%;
         opacity: 1;    
         z-index: 11; 
+        height: 50px;
+        font-size: 25px;
+        font-weight: bold; 
     }
     .btn 
     {
+        background-color: transparent;
+        padding: 100px 0px; /* Aumenta a altura e o espaçamento horizontal */
+        height: 500px;
         opacity: 1;
         width: 100vw;
+    }
+    .btn:hover
+    {
+        background-color: transparent;
     }
     #Valores
     {
@@ -2333,7 +2487,12 @@ h4
     }
     .Contatos
     {
+
         top: 100vh;
+    }
+    .Contatos ul 
+    {
+        padding: 1vh;
     }
     
 }
