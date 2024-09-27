@@ -122,7 +122,6 @@ body {
 
   }
 
-
   .zoomed-overlay {
     position: fixed;
     top: 0;
@@ -139,7 +138,7 @@ body {
 
   .zoomed-overlay img {
     background-color: #ffffff;
-    width: 40%;
+    width: 30%;
     border-radius: 15px;
     cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
   }
@@ -346,6 +345,10 @@ body {
 }
 @media (max-width:1100px)
 {
+    .Equipamentos ul img:hover
+    {
+        width: 90%;
+    } 
     .whatsapp img 
     {
         display: flex;
@@ -548,10 +551,11 @@ body {
         position: relative; /* Necessário para posicionar o modal corretamente */
         height: 70vh;
     }
+
     .zoomed-overlay img {
         background-color: #ffffff;
         width: auto;
-        height: 75%;
+        height: 80%;
         border-radius: 15px;
         cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
       }
