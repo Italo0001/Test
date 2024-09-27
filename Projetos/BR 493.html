@@ -67,32 +67,48 @@
     
         </ul>
         <div class="Contatos" id="contact">
-            <ul><h1>Entre em contato</h1></ul> 
-                 <ul>
-                     <ul> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=paulo@v3construtora.com.br">E-mail</a><a href="https://wa.me/5521991135458?text=Olá,%20preciso%20de%20mais%20informações.">whatsapp</a></ul>
-                   
-                 </ul>
-              <ul>
-                     <h4>Email: paulo@v3construtora.com.br
-                     </h4> 
-                 </ul>
-                 <ul>
-                    <h4>
-                        Numero: (21) 3799-8249  (21) 96498-6471   (21) 99113-5458
-                    </h4>
-                 </ul>
-                 <ul><h1>Trabalhe Conosco</h1></ul>
-         
-         
-                 <ul><a href="https://mail.google.com/mail/?view=cm&fs=1&to=paulo@v3construtora.com.br">Enviar e-mail</a>
+            <ul id="contact-header"><h1>Entre em contato</h1></ul> 
+            <ul>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=paulo@v3construtora.com.br" target="_blank">Enviar E-mail</a>
+                <a href="https://wa.me/5521991135458?text=Olá,%20preciso%20de%20mais%20informações.">WhatsApp</a>
+            </ul>
+            <ul>
+                <h4>Email: paulo@v3construtora.com.br</h4> 
+            </ul>
+            <ul>
+                <h4>Número:   (21) 96498-6471   (21) 99113-5458</h4>
+            </ul>
+            <ul>
+                <h4>Telefone: (21) 3799-8249</h4>
+            </ul>
+            <ul id="curriculum-header"><h1>Trabalhe Conosco</h1></ul>
+            <ul>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=paulo@v3construtora.com.br&su=Contato%20V3%20Construções&body=Olá,%20gostaria%20de%20mais%20informações." target="_blank">Enviar e-mail</a>
+                <a href="https://wa.me/5521991135458?text=Olá,%20vim%20pelo%20site.">WhatsApp</a>
+            </ul>
+        </div>
         
+        <!-- // Reponsividade da div de contatos -->
+        <script>
+            function updateContactHeader() {
+                const contactHeader = document.getElementById('contact-header');
+                if (window.innerWidth < 1100) {
+                    contactHeader.innerHTML = '<h2>Contatos para o envio de currículos e mais detalhes sobre nossos serviços.</h2>';
+                } else {
+                    contactHeader.innerHTML = '<h1>Entre em contato</h1>';
+                }
+            }
         
-                    <a href="https://wa.me/5521991135458?text=Olá,%20preciso%20de%20mais%20informações.">whatsapp</a></ul>
-         </div>   
+            window.addEventListener('resize', updateContactHeader);
+            window.addEventListener('load', updateContactHeader); // Atualiza no carregamento
+        </script>  
         </div>
     
  
          <script src="../Script.js"></script>
     
+         <a href="https://wa.me/5521991135458?text=Olá,%20vim%20pelo%20site." class="whatsapp">
+            <img src="../Imagens/Whatsapp.png" alt="">  
+        </a> 
     </body>
     </html>

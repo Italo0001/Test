@@ -292,8 +292,41 @@ body {
     color: white;
     cursor: pointer;
 }
+.whatsapp img
+{
+    display: none;
+    right: 5%;
+    top: 85%;
+    position: fixed;
+    width: 15%;
+    z-index: 11;
+}
 @media (max-width: 1200px)
 {
+    .whatsapp img 
+    {
+        display: flex;
+    }
+    #curriculum-header {
+        display: none; /* Esconde o cabeçalho "Trabalhe Conosco" */
+    }
+    .Contatos ul a
+    {
+        display: none;
+    }
+    .Contatos ul h2
+    {
+        text-align: justify;
+        display: flex;
+        justify-content: space-between; /* Alinha o texto nas pontas */
+        padding: 10%; /* Espaçamento interno */
+        border-radius: 5px; /* Bordas arredondadas, se desejado */
+    }
+    .Contatos ul h4
+    {
+        width: 80vw;
+        text-align: justify;
+    }
 
     #desktop-menu {
         display: none;
