@@ -72,7 +72,7 @@ body {
     justify-content: center; /* Centraliza os itens horizontalmente */
     align-items: flex-start; /* Alinha os itens no topo */
     position: relative;
-    top: 100vh; /* Ajuste conforme necessário */
+    top: 120vh; /* Ajuste conforme necessário */
     left: 50%;
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
     width: 100%; /* Ajusta a largura conforme necessário */

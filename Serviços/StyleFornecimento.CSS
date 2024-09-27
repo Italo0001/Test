@@ -73,7 +73,7 @@ body {
     justify-content: center; /* Centraliza os itens horizontalmente */
     align-items: flex-start; /* Alinha os itens no topo */
     position: relative;
-    top: 120vh; /* Ajuste conforme necessário */
+    top: 80vh; /* Ajuste conforme necessário */
     left: 50%;
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
     width: 100%; /* Ajusta a largura conforme necessário */
@@ -435,7 +435,7 @@ body {
     }
     .Equipamentos
     {
-        top: 200vh;
+        top: 100vh;
     }
     .Equipamentos ul {
         margin-top: 2%;
@@ -464,7 +464,7 @@ body {
     }
     .Equipamentos
     {
-        top: 210vh;
+        top: 100vh;
     }
     .Equipamentos ul {
         margin-top: 2%;
@@ -486,15 +486,12 @@ body {
       
 
 }
-@media (max-width: 700px)
-{
 
-}
 @media (max-width:500px)
 {
     .Equipamentos
     {
-        top: 420vh;
+        top: 200vh;
     }
     .Equipamentos ul {
         padding: 2px;
@@ -505,6 +502,10 @@ body {
         margin: 5%; /* Adiciona margem horizontal para espaçamento entre os itens */
         position: relative; /* Necessário para posicionar o modal corretamente */
         height: 60vh;
+    }
+    .Equipamentos ul img 
+    {
+        border-radius: 15px;
     }
     .zoomed-overlay img {
         background-color: #ffffff;
