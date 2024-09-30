@@ -70,9 +70,29 @@ document.querySelectorAll('.Equipamentos img').forEach(img => {
 zoomedOverlay.addEventListener('click', function() {
   zoomedOverlay.style.display = 'none'; // Esconde o overlay quando clicado
 });
+let startX;
 
+const menu = document.getElementById('menu-burguer');
+const openBtn = document.getElementById('open-menu');
+const closeBtn = document.getElementById('close-menu');
 
+openBtn.addEventListener('click', () => {
+    menu.classList.remove('hidden');
+});
 
+closeBtn.addEventListener('click', () => {
+    menu.classList.add('hidden');
+});
 
+document.addEventListener('touchstart', (event) => {
+    startX = event.touches[0].clientX;
+});
 
-
+document.addEventListener('touchmove', (event) => {
+    const currentX = event.touches[0].clientX;
+    if (startX && currentX - startX > 50) { // arrastar para abrir
+        menu.classList.remove('hidden');
+    } else if (startX && startX - currentX > 50) { // arrastar para fechar
+        menu.classList.add('hidden');
+    }
+});
