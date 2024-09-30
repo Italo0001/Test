@@ -169,14 +169,24 @@
 
 <!-- // Reponsividade da div de contatos -->
 <script>
-    function updateContactHeader() {
-        const contactHeader = document.getElementById('contact-header');
-        if (window.innerWidth < 1000) {
-            contactHeader.innerHTML = '<h2>Contatos para o envio de currículos e mais detalhes sobre nossos serviços.</h2>';
-        } else {
-            contactHeader.innerHTML = '<h1>Entre em contato</h1>';
-        }
+document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll('.btn');
+    
+    function updateButtonText() {
+        buttons.forEach(button => {
+            if (window.innerWidth < 1000) {
+                button.textContent = "Clique E Saiba Mais";
+            } else {
+                button.textContent = "Saiba Mais"; // Volta ao texto original
+            }
+        });
     }
+
+    updateButtonText(); // Chama a função na carga inicial
+
+    window.addEventListener('resize', updateButtonText); // Atualiza ao redimensionar
+});
+
 
 //serve para arrastar para o lado e aparecer o menu
 let startX;
