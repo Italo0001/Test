@@ -497,6 +497,7 @@ body {
       {
           top: 80vh;
       }
+      
          
 
 }
@@ -567,6 +568,10 @@ body {
         border-radius: 15px;
         cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
       }
+      .whatsapp img 
+      {
+        width: 15vh;
+      }
 }
 @media only screen and (orientation: landscape) and (max-width:1100px)
 {
@@ -603,6 +608,10 @@ body {
     {
         top: 120vh;
     }
+    .whatsapp img 
+    {
+      width: 15vh;
+    }
 }
 @media only screen and (orientation: landscape) and (max-width: 900px)
 {
@@ -636,6 +645,10 @@ body {
     {
         top: 170vh;
     }
+    .whatsapp img 
+    {
+      width: 15vh;
+    }
 }
 @media only screen and (orientation: landscape) and (max-width: 800px) 
 {
@@ -667,5 +680,9 @@ body {
       .Contatos
       {
         top: 160vh;
+      }
+      .whatsapp img 
+      {
+        width: 15vh;
       }
 }

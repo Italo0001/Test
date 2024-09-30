@@ -445,6 +445,11 @@ body {
         border-radius: 15px;
         cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
       }
+      .whatsapp img 
+      {
+        top: 80%;
+        width: 10vh;
+      }  
 
 }
 @media (max-width: 800px)
@@ -474,13 +479,14 @@ body {
         border-radius: 15px;
         cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
       }
-      
+      .whatsapp img 
+      {
+        top: 80%;
+        width: 10vh;
+      }     
 
 }
-@media (max-width: 700px)
-{
 
-}
 @media (max-width:500px)
 {
     .Equipamentos
@@ -537,6 +543,20 @@ body {
         border-radius: 15px;
         cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
       }
+      .whatsapp img 
+      {
+        display: flex;
+        top: 75%;
+        width: 10vh;
+      }  
+      .Contatos a 
+      {
+        display: none;
+      }
+      #curriculum-header
+      {
+        display: none;
+      }
 }
 @media only screen and (orientation: landscape) and (max-width:1100px)
 {
@@ -565,8 +585,11 @@ body {
         border-radius: 15px;
         cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
       }
-
-  
+      .whatsapp img 
+      {
+        top: 80%;
+        width: 15vh;
+      }
 }
 
 @media only screen and (orientation: landscape) and (max-width: 800px) 
@@ -596,7 +619,9 @@ body {
         border-radius: 15px;
         cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
       }
-      
-
-
+      .whatsapp img 
+      {
+        top: 80%;
+        width: 15vh;
+      }
 }

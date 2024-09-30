@@ -529,7 +529,7 @@ body {
     }
     .Equipamentos
     {
-        top: 140vh;
+        top: 110vh;
     }
     .Equipamentos ul {
         padding: 2px;
@@ -555,9 +555,13 @@ body {
     {
         height: 100%;
     }
+    .Introducao
+    {
+        top: 50vh;
+    }
     .Equipamentos
     {
-        top: 140vh;
+        top: 120vh;
     }
     .Equipamentos ul {
         padding: 2px;
@@ -576,6 +580,11 @@ body {
         border-radius: 15px;
         cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
       }
+      .whatsapp img 
+      {
+          width: 15vh;
+      }
+  
 }
 @media only screen and (orientation: landscape) and (max-width: 900px)
 {
@@ -583,9 +592,13 @@ body {
     {
         height: 100%;
     }
+    .Introducao
+    {
+        top: 60vh;
+    }
     .Equipamentos
     {
-        top: 190vh;
+        top: 150vh;
     }
     .Equipamentos ul {
         padding: 2px;
@@ -604,7 +617,11 @@ body {
         border-radius: 15px;
         cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
       }
-
+      .whatsapp img 
+      {
+          width: 15vh;
+      }
+  
   
 }
 @media only screen and (orientation: landscape) and (max-width: 800px) 
@@ -613,15 +630,19 @@ body {
     {
         height: 100%;
     }
+    .Introducao
+    {
+        top: 60vh;
+    }
     .Equipamentos
     {
-        top: 190vh;
+        top: 120vh;
     }
     .Equipamentos ul {
         padding: 2px;
         padding: 0; /* Remove o preenchimento interno da lista */
         list-style-type: none; /* Remove os marcadores padrão */
-        width: 25%; /* Ajusta a largura dos itens conforme necessário */
+        width: 20%; /* Ajusta a largura dos itens conforme necessário */
         box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
         margin: 1%; /* Adiciona margem horizontal para espaçamento entre os itens */
         position: relative; /* Necessário para posicionar o modal corretamente */
@@ -634,6 +655,10 @@ body {
         border-radius: 15px;
         cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
       }
+    .whatsapp img 
+    {
+        width: 15vh;
+    }
 
 
 }
