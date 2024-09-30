@@ -180,6 +180,34 @@
 
     window.addEventListener('resize', updateContactHeader);
     window.addEventListener('load', updateContactHeader); // Atualiza no carregamento
+
+    openBtn.addEventListener('click', () => {
+    menu.classList.remove('show'); 
+    menu.classList.add('hidden');
+});
+
+// Função para fechar o menu
+closeBtn.addEventListener('click', () => {
+    menu.classList.remove('hidden');
+    setTimeout(() => menu.classList.add('show'), 300); // Espera a animação terminar
+});
+
+// Detectar gestos
+document.addEventListener('touchstart', (event) => {
+    startX = event.touches[0].clientX;
+});
+
+document.addEventListener('touchmove', (event) => {
+    const currentX = event.touches[0].clientX;
+    
+    if (startX && currentX - startX > 50) { // arrastar para abrir
+        menu.classList.remove('show');
+        menu.classList.add('hidden');
+    } else if (startX && startX - currentX > 50) { // arrastar para fechar
+        menu.classList.remove('hidden');
+        setTimeout(() => menu.classList.add('show'), 300); // Espera a animação terminar
+    }
+});
 </script>
 
 
