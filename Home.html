@@ -79,6 +79,20 @@
         </ul>
     <script src="Script.js"></script>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll('.btn-overlay');
+    
+    if (window.innerWidth < 1100) {
+        buttons.forEach(button => {
+            button.textContent = "Clique E Saiba Mais";
+        });
+    }
+});  
+</script>
+
+
     <!-- Clientes -->
 <div class="clientes" id="customers" >
 
@@ -182,6 +196,27 @@
     </div>
 
 </div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll('.btn');
+    
+    function updateButtonText() {
+        buttons.forEach(button => {
+            if (window.innerWidth < 1000) {
+                button.textContent = "Clique E Saiba Mais";
+            } else {
+                button.textContent = "Saiba Mais"; // Volta ao texto original
+            }
+        });
+    }
+
+    updateButtonText(); // Chama a função na carga inicial
+
+    window.addEventListener('resize', updateButtonText); // Atualiza ao redimensionar
+});
+
+</script>
+
 
 <div id="Valores">
     <ul><h1>115 Obras realizadas</h1></ul>
