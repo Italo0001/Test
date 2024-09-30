@@ -338,20 +338,12 @@ body {
     color: white;
     cursor: pointer;
 }
+
 .whatsapp img
 {
     display: none;
     right: 5%;
-    top: 85%;
-    position: fixed;
-    width: 15%;
-    z-index: 11;
-}
-.whatsapp img
-{
-    display: none;
-    right: 5%;
-    top: 85%;
+    top: 90%;
     position: fixed;
     width: 15%;
     z-index: 11;
