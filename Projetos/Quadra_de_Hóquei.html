@@ -56,11 +56,11 @@
                     Contratante – JZ Engenharia e Comércio LTDA
                 </h3>
                 <ul class="image-row">
-                    <img src="../Imagens/BR 465RJ-1.png" alt="" class="Menor">
-                    <img src="../Imagens/BR 465RJ-2.png" alt="" class="Menor">
+                    <img src="../Imagens/Campos Olimpícos - Quadra de Hóquei-1.png" alt="" class="Menor">
+                    <img src="../Imagens/Campos Olimpícos - Quadra de Hóquei-2 Copia.png" alt="" class="Menor">
                 </ul>
         <ul class="image-row">
-                <img src="../Imagens/BR 465RJ-3.png" alt="" class="Maior">
+                <img src="../Imagens/Campos Olimpícos - Quadra de Hóquei-2.png" alt="" class="Maior">
         </ul>
 
 
@@ -90,18 +90,62 @@
     
     <!-- // Reponsividade da div de contatos -->
     <script>
-        function updateContactHeader() {
-            const contactHeader = document.getElementById('contact-header');
-            if (window.innerWidth < 1100) {
-                contactHeader.innerHTML = '<h2>Contatos para o envio de currículos e mais detalhes sobre nossos serviços.</h2>';
-            } else {
-                contactHeader.innerHTML = '<h1>Entre em contato</h1>';
+        document.addEventListener("DOMContentLoaded", function() {
+            const buttons = document.querySelectorAll('.btn');
+            
+            function updateButtonText() {
+                buttons.forEach(button => {
+                    if (window.innerWidth < 1000) {
+                        button.textContent = "Clique E Saiba Mais";
+                    } else {
+                        button.textContent = "Saiba Mais"; // Volta ao texto original
+                    }
+                });
             }
-        }
-    
-        window.addEventListener('resize', updateContactHeader);
-        window.addEventListener('load', updateContactHeader); // Atualiza no carregamento
-    </script>     
+        
+            updateButtonText(); // Chama a função na carga inicial
+        
+            window.addEventListener('resize', updateButtonText); // Atualiza ao redimensionar
+        });
+        
+        let startX;
+        
+        const menu = document.getElementById('menu-burguer');
+        const openBtn = document.getElementById('open-menu');
+        const closeBtn = document.getElementById('close-menu');
+        
+        // Função para abrir o menu
+        openBtn.addEventListener('click', () => {
+            menu.classList.remove('hidden');
+            menu.classList.add('show');
+        });
+        
+        // Função para fechar o menu
+        closeBtn.addEventListener('click', () => {
+            menu.classList.remove('show');
+            setTimeout(() => menu.classList.add('hidden'), 300); // Espera a animação terminar
+        });
+        
+        // Detectar gestos
+        document.addEventListener('touchstart', (event) => {
+            startX = event.touches[0].clientX;
+        });
+        
+        document.addEventListener('touchmove', (event) => {
+            const currentX = event.touches[0].clientX;
+        
+            if (startX && startX - currentX > 50) { // arrastar da direita para a esquerda (abrir)
+                menu.classList.remove('hidden');
+                menu.classList.add('show');
+            } else if (startX && currentX - startX > 50) { // arrastar da esquerda para a direita (fechar)
+                menu.classList.remove('show');
+                setTimeout(() => menu.classList.add('hidden'), 300); // Espera a animação terminar
+            }
+        });
+        
+        
+        
+        </script>    
     </div>
 
 
