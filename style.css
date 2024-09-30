@@ -841,6 +841,7 @@ h4
     width: 15%;
     z-index: 11;
 }
+
 @media (max-width:1100px)
 {
     .whatsapp img 
@@ -886,6 +887,7 @@ h4
 /* Media Queries para diferentes tamanhos de tela */
 @media only screen and (orientation: portrait) and (max-width:1100px) 
 {
+    
 
     #curriculum-header {
         display: none; /* Esconde o cabeçalho "Trabalhe Conosco" */
@@ -930,8 +932,11 @@ h4
     }
     .btn-overlay
     {
+        line-height: 1.5; /* Ajuste a altura da linha se necessário */
+        font-weight: bold; /* Deixa o texto do botão em negrito */
         border-bottom-left-radius:15px ;
         border-bottom-right-radius:15px ;
+        font-size: 50px;
     }
     
     .container {
@@ -2007,6 +2012,7 @@ h4
 {  
     .btn-overlay
     {
+        line-height: 1.5; /* Ajuste a altura da linha se necessário */
         position: relative;
         width: 25vw;
         opacity: 0;
@@ -2699,6 +2705,7 @@ h4
         }
         .Contatos
         {
+            display: none;
             top: 90vh;
         }
         .btn-overlay
@@ -2722,13 +2729,6 @@ h4
             align-items: center; /* Centraliza verticalmente o conteúdo */
             justify-content: center; /* Centraliza horizontalmente o conteúdo */
             font-size: medium;
-        }
-
-        .image-item h3
-        {
-            font-size: large;
-            width:20vw;
-            top: 20vh;
         }
         .image-item img 
         {
@@ -2879,13 +2879,6 @@ h4
             justify-content: center; /* Centraliza horizontalmente o conteúdo */
             font-size: medium;
         }
-
-        .image-item h3
-        {
-            font-size: large;
-            width:20vw;
-            top: 20vh;
-        }
         .image-item img 
         {
             position: relative;
@@ -2951,6 +2944,7 @@ h4
             border-top-left-radius: 0;
             border-top-right-radius: 0;
         }
+
 }
 @media only screen and (orientation: landscape) and (max-width:1100px)
 {
@@ -3037,9 +3031,7 @@ h4
 
         .image-item h3
         {
-            font-size: large;
-            width:20vw;
-            top: 20vh;
+
         }
         .image-item img 
         {
@@ -3110,6 +3102,18 @@ h4
             border-top-left-radius: 0;
             border-top-right-radius: 0;
         }
+        .Contatos h4 
+        {
+            text-align: justify;
+        }
+        .Contatos a
+        {
+            display: none;
+        }
+        .whatsapp img 
+        {
+            width:10vh;
+        }
 }
 @media only screen and (orientation: landscape) and (max-width: 1000px)
 {
@@ -3130,22 +3134,44 @@ h4
     .servico
     {
         font-size: medium ;
-        top: 140vh;
-    }
-    .servico ul img 
-    {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
+        top: 180vh;
     }
     .servico ul a
     {
-        top:0%;
-        height: 25px;
+        top: -65vh;
         left: -50%;
         width: 100%;
-        opacity: 1;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
+        font-size: medium;
+        height: 65vh;
+        font-weight: bold; /* Deixa o texto do botão em negrito */
+        background-color: transparent;
+        color: white;
+        border-radius: 15px;
+        background-color: transparent;
+    }
+    .servico ul a:hover
+    {
+        background-color: transparent;
+    }
+    .servico ul img 
+    {
+        filter: brightness(50%); /* Escurece a imagem para 50% do brilho original */   
+        border-radius: 15px;
+    }
+    .servico ul img:hover 
+    {
+        filter: brightness(50%); /* Escurece a imagem para 50% do brilho original */
+    }
+    .image-item a
+    {
+        top: 80%;
+        width: 85%;
+        font-size: 3vw;
+        height: 25px;
+        display: flex;
+        align-items: center; /* Centraliza verticalmente o conteúdo */
+        justify-content: center; /* Centraliza horizontalmente o conteúdo */
+        font-size: medium;
     }
     .image-item a
     {
@@ -3170,26 +3196,21 @@ h4
     {
         height: 20vh;
     }
-    .image-item h3
-    {
-        width: 75%;
-        top: 40vh;
-    }
     .image-item img 
     {
         width: 25vw;
     }
     .clientes
     {
-        top: 220vh;
+        top: 260vh;
     }
     .container
     {
-        top: 180vh;
+        top: 220vh;
     }
     #Valores
     {
-        top: 180vh;
+        top: 200vh;
     }
     .endereço
     {
@@ -3206,6 +3227,32 @@ h4
     .image-item a 
     {
         width: 80%;
+    }
+    #curriculum-header {
+        display: none; /* Esconde o cabeçalho "Trabalhe Conosco" */
+    }
+    .Contatos ul a
+    {
+        display: none;
+    }
+    .Contatos ul h2
+    {
+        text-align: justify;
+        display: flex;
+        justify-content: space-between; /* Alinha o texto nas pontas */
+        padding: 10%; /* Espaçamento interno */
+        border-radius: 5px; /* Bordas arredondadas, se desejado */
+        font-size: larger;
+    }
+    .Contatos ul h4
+    {
+        font-size: medium;
+        width: 80vw;
+        text-align: center;
+    }
+    .whatsapp img 
+    {
+        width:10vh;
     }
 }
 @media only screen and (orientation: landscape) and (max-width: 900px)
@@ -3231,9 +3278,21 @@ h4
     }
     .servico ul a
     {
-        height: 25px;
+        top: -35vh;
         left: -50%;
         width: 100%;
+        font-size: medium;
+        height: 5vh;
+        font-weight: bold; /* Deixa o texto do botão em negrito */
+    }
+    .servico ul img 
+    {
+        filter: brightness(50%); /* Escurece a imagem para 50% do brilho original */   
+        border-radius: 15px;
+    }
+    .servico ul img:hover 
+    {
+        filter: brightness(50%); /* Escurece a imagem para 50% do brilho original */
     }
     .image-item a
     {
@@ -3258,11 +3317,7 @@ h4
     {
         height: 20vh;
     }
-    .image-item h3
-    {
-        width: 75%;
-        top: 40vh;
-    }
+
     .image-item img 
     {
         position: relative;
@@ -3288,9 +3343,61 @@ h4
     {
         top: 220vh;
     }
+    .whatsapp img 
+    {
+        width:10vh;
+    }
+    .image-item h3 
+    {
+        font-size: small;
+        margin-top:0 ;
+        top: 10vh;
+        width: 70%;
+    }
+    .image-item img 
+    {
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px ;
+        position: relative;
+        height: 100%;
+        width: 90%;
+        top: 40%;
+    }
+    .image-item a 
+    {
+        background-color: transparent;
+        top: -25%;
+        height: 25%;
+    }
+    #curriculum-header {
+        display: none; /* Esconde o cabeçalho "Trabalhe Conosco" */
+    }
+    .Contatos ul a
+    {
+        display: none;
+    }
+    .Contatos ul h2
+    {
+        text-align: justify;
+        display: flex;
+        justify-content: space-between; /* Alinha o texto nas pontas */
+        padding: 10%; /* Espaçamento interno */
+        border-radius: 5px; /* Bordas arredondadas, se desejado */
+        font-size: larger;
+    }
+    .Contatos ul h4
+    {
+        font-size: medium;
+        width: 80vw;
+        text-align: center;
+    }
 }
 @media only screen and (orientation: landscape) and (max-width: 800px) 
 {
+    .whatsapp img 
+    {
+        width:10vh;
+    }
     .servico
     {
         top: 150vh;
@@ -3315,11 +3422,21 @@ h4
     }
     .servico ul a
     {
-        top: 0vh;
+        top: -25vh;
         left: -50%;
         width: 100%;
-        font-size: small;
+        font-size: medium;
         height: 5vh;
+        font-weight: bold; /* Deixa o texto do botão em negrito */
+    }
+    .servico ul img 
+    {
+        filter: brightness(50%); /* Escurece a imagem para 50% do brilho original */   
+        border-radius: 15px;
+    }
+    .servico ul img:hover 
+    {
+        filter: brightness(50%); /* Escurece a imagem para 50% do brilho original */
     }
     .servico ul h3
     {
@@ -3332,7 +3449,7 @@ h4
     .image-item
     {
         width:25%;
-        height: 60%;
+        height: 50%;
     }
 
     .image-gallery
@@ -3342,7 +3459,9 @@ h4
     }
     .image-item h3
     {
-        top: 30vh;
+        font-size: small;
+        margin-top:0 ;
+        top: 10vh;
         width: 70%;
     }
     .image-item img 
@@ -3352,6 +3471,7 @@ h4
         position: relative;
         height: 100%;
         width: 90%;
+        top: 40%;
     }
     .container
     {
@@ -3364,11 +3484,9 @@ h4
 
     .image-item a 
     {
-        top: 30%;
-    }
-    .image-item h3
-    {
-        top: 80%;
+        background-color: transparent;
+        top: -10%;
+        height: 50%;
     }
     #Valores
     {
@@ -3381,5 +3499,27 @@ h4
     .Contatos
     {
         top: 210vh;
+    }
+    #curriculum-header {
+        display: none; /* Esconde o cabeçalho "Trabalhe Conosco" */
+    }
+    .Contatos ul a
+    {
+        display: none;
+    }
+    .Contatos ul h2
+    {
+        text-align: justify;
+        display: flex;
+        justify-content: space-between; /* Alinha o texto nas pontas */
+        padding: 20%; /* Espaçamento interno */
+        border-radius: 5px; /* Bordas arredondadas, se desejado */
+        font-size: larger;
+    }
+    .Contatos ul h4
+    {
+        font-size: medium;
+        width: 80vw;
+        text-align: center;
     }
 }
