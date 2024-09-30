@@ -493,7 +493,7 @@ body {
     .Corredor_Expresso
     {
         width:85%;    
-        margin-top:180vh;
+        margin-top:185vh;
     }
     .Contatos
     {
@@ -520,8 +520,10 @@ body {
         width: 80vw;    
         top: 120vh;
     }
- 
-
+    .whatsapp img 
+    {
+      width: 15vh;
+    }
 }
 @media only screen and (orientation: landscape) and (max-width:1100px){
     .logo
@@ -539,7 +541,10 @@ body {
         width: 80vw;    
         margin-top: 180vh;
     }
-
+    .whatsapp img 
+    {
+      width: 10vh;
+    }
 }
 
 @media only screen and (orientation: landscape) and (max-width: 1000px) {
@@ -556,9 +561,12 @@ body {
     .Corredor_Expresso
     {
         width: 80vw;    
-        margin-top: 265vh;
+        margin-top: 275vh;
     }
-
+    .whatsapp img 
+    {
+      width: 15vh;
+    }
 }
 @media only screen and (orientation: landscape) and (max-width: 900px) {
     .logo
@@ -574,6 +582,10 @@ body {
     {
         width: 80vw;    
         margin-top: 340vh;
+    }
+    .whatsapp img 
+    {
+      width: 15vh;
     }
 
 }
@@ -598,5 +610,8 @@ body {
         margin-top: 270vh;
     }
   
- 
+    .whatsapp img 
+    {
+      width: 15vh;
+    }
 }

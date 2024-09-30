@@ -520,7 +520,10 @@ body {
         top: -100px;
 
     }
- 
+    .whatsapp img 
+    {
+      width: 15vh;
+    }
 
 }
 @media only screen and (orientation: landscape) and (max-width:1100px){
@@ -539,7 +542,10 @@ body {
         width: 80vw;    
         margin-top: 1050px;
     }
-
+    .whatsapp img 
+    {
+      width: 15vh;
+    }
 }
 
 @media only screen and (orientation: landscape) and (max-width: 1000px) {
@@ -558,6 +564,10 @@ body {
         width: 80vw;    
         margin-top: 850px;
     }
+    .whatsapp img 
+    {
+      width: 15vh;
+    }
 
 }
 @media only screen and (orientation: landscape) and (max-width: 900px) {
@@ -575,7 +585,10 @@ body {
         width: 80vw;    
         margin-top: 850px;
     }
-
+    .whatsapp img 
+    {
+      width: 15vh;
+    }
 }
 @media only screen and (orientation: landscape) and (max-width: 800px) {
     header
@@ -596,6 +609,10 @@ body {
     {
         width: 80%;
         margin-top: 730px;
+    }
+    .whatsapp img 
+    {
+      width: 15vh;
     }
   
  
