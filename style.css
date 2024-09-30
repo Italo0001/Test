@@ -2082,8 +2082,8 @@ h4
         transform: translateX(50%);
         justify-content: center;
         margin-top: 0;
-        top: -170px;
-        height: 20vh;
+        top: -20vh;
+        height: 25vh;
         width: 100%;
         border-radius: 15px;
         background-color: none;
