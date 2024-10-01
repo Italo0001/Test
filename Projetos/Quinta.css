@@ -310,8 +310,6 @@ body {
     .whatsapp img 
     {
         display: flex;
-        width: 10vh;
-        top: 85%;
     }
     #curriculum-header {
         display: none; /* Esconde o cabeçalho "Trabalhe Conosco" */
