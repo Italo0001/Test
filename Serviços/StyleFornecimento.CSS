@@ -109,11 +109,11 @@ body {
   }
 
   .Equipamentos ul img {
-    margin-top: 10%;
+    margin: 0;
+    padding: 0;
     background-color: #ffffff;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    width: 90%;
+    border-radius: 15px;
+    width: 80%;
     height: auto; /* Mantém a proporção da imagem */
     cursor: pointer; /* Adiciona um cursor de ponteiro para indicar que é clicável */
     height: auto;
@@ -387,6 +387,7 @@ body {
     }
 
     .open-btn {
+        
 
         display: block;
     }
@@ -513,8 +514,11 @@ body {
         border-radius: 15px;
         cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
       }
-      
-
+      .open-btn
+      {
+        top: 1vh;
+        margin-top: 0;
+      }
 }
 @media (orientation: landscape) 
 {

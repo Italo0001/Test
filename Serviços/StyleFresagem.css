@@ -100,21 +100,18 @@ body {
     background-color: rgb(255, 255, 255);
   }
 
-
-
-
   .Equipamentos ul h3 {
     font-size: medium;
   }
 
   .Equipamentos ul img {
     background-color: #ffffff;
-    border-radius: 15px;
-    width: 90%;
+    width: 80%;
     height: auto; /* Mantém a proporção da imagem */
     cursor: pointer; /* Adiciona um cursor de ponteiro para indicar que é clicável */
     height: auto;
     transition: 0.3s ease;
+    border-radius: 15px;
   }
   .Equipamentos ul img:hover
   {

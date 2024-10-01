@@ -110,9 +110,8 @@ body {
   .Equipamentos ul img {
     margin-top: 10%;
     background-color: #ffffff;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    width: 90%;
+    border-radius: 15px;
+    width: 70%;
     height: auto; /* Mantém a proporção da imagem */
     cursor: pointer; /* Adiciona um cursor de ponteiro para indicar que é clicável */
     height: auto;
@@ -120,7 +119,7 @@ body {
   }
   .Equipamentos ul img:hover
   {
-    width: 100%;
+    width: 80%;
 
   }
 
