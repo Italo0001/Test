@@ -2188,7 +2188,7 @@ h4
         align-items: center; /* Alinha verticalmente ao centro */
         justify-content: center; /* Alinha horizontalmente ao centro */
         scroll-snap-align: start; /* Faz com que o item se alinhe ao iniciar a rolagem */
-        margin: 0 10%; /* Adiciona margem horizontal para espaçamento */
+        margin: 0 5%; /* Adiciona margem horizontal para espaçamento */
     }
     .content h2
     {
@@ -2265,7 +2265,7 @@ h4
     }
     .toggle-btn
     {
-        top: 5vh;
+        top: 10vh;
     }
 
     body {
