@@ -375,10 +375,6 @@ body {
         margin-top: -120vh;
         border-radius: 15px;
     }
-    .whatsapp img 
-    {
-        width: 10vh;
-    }
 
 }
 
@@ -406,10 +402,7 @@ body {
         margin-top: -120vh;
         
     }
-    .whatsapp img 
-    {
-        width: 10%;
-    }
+
 
 }
 @media (max-width: 600px)

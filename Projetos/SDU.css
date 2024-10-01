@@ -61,6 +61,7 @@ body {
     margin-right: 0;
     text-align: left;
     z-index: 11; /* Garante que o texto fique sobre outros conteúdos */
+    
 }
 .SDUAEROPORTO ul h3 
 {
@@ -372,10 +373,7 @@ body {
         margin-top: -40vh;
         border-radius: 15px;
     }
-    .whatsapp img 
-    {
-        width: 10vh;
-    }
+
 
 }
 
@@ -403,11 +401,7 @@ body {
         margin-top: -40vh;
         
     }
-    .whatsapp img 
-    {
-        width: 10vh;
-        top: 90%;
-    }
+
 }
 @media (max-width: 600px)
 {
