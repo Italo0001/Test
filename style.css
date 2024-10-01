@@ -2177,7 +2177,7 @@ h4
     
     .image-item 
     {
-        top: -90vh;
+        top: -80vh;
         text-align: center;
         flex: 0 0 auto; /* Mantém o tamanho fixo dos itens */
         width: 60vw; /* Ajusta a largura para 80% da largura da viewport */
@@ -2251,6 +2251,7 @@ h4
     }
     
 }
+
 @media (max-width:400px)
 {  
     .btn-overlay
@@ -2504,6 +2505,26 @@ h4
         padding: 1vh;
     }
     
+}
+@media (max-width:350px)
+{
+
+    .image-item a
+    {
+        position: relative;
+        color: #fff;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        top: -5vh;
+        width: 85%;
+        opacity: 1;    
+        z-index: 11; 
+        height: 50px;
+        font-size: 25px;
+        font-weight: bold; 
+    }
 }
 @media (orientation: landscape) 
 {
