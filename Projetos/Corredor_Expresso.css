@@ -50,9 +50,10 @@ body {
 }
 .Corredor_Expresso
 {
+  
     display: block; /* Inicialmente escondido */
     position: absolute;
-    margin-top: 345vh;
+    margin-top: 2600px;
     left: 50%;
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
     width: 80%; /* Ajusta a largura conforme necessário */
@@ -63,8 +64,6 @@ body {
     margin-right: 0;
     text-align: left;
     z-index: 11; /* Garante que o texto fique sobre outros conteúdos */
-    
-
 }
 .Corredor_Expresso ul h3 
 {
@@ -522,7 +521,7 @@ body {
     }
     .whatsapp img 
     {
-      width: 15vh;
+      width: 10vh;
     }
 }
 @media only screen and (orientation: landscape) and (max-width:1100px){
@@ -539,7 +538,7 @@ body {
     .Corredor_Expresso
     {
         width: 80vw;    
-        margin-top: 180vh;
+        margin-top: 1100px;
     }
     .whatsapp img 
     {
@@ -565,7 +564,11 @@ body {
     }
     .whatsapp img 
     {
-      width: 15vh;
+      width: 10vh;
+    }
+    .Contatos
+    {
+        width: 90%;
     }
 }
 @media only screen and (orientation: landscape) and (max-width: 900px) {
@@ -581,11 +584,11 @@ body {
     .Corredor_Expresso
     {
         width: 80vw;    
-        margin-top: 340vh;
+        margin-top: 1150px;
     }
     .whatsapp img 
     {
-      width: 15vh;
+      width: 10vh;
     }
 
 }
@@ -602,16 +605,16 @@ body {
     {
         margin: 0;
         text-align: center;
-        margin-top: 15vh;
+        margin-top: 100px;
     }
     .Corredor_Expresso
     {
         width: 80%;
-        margin-top: 270vh;
+        margin-top: 1050px;
     }
   
     .whatsapp img 
     {
-      width: 15vh;
+      width: 10vh;
     }
 }

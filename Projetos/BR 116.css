@@ -38,7 +38,7 @@ body {
 .BR116
 {
     position: absolute;
-    margin-top: 20vh;
+    margin-top: 200px;
     margin-bottom: 20vh;
     left: 50%;
     transform: translateX(-50%);
@@ -51,7 +51,7 @@ body {
 {
     display: block; /* Inicialmente escondido */
     position: absolute;
-    margin-top: 420vh;
+    margin-top: 3100px;
     left: 50%;
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
     width: 80%; /* Ajusta a largura conforme necessário */
@@ -376,7 +376,7 @@ body {
     .BR116Dutra
     {
         width: 80vw;
-        margin-top: 200vh;
+        margin-top: 2700px;
     }
     .Contatos
     {
@@ -385,6 +385,7 @@ body {
         border-radius: 15px;
     }
 }
+
 @media (max-width:900px)
 {
     .h2
@@ -407,6 +408,11 @@ body {
     {
         border-radius: 15px;
         margin-top: -40vh;     
+    }
+    .whatsapp img 
+    {
+        top: 85%;
+        width: 10vh;
     }
 }
 @media (max-width: 600px)
@@ -514,6 +520,7 @@ body {
     .whatsapp img 
     {
       width: 15vh;
+      top: 80%;
     }
 }
 @media only screen and (orientation: landscape) and (max-width:1100px){
@@ -534,6 +541,7 @@ body {
     .whatsapp img 
     {
       width: 15vh;
+      top: 80%;
     }
 }
 
@@ -556,6 +564,7 @@ body {
     .whatsapp img 
     {
       width: 15vh;
+      top: 80%;
     }
 }
 @media only screen and (orientation: landscape) and (max-width: 900px) {

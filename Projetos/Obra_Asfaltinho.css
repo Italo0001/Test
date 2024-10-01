@@ -51,7 +51,7 @@ body {
 {
     display: block; /* Inicialmente escondido */
     position: absolute;
-    margin-top: 1450px;
+    margin-top: 1300px;
     left: 50%;
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
     width: 80%; /* Ajusta a largura conforme necessário */
@@ -306,6 +306,7 @@ body {
 {
     .whatsapp img 
     {
+        width: 10vh;
         display: flex;
     }
     #curriculum-header {
@@ -518,7 +519,7 @@ body {
     }
     .whatsapp img 
     {
-      width: 15vh;
+      width: 10vh;
     }
 
 }
@@ -540,7 +541,7 @@ body {
     }
     .whatsapp img 
     {
-      width: 15vh;
+      width: 10vh;
     }
 }
 
@@ -562,7 +563,7 @@ body {
     }
     .whatsapp img 
     {
-      width: 15vh;
+      width: 10vh;
     }
 }
 @media only screen and (orientation: landscape) and (max-width: 900px) {
@@ -582,7 +583,7 @@ body {
     }
     .whatsapp img 
     {
-      width: 15vh;
+      width: 10vh;
     }
 }
 @media only screen and (orientation: landscape) and (max-width: 800px) {
@@ -607,7 +608,7 @@ body {
     }
     .whatsapp img 
     {
-      width: 15vh;
+      width: 10vh;
     }
  
 }

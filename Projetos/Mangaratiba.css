@@ -375,7 +375,10 @@ body {
         margin-top: -120vh;
         border-radius: 15px;
     }
- 
+    .whatsapp img 
+    {
+        width: 10vh;
+    }
 
 }
 
@@ -402,6 +405,10 @@ body {
         border-radius: 15px;
         margin-top: -120vh;
         
+    }
+    .whatsapp img 
+    {
+        width: 10%;
     }
 
 }
@@ -523,7 +530,7 @@ body {
     }
     .whatsapp img 
     {
-      width: 15vh;
+      width: 10vh;
     }
 }
 @media only screen and (orientation: landscape) and (max-width:1100px){
@@ -548,7 +555,7 @@ body {
     }
     .whatsapp img 
     {
-      width: 15vh;
+      width: 10vh;
     }
 }
 
@@ -574,7 +581,7 @@ body {
     }
     .whatsapp img 
     {
-      width: 15vh;
+      width: 10vh;
     }
 }
 @media only screen and (orientation: landscape) and (max-width: 900px) {
@@ -594,11 +601,11 @@ body {
     }
     .Contatos
     {
-        margin-top: 60vh;
+        margin-top: 65vh;
     }
     .whatsapp img 
     {
-      width: 15vh;
+      width: 10vh;
     }
 }
 @media only screen and (orientation: landscape) and (max-width: 800px) {
@@ -623,6 +630,6 @@ body {
     }
     .whatsapp img 
     {
-      width: 15vh;
+      width: 10vh;
     }
 }

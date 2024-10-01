@@ -39,7 +39,7 @@ body {
 .Quinta
 {
     position: absolute;
-    margin-top: 20vh;
+    margin-top: 200px;
     margin-bottom: 20vh;
     left: 50%;
     transform: translateX(-50%);
@@ -50,7 +50,7 @@ body {
 {
     display: block; /* Inicialmente escondido */
     position: absolute;
-    margin-top: 240vh;
+    margin-top: 1900px;
     left: 50%;
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
     width: 80%; /* Ajusta a largura conforme necessário */
@@ -310,6 +310,8 @@ body {
     .whatsapp img 
     {
         display: flex;
+        width: 10vh;
+        top: 85%;
     }
     #curriculum-header {
         display: none; /* Esconde o cabeçalho "Trabalhe Conosco" */
@@ -376,7 +378,6 @@ body {
         margin-top: -40vh;
         border-radius: 15px;
     }
- 
 
 }
 
@@ -403,6 +404,10 @@ body {
         border-radius: 15px;
         margin-top: -40vh;
         
+    }
+    .whatsapp img 
+    {
+        width: 10vw;
     }
 
 }
@@ -467,6 +472,7 @@ body {
 }
 @media (max-width:400px)
 {
+
     .open-btn
     {
         top: 0;
@@ -522,7 +528,11 @@ body {
     {
      display: none;
     }
-
+    .whatsapp img 
+    {
+        display: flex;
+        width: 10vh;
+    }
 }
 
 @media only screen and (orientation: landscape) and (max-width:1100px){
@@ -567,7 +577,7 @@ body {
     .whatsapp img 
     {
         display: flex;
-      width: 15vh;
+      width: 10vh;
     }
 }
 @media only screen and (orientation: landscape) and (max-width: 900px) {
@@ -587,7 +597,7 @@ body {
     }
     .whatsapp img 
     {
-      width: 15vh;
+      width: 10vh;
     }
 
 }
@@ -613,7 +623,7 @@ body {
     }
     .whatsapp img 
     {
-      width: 15vh;
+      width: 10vh;
     }
  
 }
