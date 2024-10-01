@@ -836,7 +836,7 @@ h4
 {
     display: none;
     right: 5%;
-    top: 85%;
+    top: 90%;
     position: fixed;
     width: 15%;
     z-index: 11;
@@ -862,6 +862,10 @@ h4
         display: none;
     }
     #header
+    {
+        height: 5vh;
+    }
+    .logo
     {
         height: 5vh;
     }
@@ -1825,6 +1829,7 @@ h4
     {
         width: 100%;
         height: 100%;
+        min-height: 50px;
     }
     .LogoSemFundo
     {
@@ -2031,6 +2036,28 @@ h4
         top: -10vh;
         background-color: transparent;
       }
+}
+@media (max-width: 600px)
+{
+.servico ul img 
+{
+    min-height: 125px;
+}
+.servico ul a 
+{
+    top:-400%;
+}
+.container{
+    height: 100vh;
+}
+.slide-content
+{
+    height: 100%;
+}
+.image-item a 
+{
+    background-color: transparent;
+}
 }
 @media (max-width:500px)
 {  
@@ -2689,10 +2716,51 @@ h4
         top: 2vh;
     }
 }
+@media only screen and (orientation: landscape) and (max-width:1300px)
+{
+.logo
+{
+    height: 5vh;
+}
+.servico img 
+{
+    filter: brightness(50%);
+}
+.servico ul a
+{
+    background-color: transparent;
+    color: #fff;
+    opacity: 1;
+    top: -25vh;    
+    height: 25vh;
+    width: 100%;
+    left: -50%;
 
+}
+.image-item h3
+{
+    top: 0;
+    color: #000;
+}
+.image-item a 
+{
+
+    color: #fff;
+    background-color: transparent ;
+    top: -50%;
+    opacity: 1;
+    width: 100%;
+}
+
+
+}
 
 @media only screen and (orientation: landscape) and (max-width:1100px)
 {
+        #Project
+        {
+            scroll-margin-top: -690px ; /* Ajuste conforme a altura do seu rodapé */
+        }
         #desktop-menu 
         {
             display: none;
@@ -3029,6 +3097,10 @@ h4
         top: 0;
         color: #000;
     }
+    #Project
+    {
+        scroll-margin-top: -1000px ; /* Ajuste conforme a altura do seu rodapé */
+    }
 }
 @media only screen and (orientation: landscape) and (max-width: 900px)
 {
@@ -3166,13 +3238,23 @@ h4
         width: 80vw;
         text-align: center;
     }
+    #Project
+    {
+        scroll-margin-top: -750px ; /* Ajuste conforme a altura do seu rodapé */
+    }
 }
 @media only screen and (orientation: landscape) and (max-width: 800px) 
-{
+{   
+     #Project
+    {
+        scroll-margin-top: -680px ; /* Ajuste conforme a altura do seu rodapé */
+    }
+
     .whatsapp img 
     {
         width:10vh;
     }
+    
     .servico
     {
         top: 150vh;
