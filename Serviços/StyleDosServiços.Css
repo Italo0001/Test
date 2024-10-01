@@ -445,11 +445,7 @@ body {
         border-radius: 15px;
         cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
       }
-      .whatsapp img 
-      {
-        top: 80%;
-        width: 10vh;
-      }  
+
 
 }
 @media (max-width: 800px)
@@ -479,11 +475,7 @@ body {
         border-radius: 15px;
         cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
       }
-      .whatsapp img 
-      {
-        top: 80%;
-        width: 10vh;
-      }     
+  
 
 }
 
@@ -546,8 +538,6 @@ body {
       .whatsapp img 
       {
         display: flex;
-        top: 75%;
-        width: 10vh;
       }  
       .Contatos a 
       {
@@ -585,11 +575,7 @@ body {
         border-radius: 15px;
         cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
       }
-      .whatsapp img 
-      {
-        top: 80%;
-        width: 15vh;
-      }
+
 }
 
 @media only screen and (orientation: landscape) and (max-width: 800px) 
@@ -619,9 +605,5 @@ body {
         border-radius: 15px;
         cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
       }
-      .whatsapp img 
-      {
-        top: 80%;
-        width: 15vh;
-      }
+
 }

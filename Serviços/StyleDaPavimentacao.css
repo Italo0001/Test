@@ -455,10 +455,7 @@ body {
         border-radius: 15px;
         cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
       }
-      .whatsapp img 
-      {
-        top: 75%;
-      }
+
 }
 @media (max-width: 1100px)
 {
@@ -475,10 +472,7 @@ body {
     {
         top: 230vh;
     }
-    .whatsapp img 
-    {
-        width: 10vh;
-    }
+
 }
 
 @media (max-width:600px)
