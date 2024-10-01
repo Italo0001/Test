@@ -935,6 +935,7 @@ h4
     }
     .Contatos ul h4
     {
+        font-size: medium;
         width: 80vw;
         text-align: justify;
     }
@@ -1064,6 +1065,7 @@ h4
     }
     .Contatos ul h4
     {
+        font-size: medium;
         width: 80vw;
         text-align: justify;
     }
@@ -1549,11 +1551,11 @@ h4
     }
     .Contatos ul h2 
     {
-        font-size: 5vh;
+        font-size: 3vh;
     }
     .Contatos ul h4
     {
-        font-size: 3vh;
+        font-size: medium;
     }
 }
 @media (max-width: 800px)
