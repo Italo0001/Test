@@ -144,9 +144,24 @@
             }
         });
         
-        
-        
         </script>  
+
+        
+<!-- // Reponsividade da div de contatos -->
+<script>
+    function updateContactHeader() {
+        const contactHeader = document.getElementById('contact-header');
+        if (window.innerWidth < 1100) {
+            contactHeader.innerHTML = '<h2>Contatos para o envio de currículos e mais detalhes sobre nossos serviços.</h2>';
+        } else {
+            contactHeader.innerHTML = '<h1>Entre em contato</h1>';
+        }
+    }
+
+    window.addEventListener('resize', updateContactHeader);
+    window.addEventListener('load', updateContactHeader); // Atualiza no carregamento
+</script>
+
      <a href="https://wa.me/5521991135458?text=Olá,%20vim%20pelo%20site." class="whatsapp">
 
         <img src="../Imagens/Whatsapp.png" alt="">
