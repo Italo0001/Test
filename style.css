@@ -2573,7 +2573,7 @@ h4
     
     .image-item img
     {
-        top: -5%;
+        top: 10px;
         width: 110%; /* Garante que a imagem não ultrapasse a largura do item */
         height: auto; /* Mantém a proporção da imagem */
         border-bottom-left-radius: 15px;
@@ -2583,7 +2583,7 @@ h4
     .image-gallery h3
     {
         color: #000;       
-        top: -50px;
+        top: -30px;
         font-size: 15px;
         width: 200px;
         height: 100%;
