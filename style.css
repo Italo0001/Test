@@ -2551,7 +2551,7 @@ h4
     }
     
     .image-item {
-        margin-top: 150px; /* Aumente para 150px ou mais, conforme necessário */
+        margin-top: 140px; /* Aumente para 150px ou mais, conforme necessário */
         text-align: center;
         flex: 0 0 auto; /* Mantém o tamanho fixo dos itens */
         width: 65vw; /* Ajusta a largura para 65% da largura da viewport */
