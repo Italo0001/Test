@@ -2324,7 +2324,7 @@ h4
     .image-item h3
     {
         color: #000;
-        top: -35px;
+        top: -30px;
         font-size: 4vw;
     }
     .image-item:hover h3
@@ -2333,7 +2333,7 @@ h4
     }
     .image-item img
     {
-        top: -10%;
+        top: 10px;
         max-width: 85%; /* Garante que a imagem não ultrapasse a largura do item */
         height: auto; /* Mantém a proporção da imagem */
         border-radius: 15px;
