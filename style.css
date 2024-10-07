@@ -2661,7 +2661,7 @@ h4
 {
     .container
     {
-        top: 65vh;
+        top: 60vh;
     }
     .slide-content
     {
@@ -3324,7 +3324,7 @@ h4
         font-size: small;
         margin-top:0 ;
         top: 10vh;
-        width: 55%;
+        width: 100%;
     }
     .image-item img 
     {
@@ -3459,7 +3459,7 @@ h4
         font-size: small;
         margin-top:0 ;
         top: 10vh;
-        width:55%;
+        width: 80%;
     }
     .image-item img 
     {
