@@ -2226,7 +2226,8 @@ h4
         width: 20vw;   
     }
 
-    .container {
+    .container 
+    {
         width: 100%; /* Largura da viewport */
         height: 65vh; /* Altura da viewport */
         overflow: hidden; /* Oculta parte do conteúdo que está fora da área visível */
