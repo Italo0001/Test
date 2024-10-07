@@ -588,9 +588,11 @@ h4
 .content, .hidden-content {
     width: 100%; /* Cada bloco ocupa a largura total da viewport */
     height: 100%;
-    padding: 20px;
+    padding: 80px;
     box-sizing: border-box;
     overflow-y: hidden;
+
+
 }
 
 .hidden-content {
@@ -600,7 +602,13 @@ h4
     flex-direction: column; /* Coloca o conteúdo em coluna para exibir o conteúdo abaixo */
     overflow-x: hidden; /* Remove rolagem horizontal */
 }
+.slide-content h2 
+{
+    position: absolute;
+    transform: translateX(50%);
+    right: 50%;
 
+}
 .image-gallery {
     margin: 0;
     padding: 0;
@@ -609,7 +617,6 @@ h4
     overflow-x: auto; /* Permite rolagem horizontal */
     align-items: center; /* Alinha verticalmente ao centro */
     justify-content: center; /* Opcional: alinha horizontalmente ao centro */
-
 }
 
 .image-item {
@@ -651,9 +658,8 @@ h4
 
 .toggle-btn {
     position: absolute;
-    top: 20vh; /* Ajuste a posição vertical dos botões conforme necessário */
-    background-color: #ffffff;
-    color: rgb(88, 88, 88);
+    background-color: #e7d800;
+    color: rgb(255, 255, 255);
     border: none;
     cursor: pointer;
     font-size: 2rem; /* Ajuste o tamanho do texto conforme necessário */
@@ -675,10 +681,13 @@ h4
 }
 
   .left-btn {
-    right: 6%; /* Distância do botão da borda esquerda */
+    margin-top: 260px;
+    left: 2%; /* Distância do botão da borda esquerda */
+    z-index: 10;
   }
   
   .right-btn {
+    margin-top: 260px;
     right: 2%; /* Distância do botão da borda direita */
   }
   .image-item a
@@ -870,6 +879,7 @@ h4
     {
         height: 5vh;
     }
+
 }
 @media (max-width:1100px)
 {
@@ -988,6 +998,7 @@ h4
         -webkit-overflow-scrolling: touch; /* Suporte a rolagem suave em iOS */
         padding: 0; /* Remove padding extra para ajustar o layout */
         box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
+        margin-left: 200px;
     }
     .content, .hidden-content {
         flex: 0 0 100%; /* Cada bloco ocupa a largura total da viewport */
@@ -1044,6 +1055,18 @@ h4
     .image-gallery h3 {
         font-size: 3vw; /* Ajusta o tamanho da fonte com base na largura da viewport */
         margin: 0;
+    }
+    .left-btn
+    {
+        width: 10%;
+        height: 10%;
+        font-size: 70px;
+    }
+    .right-btn
+    {
+        width: 10%;
+        height: 10%;
+        font-size: 70px;
     }
 }
 @media only screen and (orientation: portrait) and (max-width: 1000px)
@@ -1412,6 +1435,8 @@ h4
         -webkit-overflow-scrolling: touch; /* Suporte a rolagem suave em iOS */
         padding: 0; /* Remove padding extra para ajustar o layout */
         box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
+        width: 60%;
+        margin-left: 200px;
     }
     .content, .hidden-content 
     {
@@ -1557,6 +1582,14 @@ h4
     {
         font-size: medium;
     }
+    .left-btn
+    {
+        left: 3%;
+    }
+    .right-btn
+    {
+        left: 88%;
+    }
 }
 @media (max-width: 800px)
 {
@@ -1645,6 +1678,8 @@ h4
         -webkit-overflow-scrolling: touch; /* Suporte a rolagem suave em iOS */
         padding: 0; /* Remove padding extra para ajustar o layout */
         box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
+        width: 70%;
+        margin-left: 110px;
     }
     .content, .hidden-content 
     {
@@ -1653,6 +1688,7 @@ h4
         padding: 10px; /* Ajusta o padding para o tamanho da tela menor */
         box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
         scroll-snap-align: start; /* Faz com que o item se alinhe ao iniciar a rolagem */
+        left: 50%;
     }
     
     .hidden-content 
@@ -1675,6 +1711,7 @@ h4
         align-items: center; /* Alinha verticalmente ao centro */
         justify-content: flex-start; /* Alinha horizontalmente ao início */
         scroll-snap-type: x mandatory; /* Facilita a rolagem em itens */
+        margin: 50px;
     }
     
     .image-item 
@@ -1689,8 +1726,9 @@ h4
         align-items: center; /* Alinha verticalmente ao centro */
         justify-content: center; /* Alinha horizontalmente ao centro */
         scroll-snap-align: start; /* Faz com que o item se alinhe ao iniciar a rolagem */
-        margin: 0 5%; /* Adiciona margem horizontal para espaçamento */
+        margin-left: 0 5%; /* Adiciona margem horizontal para espaçamento */
         margin-top: 20vh;
+        
     }
     .content h2
     {
@@ -1749,6 +1787,16 @@ h4
         height: 500px;
         opacity: 1;
         width: 100vw;
+    }
+    .left-btn
+    {
+        top: 150px;
+        left: 3%;
+    }
+    .right-btn
+    {
+        top: 150px;
+        left: 88%;
     }
 }
 
@@ -2197,6 +2245,21 @@ h4
         -webkit-overflow-scrolling: touch; /* Suporte a rolagem suave em iOS */
         padding: 0; /* Remove padding extra para ajustar o layout */
         box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
+        width: 95%;
+        padding: 60px;
+        margin-left: 0;
+    }
+    .left-btn
+    {
+        font-size: larger;
+        top: 0%;
+        left: 2%;
+    }
+    .right-btn
+    {
+        font-size: larger;
+        top: 0%;
+        left: 88%; 
     }
     .content, .hidden-content 
     {
@@ -2205,6 +2268,8 @@ h4
         padding: 10px; /* Ajusta o padding para o tamanho da tela menor */
         box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
         scroll-snap-align: start; /* Faz com que o item se alinhe ao iniciar a rolagem */
+        margin: 0;
+        padding: 20px;
     }
     
     .hidden-content 
@@ -2227,6 +2292,7 @@ h4
         align-items: center; /* Alinha verticalmente ao centro */
         justify-content: flex-start; /* Alinha horizontalmente ao início */
         scroll-snap-type: x mandatory; /* Facilita a rolagem em itens */
+        left: 50%;
     }
     
     .image-item 
@@ -2243,6 +2309,7 @@ h4
         justify-content: center; /* Alinha horizontalmente ao centro */
         scroll-snap-align: start; /* Faz com que o item se alinhe ao iniciar a rolagem */
         margin: 0 5%; /* Adiciona margem horizontal para espaçamento */
+
     }
     .content h2
     {
@@ -2283,7 +2350,7 @@ h4
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
         top: -5vh;
-        width: 80%;
+        width: 75%;
         opacity: 1;    
         z-index: 11; 
         height: 10vh;
@@ -2303,6 +2370,7 @@ h4
     {
         top: 80vh;
     }
+    
     
 }
 
@@ -2418,7 +2486,7 @@ h4
     }
     .container {
         width: 100%; /* Largura da viewport */
-        height: 80vh; /* Altura da viewport */
+        height: 500px; /* Altura da viewport */
         overflow: hidden; /* Oculta parte do conteúdo que está fora da área visível */
         position: relative;
         background-color: #ffffff;
@@ -2435,6 +2503,9 @@ h4
         -webkit-overflow-scrolling: touch; /* Suporte a rolagem suave em iOS */
         padding: 0; /* Remove padding extra para ajustar o layout */
         box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
+        width: 100%;
+        padding: 60px;
+        margin-left: 0;
     }
     .content, .hidden-content 
     {
@@ -2443,6 +2514,7 @@ h4
         padding: 10px; /* Ajusta o padding para o tamanho da tela menor */
         box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
         scroll-snap-align: start; /* Faz com que o item se alinhe ao iniciar a rolagem */
+
     }
     
     .hidden-content 
@@ -2482,6 +2554,7 @@ h4
         justify-content: center; /* Alinha horizontalmente ao centro */
         scroll-snap-align: start; /* Faz com que o item se alinhe ao iniciar a rolagem */
         margin: 0 5%; /* Adiciona margem horizontal para espaçamento */
+        left: 25%;
     }
     
     .content h2
@@ -2520,13 +2593,14 @@ h4
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
-        top: -10vh;
-        width: 85%;
+        top: -35px;
+        width: 75%;
         opacity: 1;    
         z-index: 11; 
         height: 50px;
         font-size: 25px;
         font-weight: bold; 
+        top: -65px;
     }
     .btn 
     {
@@ -2558,11 +2632,34 @@ h4
     {
         padding: 1vh;
     }
+    .left-btn
+    {   
+        font-size: larger;
+        top: 45px;
+        left: 2vw;
+    }
+    .right-btn
+    {
+        font-size: larger;
+        top: 45px;
+        left: 88%;
+    }
     
 }
 @media (max-width:350px)
 {
-
+    .slide-content
+    {
+        margin-left: 0;
+    }
+    .left-btn
+    {
+        font-size: larger;
+    }
+    .right-btn
+    {
+        font-size: larger;
+    }
     .image-item a
     {
         position: relative;
@@ -2932,7 +3029,8 @@ h4
         }
         .whatsapp img   
         {
-            width: 10%;
+            top: 90%;
+            width: 5%;
         }
         .image-item h3 
         {
