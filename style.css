@@ -361,6 +361,7 @@ h4
     z-index: 11; /* Garante que o texto fique sobre outros conteúdos */
     
 }
+
 .clientes h1
 {
     display: block;
@@ -374,10 +375,11 @@ h4
 }
 .clientes div ul img
 {
+
     background-color: #ffffff;
     border-radius: 5px;
     width: 12vw;   
-    height: auto;
+    height: 7vw;
 }
 
 .endereço
