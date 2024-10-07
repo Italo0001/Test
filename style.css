@@ -375,6 +375,7 @@ h4
 }
 .clientes div ul img
 {
+
     background-color: #ffffff;
     border-radius: 5px;
     width: 12vw;   
@@ -2658,6 +2659,10 @@ h4
 }
 @media (max-width:350px)
 {
+    .container
+    {
+        top: 65vh;
+    }
     .slide-content
     {
         margin-left: 0;
@@ -2772,7 +2777,7 @@ h4
     {
         text-align: center;
         flex: 0 0 auto; /* Mantém o tamanho fixo dos itens */
-        width: 15%; /* Ajusta a largura para 20% da largura da viewport */
+        width: 20%; /* Ajusta a largura para 20% da largura da viewport */
         height: 30vh; /* Ajusta a altura para 40% da altura da viewport */
         box-sizing: border-box;
         border-top-left-radius: 15px;
@@ -2783,6 +2788,7 @@ h4
         justify-content: center; /* Alinha horizontalmente ao centro */
         scroll-snap-align: start; /* Faz com que o item se alinhe ao iniciar a rolagem */
         margin: 0 0.5%; /* Adiciona margem horizontal para espaçamento */
+        
     }
 
     /* Estilo para as barras de rolagem */
@@ -2791,7 +2797,8 @@ h4
     }
     .image-item h3
     {
-        font-size: 1vw;
+        width: 65%;
+        font-size: 15px;
     }
     .image-gallery::-webkit-scrollbar-track {
         background: #000000; /* Cor da trilha da barra de rolagem */
@@ -2849,6 +2856,7 @@ h4
 }
 .image-item h3
 {
+    width: 85%;
     top: 0;
     color: #000;
 }
@@ -2944,10 +2952,6 @@ h4
             width: 40vw;
             height: 5vh;
         }
-        .container
-        {
-             top: 75vh;
-        }
         .image-item a
         {
             top: 80%;
@@ -2986,7 +2990,7 @@ h4
         }
         .container
         {
-            top: 100vh;
+            top: 110vh;
         }
         .image-item
         {
@@ -3212,6 +3216,16 @@ h4
     {
         scroll-margin-top: -1000px ; /* Ajuste conforme a altura do seu rodapé */
     }
+    .left-btn
+    {
+        top: 0;
+        left: 2%;
+    }
+    .right-btn
+    {
+        top: 0;
+        left: 93%;
+    }
 }
 @media only screen and (orientation: landscape) and (max-width: 900px)
 {
@@ -3287,7 +3301,7 @@ h4
     }
     .container
     {
-        top: 200vh;
+        top: 220vh;
     }
     #Valores
     {
@@ -3353,6 +3367,21 @@ h4
     {
         scroll-margin-top: -750px ; /* Ajuste conforme a altura do seu rodapé */
     }
+    .left-btn
+    {
+        top: 0;
+        left: 2%;
+    }
+    .right-btn
+    {
+        top: 0;
+        left: 92%;
+    }
+    .slide-content
+    {
+        width: 85%;
+        margin-left: 5%;
+    }
 }
 @media only screen and (orientation: landscape) and (max-width: 800px) 
 {   
@@ -3416,7 +3445,7 @@ h4
     }
     .image-item
     {
-        width:25%;
+        width:30%;
         height: 50%;
     }
 
@@ -3443,10 +3472,12 @@ h4
     }
     .container
     {
-        top: 190vh;
+        top: 210vh;
     }
     .slide-content
     {
+        width: 80%;
+        margin-left: 10%;
         height: 100%;
     }
 
@@ -3489,5 +3520,15 @@ h4
         font-size: medium;
         width: 80vw;
         text-align: center;
+    }
+    .left-btn 
+    {
+        top: -5%;
+        left: 2%;
+    }
+    .right-btn
+    {
+        top: -5%;
+        left: 93%;
     }
 }
