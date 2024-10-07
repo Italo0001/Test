@@ -2303,7 +2303,7 @@ h4
     
     .image-item 
     {
-        top: -90vh;
+        top: -85vh;
         text-align: center;
         flex: 0 0 auto; /* Mantém o tamanho fixo dos itens */
         width: 60vw; /* Ajusta a largura para 80% da largura da viewport */
