@@ -6,12 +6,24 @@ html
 
 }
 body {
+    font-family: 'Raleway', sans-serif; /* Aplica Raleway ao corpo todo */
+}
+
+/* Outros exemplos de aplicação */
+h1, h2, h3 {
+    font-family: 'Raleway', sans-serif; /* Aplica Raleway aos cabeçalhos */
+}
+
+p {
+    font-family: 'Raleway', sans-serif; /* Aplica Raleway aos parágrafos */
+}
+
+body {
     background-color: #ffffff;
     box-sizing: border-box;
     overflow-y: auto; /* Permite a rolagem se necessário */
     margin: 0;
     padding: 0;
-    font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
 #header {
