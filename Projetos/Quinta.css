@@ -10,8 +10,13 @@ body {
 }
 
 /* Outros exemplos de aplicação */
-h1, h2, h3 {
+h1
+{
     font-family: 'Raleway', sans-serif; /* Aplica Raleway aos cabeçalhos */
+}
+h2, h3, h4 {
+    font-family: 'Raleway', sans-serif; /* Aplica Raleway aos cabeçalhos */
+    font-weight: normal;
 }
 
 p {
@@ -44,6 +49,7 @@ body {
 }
 .h2
 {
+    font-weight: normal;
     padding: 0;    
     width: 100%;
 }
@@ -58,7 +64,7 @@ body {
 
 }
 .QuintaDaBoaVista
-{
+{    
     display: block; /* Inicialmente escondido */
     position: absolute;
     margin-top: 1900px;
@@ -76,6 +82,7 @@ body {
 }
 .QuintaDaBoaVista h3
 {
+    font-weight: normal;
     position: relative;
     text-align: justify;
     width: 100%;
