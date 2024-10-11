@@ -229,7 +229,7 @@ h4
 .servico h4 {
     width: 100%;
     font-size: 15px;
-    font-weight: bold; /* Adiciona o negrito */
+    font-weight: normal; /* Adiciona o negrito */
 }
 
 
@@ -859,7 +859,11 @@ h4
     #desktop-menu {
         display: none;
     }
+    body 
+{
+    font-family: 'Raleway', sans-serif; /* Usando a fonte Raleway */
 
+}
     .open-btn
     {
         top: 0.5%;
