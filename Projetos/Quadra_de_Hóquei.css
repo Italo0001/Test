@@ -6,17 +6,17 @@ html
 
 }
 body {
-    font-family: 'Raleway', sans-serif; /* Aplica Raleway ao corpo todo */
+    font-family: 'Montserrat', sans-serif;   
 }
 
 /* Outros exemplos de aplicação */
 h2, h3, h4 {
     font-weight: normal;
-    font-family: 'Raleway', sans-serif; /* Aplica Raleway aos cabeçalhos */
+    font-family: 'Montserrat', sans-serif;   
 }
 
 p {
-    font-family: 'Raleway', sans-serif; /* Aplica Raleway aos parágrafos */
+    font-family: 'Montserrat', sans-serif;   
 }
 
 body {

@@ -6,21 +6,21 @@ html
 
 }
 body {
-    font-family: 'Raleway', sans-serif; /* Aplica Raleway ao corpo todo */
+    font-family: 'Montserrat', sans-serif;  
 }
 
 /* Outros exemplos de aplicação */
 h1
 {
-    font-family: 'Raleway', sans-serif; /* Aplica Raleway aos cabeçalhos */
+    font-family: 'Montserrat', sans-serif;  
 }
 h2, h3, h4 {
-    font-family: 'Raleway', sans-serif; /* Aplica Raleway aos cabeçalhos */
+    font-family: 'Montserrat', sans-serif;  
     font-weight: normal;
 }
 
 p {
-    font-family: 'Raleway', sans-serif; /* Aplica Raleway aos parágrafos */
+    font-family: 'Montserrat', sans-serif;  
 }
 
 body {
@@ -67,7 +67,7 @@ body {
 {    
     display: block; /* Inicialmente escondido */
     position: absolute;
-    margin-top: 1900px;
+    margin-top: 1950px;
     left: 50%;
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
     width: 80%; /* Ajusta a largura conforme necessário */
