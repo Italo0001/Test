@@ -634,7 +634,7 @@ h4
     top: 25vh;
     position: relative; /* Posiciona o texto sobre a imagem */
     color: #fff; /* Cor do texto, ajuste conforme necessário */
-    font-size: 20%;
+    font-size: 40%;
     z-index: 11;
     width:75%;
     font-weight: bold;
@@ -2809,9 +2809,9 @@ h4
     }
     .image-item h3
     {
-        max-width: 175PX;
-        width: 65%;
-        font-size: 100%;
+        max-width: 190px;
+        width: 55%;
+        font-size: 15px;
     }
     .image-gallery::-webkit-scrollbar-track {
         background: #000000; /* Cor da trilha da barra de rolagem */
