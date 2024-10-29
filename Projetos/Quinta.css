@@ -67,7 +67,7 @@ body {
 {    
     display: block; /* Inicialmente escondido */
     position: absolute;
-    margin-top: 1950px;
+    margin-top: 270vh;
     left: 50%;
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
     width: 80%; /* Ajusta a largura conforme necessário */
@@ -77,9 +77,9 @@ body {
     margin-left: 0;
     margin-right: 0;
     text-align: left;
-    z-index: 11; /* Garante que o texto fique sobre outros conteúdos */
-
+    z-index: 11; 
 }
+
 .QuintaDaBoaVista h3
 {
     font-weight: normal;
@@ -534,8 +534,7 @@ body {
     .QuintaDaBoaVista
     {
         width: 80vw;    
-        top: -100px;
-
+        margin-top: 100px; 
     }
 
     .whatsapp img 
