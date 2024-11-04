@@ -63,21 +63,21 @@ body {
     border-bottom: 4px solid #fffb00; /* Linha sublinhada com 2px de espessura e cor preta */
 
 }
-.QuintaDaBoaVista
-{    
-    display: block; /* Inicialmente escondido */
+.QuintaDaBoaVista {
+    display: block; /* Inicialmente visível, se necessário */
     position: absolute;
-    margin-top: 270vh;
+    top: 50%; /* Centraliza verticalmente */
     left: 50%;
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
     width: 80%; /* Ajusta a largura conforme necessário */
     background-color: rgb(255, 255, 255); /* Cor de fundo */
     border-radius: 15px; /* Raio de borda arredondado */
     padding: 20px;
-    margin-left: 0;
-    margin-right: 0;
     text-align: left;
     z-index: 11; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para destacar o bloco */
+    transition: all 0.3s ease; /* Transição suave */
+    top: 1800px;
 }
 
 .QuintaDaBoaVista h3
