@@ -2809,8 +2809,8 @@ h4
     }
     .image-item h3
     {
-        max-width: 190px;
-        width: 55%;
+        max-width: 200px;
+        width: 65%;
         font-size: 15px;
     }
     .image-gallery::-webkit-scrollbar-track {
