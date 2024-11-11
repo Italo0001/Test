@@ -64,7 +64,7 @@ body {
 {
     display: block; /* Inicialmente escondido */
     position: absolute;
-    margin-top: 470vh;
+    margin-top: 460vh;
     left: 50%;
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
     width: 80%; /* Ajusta a largura conforme necessário */
