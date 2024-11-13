@@ -214,6 +214,10 @@ h3
 }
 @media  (max-width: 1400px) {
 
+    .Titulo
+    {
+        width: 80vw;
+    }
     #desktop-menu {
         display: none;
     }
