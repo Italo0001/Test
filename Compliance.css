@@ -222,7 +222,7 @@ h3
         display: flex;                   /* Usa flexbox para controle de layout */
         justify-content: center;         /* Centraliza o conteúdo na horizontal */
         align-items: center;             /* Centraliza o conteúdo na vertical */     
-        transform: translateX(50%); /* Ajusta para que o centro real do elemento seja o ponto central */
+        transform: translateX(10%); /* Ajusta para que o centro real do elemento seja o ponto central */
     }
     #desktop-menu {
         display: none;
