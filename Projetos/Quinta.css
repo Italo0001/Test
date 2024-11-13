@@ -77,7 +77,7 @@ body {
     z-index: 11; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para destacar o bloco */
     transition: all 0.3s ease; /* Transição suave */
-    top: 1800px;
+    margin-top: 200vh;
 }
 
 .QuintaDaBoaVista h3
@@ -386,7 +386,7 @@ body {
     .QuintaDaBoaVista
     {
         width: 80vw;
-        margin-top: 1800px;
+        margin-top: 80vh;
     }
     .Contatos
     {
@@ -412,7 +412,7 @@ body {
     }
     .QuintaDaBoaVista
     {
-    margin-top: 1300px ;
+    margin-top: 80vh;
     width: 85%;
     }
     .Contatos
@@ -473,7 +473,7 @@ body {
     }
     .QuintaDaBoaVista
     {
-        margin-top: 1000px;
+        margin-top:80vh;
         width: 85%;
     }
     .Contatos
@@ -509,7 +509,7 @@ body {
     .QuintaDaBoaVista
     {
         width:90%;    
-        margin-top: 850px;
+        margin-top: 80vh;
     }
     .Contatos
     {
@@ -534,7 +534,7 @@ body {
     .QuintaDaBoaVista
     {
         width: 80vw;    
-        margin-top: 100px; 
+        margin-top: 180vh; 
     }
 
     .whatsapp img 
@@ -558,7 +558,7 @@ body {
     .QuintaDaBoaVista
     {
         width: 80vw;    
-        margin-top: 1550px;
+        margin-top: 180vh;
     }
     .whatsapp img 
     {
@@ -581,7 +581,7 @@ body {
     .QuintaDaBoaVista
     {
         width: 80vw;    
-        margin-top: 1250px;
+        margin-top: 220vh;
     }
     .whatsapp img 
     {
@@ -602,7 +602,7 @@ body {
     .QuintaDaBoaVista
     {
         width: 80vw;    
-        margin-top: 1150px;
+        margin-top: 250vh;
     }
     .whatsapp img 
     {
@@ -628,7 +628,7 @@ body {
     .QuintaDaBoaVista
     {
         width: 80%;
-        margin-top: 1050px;
+        margin-top: 220vh;
     }
     .whatsapp img 
     {
