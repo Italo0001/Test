@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V3 Construções</title>
+    <link rel="stylesheet" href="Compliance.css">
+    <link rel="icon" href="Imagens/icon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header id="header">
+        <a href="Home.html">
+            <img src="Imagens/LogoSemFundo.png" class="logo">
+        </a>
+        <nav id="desktop-menu">
+                
+            <ul>
+                <li><a href="Home.html">Página Inicial</a></li>
+                <li><a href="Index.html">Empresa</a></li>
+                <li><a href="#contact">Contato</a></li>
+
+            </ul>
+        </nav>
+        <button id="open-menu" class="open-btn">☰</button>
+    </header>
+    <div id="menu-burguer" class="hidden">
+        <button id="close-menu" class="close-btn">&times;</button>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Página Inicial</a></li>
+                <li><a href="Index.html"> Empresa</a></li>
+                <li><a href="#contact">Contato</a></li>
+
+            </ul>
+        </nav>
+    </div>
+
+    <h1 class="Titulo">Compliance - V3 Construções</h1>
+
+    <h3> A V3 CONSTRUÇÕES tem como compromisso principal a entrega de soluções de excelência na construção
+        civil, com foco em pavimentação e infraestrutura urbana. A empresa se guia por princípios de transparência, 
+        integridade e inovação, com a missão de contribuir para a melhoria das condições de vida das comunidades por 
+        meio de seus projetos. Em 2016, com o intuito de fortalecer a conformidade e consolidar seus valores 
+        institucionais, a V3 CONSTRUÇÕES lançou seu Programa de Compliance, assegurando que todas as suas operações 
+        sejam conduzidas de acordo com os mais elevados padrões éticos e de responsabilidade.
+    </h3>
+    <h3>
+        Com o propósito de orientar a conduta esperada de seus colaboradores, diretores,
+        administradores e terceiros que têm relação comercial com a V3 CONSTRUÇÕES, a empresa 
+        elaborou um Código de Conduta. Este documento estabelece as diretrizes e os comportamentos
+        que devem ser seguidos por todos os envolvidos nas operações da empresa, aplicando-se a todos,
+        independentemente de se tratar de clientes ou parceiros do setor público ou privado.
+    </h3>
+       
+    
+    <a class="download" href="Compliace.pdf" download="Compliance.pdf">
+        Baixar Arquivo
+      </a>
+
+
+
+
+
+
+
+
+
+
+    <script src="Script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          const buttons = document.querySelectorAll('.btn-overlay');
+          
+          if (window.innerWidth < 1100) {
+              buttons.forEach(button => {
+                  button.textContent = "Clique E Saiba Mais";
+              });
+          }
+      });  
+      </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const buttons = document.querySelectorAll('.btn');
+        
+        function updateButtonText() {
+            buttons.forEach(button => {
+                if (window.innerWidth < 1000) {
+                    button.textContent = "Clique E Saiba Mais";
+                } else {
+                    button.textContent = "Saiba Mais"; // Volta ao texto original
+                }
+            });
+        }
+    
+        updateButtonText(); // Chama a função na carga inicial
+    
+        window.addEventListener('resize', updateButtonText); // Atualiza ao redimensionar
+    });
+    
+    let startX, startY;
+    
+    const menu = document.getElementById('menu-burguer');
+    const openBtn = document.getElementById('open-menu');
+    const closeBtn = document.getElementById('close-menu');
+    const imageGallery = document.querySelector('.image-gallery');
+    
+    // Função para abrir o menu
+    openBtn.addEventListener('click', () => {
+        menu.classList.remove('hidden');
+        menu.classList.add('show');
+    });
+    
+    // Função para fechar o menu
+    closeBtn.addEventListener('click', () => {
+        menu.classList.remove('show');
+        setTimeout(() => menu.classList.add('hidden'), 300);
+    });
+    
+    // Detectar gestos
+    document.addEventListener('touchstart', (event) => {
+        startX = event.touches[0].clientX;
+        startY = event.touches[0].clientY;
+    });
+    
+    document.addEventListener('touchmove', (event) => {
+        const currentX = event.touches[0].clientX;
+        const currentY = event.touches[0].clientY;
+    
+        const deltaX = currentX - startX;
+        const deltaY = currentY - startY;
+    
+        // Verifique se o movimento é predominantemente horizontal
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+            // Abrir menu ao arrastar da direita para a esquerda
+            if (deltaX < -50) { 
+                menu.classList.remove('hidden');
+                menu.classList.add('show');
+                event.preventDefault(); // Evita rolagem se abrir o menu
+            }
+            // Fechar menu ao arrastar da esquerda para a direita
+            else if (deltaX > 50) {
+                menu.classList.remove('show');
+                setTimeout(() => menu.classList.add('hidden'), 300);
+                event.preventDefault(); // Evita rolagem se fechar o menu
+            }
+        }
+    });
+    
+    // Impedir que toques na galeria acionem eventos do documento
+    imageGallery.addEventListener('touchstart', (event) => {
+        event.stopPropagation();
+    });
+    
+    imageGallery.addEventListener('touchmove', (event) => {
+        event.stopPropagation();
+    });
+    
+    </script>
+          
+</body>
+</html>

@@ -1,0 +1,244 @@
+html
+{
+    scroll-behavior: smooth;
+
+}
+body {
+    background-color: #ffffff;
+    box-sizing: border-box;
+    overflow-y: auto; /* Permite a rolagem se necessário */
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;    
+    width: 100vw;
+    scroll-behavior: smooth; /* Adiciona rolagem suave */
+}
+#header 
+{
+    background-color: #000000;
+    position: fixed;
+    width: 100%; /* Ajusta a largura do cabeçalho para 100% da largura da viewport */
+    height: 8%; /* Mantém a altura do cabeçalho como uma porcentagem da altura da viewport */
+    min-height: 40px;
+    top: 0;
+    z-index: 100; /* Garante que o cabeçalho fique sobre outros conteúdos */
+    padding: 0;
+    margin: 0;
+}
+#header nav 
+{
+   top: 2.5%;
+   font-size: larger;
+}
+#desktop-menu 
+{
+    position: fixed;
+    top: 0;
+    right: 2vw; /* Ajusta a posição do menu com base na largura da viewport */
+    background-color: #000000;
+    color: white;
+ /* Ajusta o padding com base na altura e largura da viewport */
+    display: flex;
+    align-items: center;
+}
+
+#desktop-menu ul 
+{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.5s;
+}
+#desktop-menu ul :hover
+{
+    background-color: #242424;
+}
+#desktop-menu ul li 
+{
+    margin: 0 1vw; /* Ajusta a margem com base na largura da viewport */
+}
+#desktop-menu ul li a 
+{
+    color: white;
+    text-decoration: none;
+    padding: 1vh 2vw; /* Ajusta o padding com base na altura e largura da viewport */
+}
+#menu-burguer 
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%; /* Ajusta a largura do menu de hambúrguer para 50% da largura da viewport */
+    height: 100%; /* Ajusta a altura do menu para 100% da altura da viewport */
+    background-color: #000000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 0.5s ease;
+    z-index: 1000;  
+}
+#menu-burguer nav ul 
+{
+    top:2px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+#menu-burguer nav ul li
+{
+    margin: 2vh 0; /* Ajusta a margem com base na altura da viewport */
+    transition: background-color 0.3s;
+}
+#menu-burguer nav ul li:hover 
+{
+    background-color: #181818;
+}
+#menu-burguer nav ul li a
+{
+    color: white;
+    text-decoration: none;
+    padding: 2vh 2vw; /* Ajusta o padding com base na altura e largura da viewport */
+}
+.logo 
+{
+    height: 8vh;
+    min-height: 40px;
+    width: auto;
+    min-width: 120px;
+    position: fixed;
+    z-index: 11;
+    justify-content: left;
+    text-align: left;
+}
+
+#menu-burguer 
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #000000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+#menu-burguer nav ul
+{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+#menu-burguer nav ul li
+{
+    margin: 20px 0;
+    transition: background-color 0.3s;
+}
+#menu-burguer nav ul li :hover
+{
+    background-color: #181818;
+}
+#menu-burguer nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.open-btn 
+{
+
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 2vw;
+    font-size: 150%;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+h2,h3,h4 
+{
+    font-weight: normal;
+}
+
+h3 
+{
+    
+
+    text-align: justify;
+    justify-content: center;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+
+.Titulo 
+{
+    margin-top: 20vh;          
+    margin-bottom: 10vh;       
+    margin-left: auto;        
+    margin-right: auto;        
+    text-align: center;        
+    border-bottom: rgb(255, 251, 0) solid 5px;
+    width: 40vw;               
+}
+.download
+{
+    margin-left: 75vw;
+}
+@media  (max-width: 1400px) {
+ 
+    #desktop-menu {
+        display: none;
+    }
+    #desktop-menu 
+    {
+        display: none;
+    }
+    .open-btn
+    {
+        top: 0.5%;
+        display: block;
+    }
+    #menu-burguer.show 
+    {
+        transform: translateX(0);
+
+    }
+    #desktop-menu 
+    {
+        display: none;
+    }
+    #header
+    {
+        height: 5vh;
+    }
+    .logo
+    {
+        height: 5vh;
+    }
+    
+}
