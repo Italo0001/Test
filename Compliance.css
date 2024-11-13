@@ -210,7 +210,12 @@ h3
     margin-left: 75vw;
 }
 @media  (max-width: 1400px) {
- 
+    .Titulo
+    {
+        width: 60vw;
+        text-align: center;        
+
+    }
     #desktop-menu {
         display: none;
     }
