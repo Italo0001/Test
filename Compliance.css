@@ -218,6 +218,11 @@ h3
     .Titulo
     {
         width: 80vw;
+        text-align: center;              /* Alinha o texto ao centro */
+        display: flex;                   /* Usa flexbox para controle de layout */
+        justify-content: center;         /* Centraliza o conteúdo na horizontal */
+        align-items: center;             /* Centraliza o conteúdo na vertical */     
+        transform: translateX(50%); /* Ajusta para que o centro real do elemento seja o ponto central */
     }
     #desktop-menu {
         display: none;
