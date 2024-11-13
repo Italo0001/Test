@@ -195,25 +195,19 @@ h3
 }
 
 
-.Titulo 
-{
-    text-align: center;
-    top: 20vh;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    z-index: 11;
-    position: absolute;
-    margin-bottom: 20vh;
-    left: 50%;
-    transform: translateX(-50%);
-    border-bottom: 4px solid #fffb00; /* Linha sublinhada com 2px de espessura e cor preta */
-    align-items: center; /* Centraliza verticalmente */
-    color: #000000;
-    position: absolute;
-    z-index: 11;            
+.Titulo {
+    margin-top: 20vh;                /* Espaço superior (20% da altura da tela) */
+    margin-bottom: 10vh;             /* Espaço inferior (10% da altura da tela) */
+    border-bottom: #fffb00 solid 5px; /* Linha de borda inferior */
+    width: 50vw;                     /* Largura do título (50% da largura da tela) */
+    text-align: center;              /* Alinha o texto ao centro */
+    display: flex;                   /* Usa flexbox para controle de layout */
+    justify-content: center;         /* Centraliza o conteúdo na horizontal */
+    align-items: center;             /* Centraliza o conteúdo na vertical */
+            
+    transform: translateX(50%); /* Ajusta para que o centro real do elemento seja o ponto central */
 }
+
 .download
 {
     margin-left: 75vw;
