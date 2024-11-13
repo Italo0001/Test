@@ -69,18 +69,31 @@
 
 
     <script src="Script.js"></script>
+<script>
+    // Seleciona o botão
+const button = document.querySelector('.download');
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-          const buttons = document.querySelectorAll('.btn-overlay');
-          
-          if (window.innerWidth < 1100) {
-              buttons.forEach(button => {
-                  button.textContent = "Clique E Saiba Mais";
-              });
-          }
-      });  
-      </script>
+// Função para mover o botão longe do mouse
+button.addEventListener('mousemove', function(event) {
+    // Obtém o tamanho do botão
+    const buttonWidth = button.offsetWidth;
+    const buttonHeight = button.offsetHeight;
+
+    // Obtém a posição do mouse
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
+
+    // Calcula uma nova posição para o botão
+    const offsetX = Math.random() * 200 - 100;  // Aleatório em uma faixa de -100 a 100
+    const offsetY = Math.random() * 200 - 100;  // Aleatório em uma faixa de -100 a 100
+
+    // Atualiza a posição do botão
+    button.style.left = `${mouseX + offsetX - buttonWidth / 2}px`;
+    button.style.top = `${mouseY + offsetY - buttonHeight / 2}px`;
+});
+
+</script>
+ 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const buttons = document.querySelectorAll('.btn');
