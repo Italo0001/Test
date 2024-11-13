@@ -207,12 +207,37 @@ h3
             
     transform: translateX(50%); /* Ajusta para que o centro real do elemento seja o ponto central */
 }
-
-.download
-{
+.download {
+    background-color: #ebe700;
     position: relative;
-    left: 10%;
+    left: 45%;
+    text-decoration: none;
+    border: 2px solid #000; /* Adiciona uma borda preta de 2px */
+    padding: 5px 10px; /* Ajusta o espaçamento interno para deixar o link mais "encorpado" */
+    border-radius: 5px; /* Borda arredondada (opcional) */
+    transition: width 0.3s ease; /* Adiciona transição na largura */
+    width: 120px; /* Largura inicial */
+    display: inline-block; /* Para garantir que o elemento tenha uma largura definida */
+    text-align: center;
+    height: auto;
 }
+.download {
+    background-color: #ebe700;
+    position: absolute; /* Vamos usar posição absoluta para mover o botão livremente */
+    text-decoration: none;
+    border: 2px solid #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+
+.download:hover {
+    width: 10vw; /* A largura aumenta ao passar o mouse */
+}
+
+
+
 @media  (max-width: 1400px) {
 
     .Titulo
