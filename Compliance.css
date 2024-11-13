@@ -210,7 +210,8 @@ h3
 
 .download
 {
-    margin-left: 75vw;
+    position: relative;
+    left: 10%;
 }
 @media  (max-width: 1400px) {
 
