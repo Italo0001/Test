@@ -1,7 +1,6 @@
 html
 {
     scroll-behavior: smooth;
-
 }
 body {
     background-color: #ffffff;
@@ -228,12 +227,13 @@ h3
     border: 2px solid #000;
     padding: 10px 20px;
     border-radius: 5px;
-    transition: all 0.1s ease;
+    transition: all 0.5s ease;
     cursor: pointer;
 }
 
 .download:hover {
-    width: 10vw; /* A largura aumenta ao passar o mouse */
+    width: 15vw; /* A largura aumenta ao passar o mouse */
+    left: 40%;
 }
 
 .Contatos {
@@ -287,10 +287,6 @@ h3
 .Contatos ul a:hover {
     background-color: rgb(59, 59, 59); /* Cor de fundo ao passar o mouse */
 }
-
-
-
-
 @media  (max-width: 1400px) {
 
     .Titulo
@@ -334,7 +330,14 @@ h3
     .download
 {
     position: relative;
-    left: 10%;
+    width: 35vw;
+    left: 25%;
+}
+.download:hover
+{
+    position: relative;
+    width: 35vw;
+    left: 25%; 
 }
 @media  (max-width: 1100px) 
 {
