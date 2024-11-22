@@ -31,7 +31,7 @@ body {
     overflow-x: hidden;
 }
 .EM {
-    top: 150px;
+    top: 100px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -297,7 +297,7 @@ body {
     left: 50%;
     transform: translate(-50%, -0%); /* Ajusta a posição para o centro */
     position: relative;
-    top: 20vh;
+    top: 10vh;
     padding: 50px;
 }
 .TextoResponsivo h1
