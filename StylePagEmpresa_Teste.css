@@ -297,7 +297,7 @@ body {
     left: 50%;
     transform: translate(-50%, -0%); /* Ajusta a posição para o centro */
     position: relative;
-    top: 10vh;
+    top: 5vh;
     padding: 50px;
 }
 .TextoResponsivo h1
