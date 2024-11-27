@@ -854,6 +854,19 @@ h4
     width: 15%;
     z-index: 11;
 }
+select
+{
+    font-family: 'Montserrat', sans-serif;    
+    background-color: #000;
+    border: none;
+    color: white;
+    font-size: large;
+}
+select:focus
+{
+    border: none;
+    outline: none;
+}
 @media (max-width:1400px)
 {
     #desktop-menu {
