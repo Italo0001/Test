@@ -70,3 +70,13 @@ document.querySelectorAll('.Equipamentos img').forEach(img => {
 zoomedOverlay.addEventListener('click', function() {
   zoomedOverlay.style.display = 'none'; // Esconde o overlay quando clicado
 });
+function redirigirPagina() {
+    var select = document.getElementById('sobre');
+    var valorSelecionado = select.value;
+
+    // Verifica se o valor selecionado não está vazio
+    if (valorSelecionado) {
+        // Redireciona para uma página com base no valor selecionado
+        window.location.href = valorSelecionado + '.html'; // Exemplo: maca.html
+    }
+}
