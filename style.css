@@ -354,11 +354,16 @@ h4
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
     width: 100%; /* Ajusta a largura conforme necessário */
     background-size: cover; /* Faz com que a imagem cubra toda a <div> */
-    height:auto;
     background-image: url(Imagens/FundoClientes.png);
     text-align: center;
     z-index: 11; /* Garante que o texto fique sobre outros conteúdos */
-    
+    height: auto;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;   /* Coloca os itens na vertical */
+    justify-content: center;  /* Centraliza verticalmente */
+    align-items: center;      /* Centraliza horizontalmente */
+    text-align: center;       /* Alinha o conteúdo do texto ao centro */
 }
 
 .clientes h1
@@ -369,8 +374,11 @@ h4
 }
 .clientes ul
 {
+    border-radius:  5px;
     display: inline-block;
 
+
+    
 }
 .clientes div ul img
 {
@@ -2528,7 +2536,7 @@ select:focus
     .slide-content {
         display: flex;
         flex-direction: row;
-        height: 100vw;
+        height: 140vw;
         overflow-x: auto; /* Adiciona rolagem horizontal */
         scroll-snap-type: x mandatory; /* Facilita a rolagem em itens */
         -webkit-overflow-scrolling: touch; /* Suporte a rolagem suave em iOS */
@@ -2576,8 +2584,8 @@ select:focus
         margin-top: 120px; /* Aumente para 150px ou mais, conforme necessário */
         text-align: center;
         flex: 0 0 auto; /* Mantém o tamanho fixo dos itens */
-        width: 65vw; /* Ajusta a largura para 65% da largura da viewport */
-        height: 1%; /* Ajusta a altura */
+        width: 60vw; /* Ajusta a largura para 65% da largura da viewport */
+        height: 100%; /* Ajusta a altura */
         box-sizing: border-box;
         display: flex; /* Usa flexbox para centralizar o conteúdo */
         flex-direction: column; /* Organiza o conteúdo verticalmente */
@@ -2596,10 +2604,11 @@ select:focus
     .image-item img
     {
         top: 10px;
-        width: 110%; /* Garante que a imagem não ultrapasse a largura do item */
+        width: 100%; /* Garante que a imagem não ultrapasse a largura do item */
         height: auto; /* Mantém a proporção da imagem */
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
+        height: auto;
     }
 
     .image-gallery h3
