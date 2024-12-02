@@ -112,8 +112,11 @@ body {
     background-color: transparent;
   }
 
+  .Equipamentos ul.impa
+  {
 
-
+      margin-top: 4%; /* Distância maior para as uls com a classe impa */
+  }
 
   .Equipamentos ul h3 {
     font-size: medium;

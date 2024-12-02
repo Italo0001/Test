@@ -115,7 +115,11 @@ body {
     padding: 0;
 
   }
-
+  .Equipamentos ul.impa
+  {
+  
+      margin-top: 4%; /* Distância maior para as uls com a classe impa */
+  }
   .Equipamentos ul h3 {
     font-size: medium;
   }
