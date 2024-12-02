@@ -33,7 +33,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     width: 100%;
     scroll-behavior: smooth; /* Adiciona rolagem suave */
-    background-image: url('1-6ad5e503.jpg');
+    background-image: url('background.jpg');
     background-attachment: fixed; 
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.4);  /* Cor preta com opacidade */
