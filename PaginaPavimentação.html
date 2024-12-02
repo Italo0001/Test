@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V3 construções</title>
+    <link rel="stylesheet" href="StyleDaPavimentacao.css">
+    <link rel="icon" href="../Imagens/icon.png" type="image/x-icon" width="10%">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+    <header id="header">
+        <a href="../Home.html">
+            <img src="../Imagens/LogoSemFundo.png" class="logo">
+        </a>
+            <nav id="desktop-menu">                
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#contact">Contato</a></li>
+                <li><a href="../Index.html">Empresa</a></li>
+                <li><a href="../Home.html">Página inicial</a></li>
+
+            </ul>
+        </nav>
+        <button id="open-menu" class="open-btn">☰</button>
+    </header>
+    <img src="Imagens/LogoSemFundo.png" class="logo">
+    <div id="menu-burguer" class="hidden">
+        <button id="close-menu" class="close-btn">&times;</button>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#contact">Contato</a></li>
+                <li><a href="../Index.html"> Empresa</a></li>
+                <li><a href="../Home.html"> Página inicial</a></li>
+
+
+            </ul>
+        </nav>
+    </div>
+<div id="home"></div>
+        <h1 class="telaInicial">PAVIMENTAÇÃO ASFÁLTICA        </h1>
+
+        <h3 class="Introducao">
+            <p>
+                Com expertise na fabricação de asfalto 
+                e execução de serviços de fresagem, nossa empresa oferece soluções completas em aplicação e recapeamento de superfícies asfálticas.
+                 Nosso foco na qualidade, aplicação precisa e duradoura do asfalto.
+            </p>
+
+             <p>
+                Nossos serviços de aplicação de asfalto são projetados para atender às necessidades específicas de cada cliente. Seja para estradas,
+             áreas industriais ou comerciais, utilizamos técnicas avançadas para garantir uma aplicação uniforme e resistente. 
+            Além disso, nossa equipe altamente treinada e equipada com tecnologia moderna assegura que cada projeto seja concluído dentro dos mais altos padrões de qualidade.
+             </p>
+             <p>
+                Quando se trata de recapeamento, entendemos a importância de revitalizar e fortalecer superfícies desgastadas ou danificadas. 
+                Nossa abordagem meticulosa inclui a remoção cuidadosa das camadas antigas de asfalto por meio da fresagem para, em seguida, aplicar novas camadas com precisão e durabilidade. 
+                Através da combinação de materiais de qualidade e técnicas especializadas, proporcionamos um recapeamento que revitaliza e estende a vida útil das superfícies asfálticas,
+                garantindo uma estrutura sólida e confiável por anos.
+             </p>
+             <div class="Equipamentos" >
+                <ul>
+                    
+                    <img src="../Imagens/Entorno do Maracanã-2.png">
+                </ul>
+                <ul class="impa">
+                    <img src="../Imagens/LamsaProjeto-2.png">
+                </ul>
+                <ul>
+                    <img src="../Imagens/BR 101RJ-2.png" >
+                </ul>
+                <ul class="impa">
+                    <img src="../Imagens/Corredor Expresso Transolímpica-5.png" > 
+                </ul>   
+                <ul>
+                    <img src="../Imagens/SDU RJ-2.png" > 
+                </ul>  
+                <ul class="impa">
+                    <img src="../Imagens/Br116-2.png" > 
+                </ul>  
+                <ul>
+                    <img src="../Imagens/BR 465RJ-1.png" > 
+                </ul>  
+            </div>
+            <div class="zoomed-overlay" id="zoomedOverlay">
+                <img id="zoomedImage" alt="Imagem Ampliada">
+              </div>
+        </h3>
+    </ul>
+    <script src="../Script.js"></script>
+
+    <div class="Contatos" id="contact">
+        <ul id="contact-header"><h1>Entre em contato</h1></ul> 
+        <ul>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=v3@v3construtora.com.br" target="_blank">Enviar E-mail</a>
+            <a href="https://wa.me/552137998249?text=Olá,%20preciso%20de%20mais%20informações.">WhatsApp</a>
+        </ul>
+        <ul>
+            <h4>Email: v3@v3construtora.com.br</h4> 
+        </ul>
+        <ul>
+            <h4>Telefone: (21) 3799-8249</h4>
+        </ul>
+        <ul id="curriculum-header"><h1>Trabalhe Conosco</h1></ul>
+        <ul>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=v3@v3construtora.com.br&su=Contato%20V3%20Construções&body=Olá,%20gostaria%20de%20mais%20informações." target="_blank">Enviar e-mail</a>
+            <a href="https://wa.me/552137998249?text=Olá,%20vim%20pelo%20site.">WhatsApp</a>
+        </ul>
+    </div>
+    
+    <!-- // Reponsividade da div de contatos -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const buttons = document.querySelectorAll('.btn');
+            
+            function updateButtonText() {
+                buttons.forEach(button => {
+                    if (window.innerWidth < 1000) {
+                        button.textContent = "Clique E Saiba Mais";
+                    } else {
+                        button.textContent = "Saiba Mais"; // Volta ao texto original
+                    }
+                });
+            }
+        
+            updateButtonText(); // Chama a função na carga inicial
+        
+            window.addEventListener('resize', updateButtonText); // Atualiza ao redimensionar
+        });
+        
+        let startX;
+        
+        const menu = document.getElementById('menu-burguer');
+        const openBtn = document.getElementById('open-menu');
+        const closeBtn = document.getElementById('close-menu');
+        
+        // Função para abrir o menu
+        openBtn.addEventListener('click', () => {
+            menu.classList.remove('hidden');
+            menu.classList.add('show');
+        });
+        
+        // Função para fechar o menu
+        closeBtn.addEventListener('click', () => {
+            menu.classList.remove('show');
+            setTimeout(() => menu.classList.add('hidden'), 300); // Espera a animação terminar
+        });
+        
+        // Detectar gestos
+        document.addEventListener('touchstart', (event) => {
+            startX = event.touches[0].clientX;
+        });
+        
+        document.addEventListener('touchmove', (event) => {
+            const currentX = event.touches[0].clientX;
+        
+            if (startX && startX - currentX > 50) { // arrastar da direita para a esquerda (abrir)
+                menu.classList.remove('hidden');
+                menu.classList.add('show');
+            } else if (startX && currentX - startX > 50) { // arrastar da esquerda para a direita (fechar)
+                menu.classList.remove('show');
+                setTimeout(() => menu.classList.add('hidden'), 300); // Espera a animação terminar
+            }
+        });
+        
+        
+        
+    </script>
+   <!-- // Reponsividade da div de contatos -->
+<script>
+    function updateContactHeader() {
+        const contactHeader = document.getElementById('contact-header');
+        if (window.innerWidth < 1100) {
+            contactHeader.innerHTML = '<h2>Contatos para o envio de currículos e mais detalhes sobre nossos serviços.</h2>';
+        } else {
+            contactHeader.innerHTML = '<h1>Entre em contato</h1>';
+        }
+    }
+
+    window.addEventListener('resize', updateContactHeader);
+    window.addEventListener('load', updateContactHeader); // Atualiza no carregamento
+</script>     
+        
+
+
+<a href="https://wa.me/552137998249?text=Olá,%20vim%20pelo%20site." class="whatsapp">
+
+    <img src="../Imagens/Whatsapp.png" alt="">
+    
+    </a> 
+</body>
+</html>

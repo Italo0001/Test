@@ -1,0 +1,616 @@
+/* Configurações básicas do corpo */
+html
+{
+    background-color: rgb(245, 245, 245); /* Cor de fundo */
+    scroll-behavior: smooth;
+
+}
+body {
+    font-family: 'Montserrat', sans-serif;  }
+
+/* Outros exemplos de aplicação */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;  }
+
+p {
+    font-family: 'Montserrat', sans-serif;  }
+
+body {
+    background-color: rgb(245, 245, 245); /* Cor de fundo */
+    box-sizing: border-box;
+    overflow-y: auto; /* Permite a rolagem se necessário */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.logo
+{
+    height: 100%;
+}
+#header {
+    background-color: #000000;
+    position: fixed;
+    width: 100%; /* Ajusta a largura do cabeçalho para 100% da largura da viewport */
+    height: 8%; /* Mantém a altura do cabeçalho como uma porcentagem da altura da viewport */
+    min-height: 40px;
+    top: 0;
+    z-index: 100; /* Garante que o cabeçalho fique sobre outros conteúdos */
+    padding: 0;
+    margin: 0;
+}
+#header nav 
+{
+   top: 2.5%;
+   font-size: larger;
+}
+
+.telaInicial
+{
+    top: 20vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    z-index: 11;
+    position: absolute;
+    margin-bottom: 20vh;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: 4px solid #fffb00; /* Linha sublinhada com 2px de espessura e cor preta */
+    align-items: center; /* Centraliza verticalmente */
+    color: #000000;
+    position: absolute;
+    z-index: 11;
+    
+}
+.Introducao
+{
+    text-align: justify;
+    padding-left: 50px;
+    padding-right: 50px;
+    position: absolute;
+    top: 30vh;
+    font-weight: normal;
+    font-size: medium;
+}
+.Equipamentos {
+
+ 
+    display: flex; /* Define o layout como flexbox */
+    flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte se necessário */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: flex-start; /* Alinha os itens no topo */
+    position: relative;
+    top: 120vh; /* Ajuste conforme necessário */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
+    width: 100%; /* Ajusta a largura conforme necessário */
+    background-color: rgb(245, 245, 245); /* Cor de fundo */
+    text-align: center;
+    z-index: 11;
+  }
+
+
+  .Equipamentos ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 20vw; /* Ajuste conforme necessário */
+    height: 50vh; /* Ajuste conforme necessário */
+    box-sizing: border-box;
+    border-radius: 15px;
+    box-shadow:  4px 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona a sombra */
+    overflow: hidden; /* Garante que os elementos não saiam da área do contêiner */
+    margin: 1%;
+    background-color: rgb(255, 255, 255);
+
+  }
+
+  .Equipamentos ul h3 {
+    font-size: medium;
+  }
+
+  .Equipamentos ul img {
+    margin-top: 10%;
+    background-color: #ffffff;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    width: 90%;
+    height: auto; /* Mantém a proporção da imagem */
+    cursor: pointer; /* Adiciona um cursor de ponteiro para indicar que é clicável */
+    height: auto;
+    transition: 0.3s ease;
+  }
+  .Equipamentos ul img:hover
+  {
+    width: 100%;
+
+  }
+
+
+  .zoomed-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Fundo escuro transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Garante que o overlay esteja acima de outros elementos */
+    display: none; /* Inicialmente oculto */
+  }
+
+  .zoomed-overlay img {
+    background-color: #ffffff;
+    width: 40%;
+    border-radius: 15px;
+    cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
+  }
+  
+.Contatos {
+    top: 100vh;
+    display: flex; /* Usa flexbox para o alinhamento do conteúdo */
+    flex-direction: column; /* Alinha os itens em coluna (verticalmente) */
+    justify-content: center; /* Centraliza verticalmente o conteúdo dentro do container */
+    align-items: center; /* Centraliza horizontalmente o conteúdo dentro do container */
+    position: relative; /* Fixa o elemento no viewport */
+    bottom: 0; /* Posiciona o elemento na parte inferior da página */
+    left: 50%; /* Move o elemento para o meio horizontalmente */
+    transform: translateX(-50%); /* Ajusta a posição horizontal para centralizar exata */
+    width: 100%; /* Largura total da viewport */
+    height: 70vh; /* Altura ajustada */
+    background-color: rgb(2, 2, 2); /* Cor de fundo */
+    color: aliceblue; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    z-index: 11; /* Garante que o conteúdo fique sobre outros conteúdos */
+    padding: 0;
+    margin: 0;
+}
+.Contatos h1 {
+    margin: 0; /* Remove a margem do título */
+}
+
+.Contatos ul {
+    margin: 5vh 0 0 0; /* Margem superior */
+    padding: 0; /* Remove o padding */
+    height: 5vh; /* Altura ajustada */
+    width: 100%; /* Largura total do container */
+    display: flex; /* Usa flexbox para alinhamento dos itens da lista */
+    align-items: center; /* Alinha os itens ao centro verticalmente */
+    justify-content: center; /* Alinha os itens ao centro horizontalmente */
+}
+
+.Contatos ul a {
+    transition: background-color 0.3s; /* Corrige a propriedade de transição e define uma duração mais curta */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    padding: 10px 15px; /* Espaçamento interno */
+    color: #ffffff; /* Cor do texto dos links */
+    margin: 0 10px; /* Margem lateral */
+}
+
+.Contatos ul a:hover {
+    background-color: rgb(59, 59, 59); /* Cor de fundo ao passar o mouse */
+}
+
+
+.Contatos ul a:hover {
+    background-color: rgb(59, 59, 59); /* Cor de fundo ao passar o mouse */
+}
+
+/* Menu de desktop */
+#desktop-menu {
+    position: fixed;
+    top: 0;
+    right: 2vw; /* Ajusta a posição do menu com base na largura da viewport */
+    background-color: #000000;
+    color: white;
+ /* Ajusta o padding com base na altura e largura da viewport */
+    display: flex;
+    align-items: center;
+}
+
+#desktop-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.5s;
+}
+#desktop-menu ul :hover{
+    background-color: #242424;
+}
+
+
+#desktop-menu ul li {
+
+    margin: 0 1vw; /* Ajusta a margem com base na largura da viewport */
+}
+
+#desktop-menu ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 1vh 2vw; /* Ajusta o padding com base na altura e largura da viewport */
+    
+}
+
+/* Menu de hambúrguer */
+#menu-burguer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%; /* Ajusta a largura do menu de hambúrguer para 50% da largura da viewport */
+    height: 100%; /* Ajusta a altura do menu para 100% da altura da viewport */
+    background-color: #000000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 0.5s ease;
+    z-index: 1000;
+    
+}
+
+#menu-burguer nav ul {
+    top:2px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+#menu-burguer nav ul li {
+    margin: 2vh 0; /* Ajusta a margem com base na altura da viewport */
+    transition: background-color 0.3s;
+}
+
+#menu-burguer nav ul li:hover {
+    background-color: #181818;
+}
+
+#menu-burguer nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 2vh 2vw; /* Ajusta o padding com base na altura e largura da viewport */
+}
+
+
+#menu-burguer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #000000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+#menu-burguer nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+#menu-burguer nav ul li {
+    margin: 20px 0;
+    transition: background-color 0.3s;
+}
+#menu-burguer nav ul li :hover
+{
+    background-color: #181818;
+}
+#menu-burguer nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.open-btn {
+
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 2vw;
+    font-size: 150%;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.whatsapp img
+{
+    display: none;
+    right: 5%;
+    top: 90%;
+    position: fixed;
+    width: 15%;
+    z-index: 11;
+}
+@media (max-width:1100px)
+{
+    .Equipamentos ul img:hover
+    {
+        width: 90%;
+    } 
+    .whatsapp img 
+    {
+        display: flex;
+    }
+    #curriculum-header {
+        display: none; /* Esconde o cabeçalho "Trabalhe Conosco" */
+    }
+    .Contatos ul a
+    {
+        display: none;
+    }
+    .Contatos ul h2
+    {
+        text-align: justify;
+        display: flex;
+        justify-content: space-between; /* Alinha o texto nas pontas */
+        padding: 10%; /* Espaçamento interno */
+        border-radius: 5px; /* Bordas arredondadas, se desejado */
+    }
+    .Contatos ul h4
+    {
+        width: 80vw;
+        text-align: justify;
+    }
+    
+    .logo
+    {
+        height: 100%;
+    }
+    #desktop-menu {
+        display: none;
+    }
+
+    .open-btn {
+
+        display: block;
+    }
+
+    #menu-burguer.show {
+        transform: translateX(0);
+
+    }
+    #desktop-menu 
+    {
+        display: none;
+    }
+    #header
+    {
+        height: 5vh;
+    }
+    .logo{
+        height: 5vh;
+        width: auto;
+    }
+    .open-btn
+    {
+        height: 2vh;
+        top: 1vh;
+    }
+    .image-gallery h3 {
+        font-size: 3vw; /* Ajusta o tamanho da fonte com base na largura da viewport */
+        margin: 0;
+    }
+}
+/* Media Queries para diferentes tamanhos de tela */
+
+@media  (orientation: portrait) , (max-width:900px)
+{
+    .logo
+    {
+        height: 100%;
+    }
+    .Equipamentos
+    {
+        top: 200vh;
+    }
+    .Equipamentos ul {
+        margin-top: 2%;
+        background-color: #ffffff;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        width: 45%;
+        height: auto; /* Mantém a proporção da imagem */
+        transition: transform 0.3s ease; /* Transição suave para o efeito de zoom */
+        cursor: pointer; /* Adiciona um cursor de ponteiro para indicar que é clicável */
+        height: 50vh;
+    }
+    .zoomed-overlay img {
+        background-color: #ffffff;
+        width: 90%;
+        border-radius: 15px;
+        cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
+      }
+
+
+}
+@media (max-width: 800px)
+{
+    .logo
+    {
+        height: 100%;
+    }
+    .Equipamentos
+    {
+        top: 210vh;
+    }
+    .Equipamentos ul {
+        margin-top: 2%;
+        background-color: #ffffff;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        width: 45%;
+        height: auto; /* Mantém a proporção da imagem */
+        transition: transform 0.3s ease; /* Transição suave para o efeito de zoom */
+        cursor: pointer; /* Adiciona um cursor de ponteiro para indicar que é clicável */
+        height: 50vh;
+    }
+    .zoomed-overlay img {
+        background-color: #ffffff;
+        width: 90%;
+        border-radius: 15px;
+        cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
+      }
+  
+
+}
+
+@media (max-width:500px)
+{
+    .Equipamentos
+    {
+        top: 420vh;
+    }
+    .Equipamentos ul {
+        padding: 2px;
+        padding: 0; /* Remove o preenchimento interno da lista */
+        list-style-type: none; /* Remove os marcadores padrão */
+        width: 90%; /* Ajusta a largura dos itens conforme necessário */
+        box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+        margin: 5%; /* Adiciona margem horizontal para espaçamento entre os itens */
+        position: relative; /* Necessário para posicionar o modal corretamente */
+        height: 60vh;
+    }
+    .zoomed-overlay img {
+        background-color: #ffffff;
+        width: 90%;
+        border-radius: 15px;
+        cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
+      }
+      .open-btn
+      {
+          top: 3px;
+          align-items: center; /* Centraliza horizontalmente */
+          justify-content: center; /* Centraliza verticalmente */
+      }
+}
+@media only screen and (orientation: landscape) and (max-width:1200px)
+{
+    .logo
+    {
+        height: 100%;
+    }
+    .Equipamentos
+    {
+        top: 140vh;
+    }
+    .Equipamentos ul {
+        padding: 2px;
+        padding: 0; /* Remove o preenchimento interno da lista */
+        list-style-type: none; /* Remove os marcadores padrão */
+        width: 25%; /* Ajusta a largura dos itens conforme necessário */
+        box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+        margin: 1%; /* Adiciona margem horizontal para espaçamento entre os itens */
+        position: relative; /* Necessário para posicionar o modal corretamente */
+        height:40vh;
+    }
+    .zoomed-overlay img {
+        background-color: #ffffff;
+        width: auto;
+        height: 80%;
+        border-radius: 15px;
+        cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
+      }
+      .whatsapp img 
+      {
+        display: flex;
+      }  
+      .Contatos a 
+      {
+        display: none;
+      }
+      #curriculum-header
+      {
+        display: none;
+      }
+}
+@media only screen and (orientation: landscape) and (max-width:1100px)
+{
+    .logo
+    {
+        height: 100%;
+    }
+    .Equipamentos
+    {
+        top: 190vh;
+    }
+    .Equipamentos ul {
+        padding: 2px;
+        padding: 0; /* Remove o preenchimento interno da lista */
+        list-style-type: none; /* Remove os marcadores padrão */
+        width: 25%; /* Ajusta a largura dos itens conforme necessário */
+        box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+        margin: 1%; /* Adiciona margem horizontal para espaçamento entre os itens */
+        position: relative; /* Necessário para posicionar o modal corretamente */
+        height: 60vh;
+    }
+    .zoomed-overlay img {
+        background-color: #ffffff;
+        width: auto;
+        height: 80%;
+        border-radius: 15px;
+        cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
+      }
+
+}
+
+@media only screen and (orientation: landscape) and (max-width: 800px) 
+{
+    .logo
+    {
+        height: 100%;
+    }
+    .Equipamentos
+    {
+        top: 190vh;
+    }
+    .Equipamentos ul {
+        padding: 2px;
+        padding: 0; /* Remove o preenchimento interno da lista */
+        list-style-type: none; /* Remove os marcadores padrão */
+        width: 25%; /* Ajusta a largura dos itens conforme necessário */
+        box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+        margin: 1%; /* Adiciona margem horizontal para espaçamento entre os itens */
+        position: relative; /* Necessário para posicionar o modal corretamente */
+        height: 60vh;
+    }
+    .zoomed-overlay img {
+        background-color: #ffffff;
+        width: auto;
+        height: 80%;
+        border-radius: 15px;
+        cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
+      }
+
+}
