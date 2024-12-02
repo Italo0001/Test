@@ -108,10 +108,10 @@ body {
     height: 40vh; /* Ajuste conforme necessário */
     box-sizing: border-box;
     border-radius: 15px;
-    box-shadow:  4px 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona a sombra */
+    /* box-shadow:  4px 4px 8px rgba(0, 0, 0, 0.2);  */
     overflow: hidden; /* Garante que os elementos não saiam da área do contêiner */
     margin: 1%;
-    background-color: rgb(255, 255, 255);
+    background-color: transparent;
     padding: 0;
 
   }
@@ -130,6 +130,11 @@ body {
     cursor: pointer; /* Adiciona um cursor de ponteiro para indicar que é clicável */
     height: auto;
     transition: 0.3s ease;
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
+    box-shadow:  4px 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona a sombra */
+
+    
+    box-shadow: 4px 4px 8px rgb(0, 0, 0);
   }
   .Equipamentos ul img:hover
   {

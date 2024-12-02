@@ -107,10 +107,9 @@ body {
     height: 50vh; /* Ajuste conforme necessário */
     box-sizing: border-box;
     border-radius: 15px;
-    box-shadow:  4px 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona a sombra */
     overflow: hidden; /* Garante que os elementos não saiam da área do contêiner */
     margin: 1%;
-    background-color: rgb(255, 255, 255);
+    background-color: transparent;
   }
 
 
@@ -130,6 +129,9 @@ body {
     cursor: pointer; /* Adiciona um cursor de ponteiro para indicar que é clicável */
     height: auto;
     transition: 0.3s ease;
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
+    box-shadow:  4px 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona a sombra */
+
   }
   .Equipamentos ul img:hover
   {
