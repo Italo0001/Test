@@ -464,7 +464,7 @@ body {
     }
     .Equipamentos ul {
         margin-top: 2%;
-        background-color: #ffffff;
+        background-color: transparent;
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
         width: 45%;
@@ -493,7 +493,7 @@ body {
     }
     .Equipamentos ul {
         margin-top: 2%;
-        background-color: #ffffff;
+        background-color: transparent;
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
         width: 45%;
@@ -527,6 +527,7 @@ body {
         margin: 5%; /* Adiciona margem horizontal para espaçamento entre os itens */
         position: relative; /* Necessário para posicionar o modal corretamente */
         height: 60vh;
+        background-color: transparent;
     }
     .Equipamentos ul img 
     {
@@ -568,6 +569,7 @@ body {
         margin: 1%; /* Adiciona margem horizontal para espaçamento entre os itens */
         position: relative; /* Necessário para posicionar o modal corretamente */
         height:40vh;
+        background-color: transparent;
     }
     .zoomed-overlay img {
         background-color: #ffffff;

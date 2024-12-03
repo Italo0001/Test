@@ -456,6 +456,8 @@ body {
         transition: transform 0.3s ease; /* Transição suave para o efeito de zoom */
         cursor: pointer; /* Adiciona um cursor de ponteiro para indicar que é clicável */
         height: 50vh;
+        background-color: transparent;
+
     }
     .zoomed-overlay img {
         background-color: #ffffff;
@@ -485,6 +487,8 @@ body {
         transition: transform 0.3s ease; /* Transição suave para o efeito de zoom */
         cursor: pointer; /* Adiciona um cursor de ponteiro para indicar que é clicável */
         height: 50vh;
+        background-color: transparent;
+
     }
     .zoomed-overlay img {
         background-color: #ffffff;
@@ -511,6 +515,8 @@ body {
         margin: 5%; /* Adiciona margem horizontal para espaçamento entre os itens */
         position: relative; /* Necessário para posicionar o modal corretamente */
         height: 60vh;
+        background-color: transparent;
+
     }
     .zoomed-overlay img {
         background-color: #ffffff;
@@ -544,6 +550,8 @@ body {
         margin: 1%; /* Adiciona margem horizontal para espaçamento entre os itens */
         position: relative; /* Necessário para posicionar o modal corretamente */
         height:40vh;
+        background-color: transparent;
+
     }
     .zoomed-overlay img {
         background-color: #ffffff;
@@ -572,6 +580,8 @@ body {
         margin: 1%; /* Adiciona margem horizontal para espaçamento entre os itens */
         position: relative; /* Necessário para posicionar o modal corretamente */
         height: 70vh;
+        background-color: transparent;
+
     }
 
     .zoomed-overlay img {
@@ -608,6 +618,7 @@ body {
         margin: 1%; /* Adiciona margem horizontal para espaçamento entre os itens */
         position: relative; /* Necessário para posicionar o modal corretamente */
         height: 60vh;
+        background-color: transparent;
     }
     .zoomed-overlay img {
         background-color: #ffffff;
