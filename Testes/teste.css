@@ -360,7 +360,7 @@ h4
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
     width: 100%; /* Ajusta a largura conforme necessário */
     background-size: cover; /* Faz com que a imagem cubra toda a <div> */
-    background-image: url(Imagens/FundoClientes.png);
+    background-image: url('../Imagens/FundoClientes.png');
     text-align: center;
     z-index: 11; /* Garante que o texto fique sobre outros conteúdos */
     height: auto;
