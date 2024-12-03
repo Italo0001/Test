@@ -34,6 +34,11 @@ body {
     font-family: 'Montserrat', sans-serif;    
     width: 100vw;
     scroll-behavior: smooth; /* Adiciona rolagem suave */
+    background-image: url('../1-Site/Imagens/background.jpg');
+    background-attachment: fixed; 
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.4);  /* Cor preta com opacidade */
+    background-blend-mode: overlay; /* Faz a imagem de fundo misturar com a cor */
 }
 
 h1 {
@@ -205,10 +210,11 @@ h4
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
     width: 100vw; /* Ajusta a largura conforme necessário */
     height: auto; 
-    background-color: rgb(255, 255, 255); /* Cor de fundo */
+    background-color: transparent; /* Cor de fundo */
     text-align: center;
     z-index: 11;  
     border: none; 
+    color: white;
 }
 .servico ul
 {
@@ -399,9 +405,10 @@ h4
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
     width: 95%; /* Ajusta a largura do cabeçalho para 100% da largura da viewport */
     height:auto;
-    background-color: rgb(255, 255, 255); /* Cor de fundo */
+    background-color: transparent; /* Cor de fundo */
     text-align: left;
     z-index: 11; /* Garante que o texto fique sobre outros conteúdos */
+    color: white;
 
 }
 .endereço iframe
@@ -430,19 +437,22 @@ h4
 /* Estilo para a div com a classe "Valores" */
 /* Estilo para a div com a classe "Valores" */
 #Valores {
+    border-top:   2px  solid #ffffff;
+    border-bottom: 2px solid #ffffff;
     top: 15vh;
-    background-color: #d6d6d6;
+    background-color: transparent;
     position: relative;
     display: flex;               /* Usa Flexbox para alinhar os itens horizontalmente */
     justify-content: space-around; /* Distribui os itens com espaço igual entre eles */
     align-items: center;         /* Alinha os itens verticalmente ao centro */
-    color: #000000;
+    color: #ffffff;
     left: 50%;
     transform: translateX(-50%); /* Centraliza horizontalmente */
     width: 100%;                 /* Ajusta a largura conforme necessário */
     height: 25vh;
     text-align: center;
     z-index: 11;
+    background-color: rgba(0, 0, 0, 0.8);  /* Cor preta com opacidade */
 }
 
 /* Estilo para os itens de lista (ul) */
@@ -454,12 +464,12 @@ h4
     display: flex;               /* Usa Flexbox para alinhar o conteúdo */
     justify-content: center;     /* Centraliza o conteúdo horizontalmente */
     align-items: center;         /* Alinha o conteúdo verticalmente */
-    border-right: 1px solid #8d8d8d; /* Linha de separação à direita */
+    border-right: 1px solid #ffffff; /* Linha de separação à direita */
     padding-right: 7.5px;
     padding-left: 7.5px;         /* Espaçamento entre o texto e a linha */
     height: 50%;                 /* Altura do quadrado, pode ajustar conforme necessário */
     width: 100%;                   /* Largura do quadrado, pode ajustar conforme necessário */
-    box-sizing: border-box;      /* Inclui padding e borda na largura/altura total */
+    box-sizing: border-box; 
 }
 
 /* Remove a borda do último item */
@@ -482,7 +492,7 @@ h4
 /* Estilo para os títulos (h1) dentro dos itens */
 #Valores ul h1 {
     font-size: 2vw ; /* Tamanho da fonte em pontos */;              /* Tamanho da fonte */
-    color: #333;                 /* Cor do texto */
+    color: #ffffff;                 /* Cor do texto */
     margin: 0;
     text-align: center;          /* Centraliza o texto dentro do h1 */
 }
@@ -574,13 +584,15 @@ h4
     height: 500px; /* Altura da viewport */
     overflow: hidden; /* Oculta parte do conteúdo que está fora da área visível */
     position: relative;
-    background-color: #ffffff;
+    background-color: transparent;
     text-align: center;
     margin-top: 30vh; /* Posição relativa */
+    color: white;
 }
 
 .container ul
 {
+    color: white;
     top: 0;
 }
 
@@ -605,18 +617,24 @@ h4
 }
 
 .hidden-content {
-    background-color: #ffffff;
+    background-color: transparent;
     border-left: 1px solid #ccc;
     display: flex;
     flex-direction: column; /* Coloca o conteúdo em coluna para exibir o conteúdo abaixo */
     overflow-x: hidden; /* Remove rolagem horizontal */
+    color: white;
+
 }
 .slide-content h2 
 {
     position: absolute;
     transform: translateX(50%);
     right: 50%;
-
+    color: white;
+}
+.slide-content h3 
+{
+    color: white;
 }
 .image-gallery {
     margin: 0;
@@ -644,7 +662,7 @@ h4
     color: #fff; /* Cor do texto, ajuste conforme necessário */
     font-size: 40%;
     z-index: 11;
-    width:75%;
+    width:70%;
     font-weight: bold;
     transition: opacity 0.3s ease;
 }
@@ -661,7 +679,7 @@ h4
     display: block; /* Remove o espaço abaixo da imagem */
     height: auto; /* Mantém a proporção da imagem */
     border-radius: 15px;   
-    filter: brightness(60%); 
+    filter: brightness(75%); 
     transition: opacity 0.3s ease;
 }
 
@@ -746,15 +764,15 @@ h4
 /* Adiciona estilização à barra de rolagem horizontal e vertical da galeria de imagens */
 .image-gallery {
     overflow: auto; /* Permite rolagem tanto horizontal quanto vertical */
-    scrollbar-width: thin; /* Para Firefox: define a largura da barra de rolagem */
-    scrollbar-color: #ffffff #ffffff; /* Para Firefox: define as cores do thumb (branco) e do trilho (cinza claro) */
+    scrollbar-width: 0px; /* Para Firefox: define a largura da barra de rolagem */
+    scrollbar-color: #8f8f8f #252525; /* Para Firefox: define as cores do thumb (branco) e do trilho (cinza claro) */
 }
 
 /* Personalização para navegadores baseados em WebKit (Chrome, Safari) */
 /* Barra de rolagem horizontal */
 .image-gallery::-webkit-scrollbar {
-    width: 12px; /* Largura da barra de rolagem vertical */
-    height: 12px; /* Altura da barra de rolagem horizontal */
+    width: 0; /* Largura da barra de rolagem vertical */
+    height: 0; /* Altura da barra de rolagem horizontal */
 }
 
 /* Trilho da barra de rolagem */
@@ -1012,7 +1030,7 @@ select:focus
         height:100%;
         overflow: hidden; /* Oculta parte do conteúdo que está fora da área visível */
         position: relative;
-        background-color: #ffffff;
+        background-color: transparent;
         text-align: center;
         top: 30vh; /* Posição relativa */
         margin: 0;
@@ -1037,7 +1055,7 @@ select:focus
     }
     
     .hidden-content {
-        background-color: #ffffff;
+        background-color: transparent;
         border-left: 1px solid #ccc;
         display: flex;
         flex-direction: column; /* Coloca o conteúdo em coluna para exibir o conteúdo abaixo */
@@ -1083,6 +1101,7 @@ select:focus
     .image-gallery h3 {
         font-size: 3vw; /* Ajusta o tamanho da fonte com base na largura da viewport */
         margin: 0;
+        color: white;
     }
     .left-btn
     {
@@ -1135,6 +1154,8 @@ select:focus
     .content h2
     {
         margin-bottom: 10%;
+        color: white;
+
     }
     .left-btn
     {
@@ -1240,7 +1261,7 @@ select:focus
         height:100%;
         overflow: hidden; /* Oculta parte do conteúdo que está fora da área visível */
         position: relative;
-        background-color: #ffffff;
+        background-color: transparent;
         text-align: center;
         top: 30vh; /* Posição relativa */
         margin: 0;
@@ -1299,6 +1320,7 @@ select:focus
     }
     .image-item h3
     {
+        color: white;
         font-size: x-large;
     }
     
@@ -1312,6 +1334,7 @@ select:focus
     .image-gallery h3 {
         font-size: 3vw; /* Ajusta o tamanho da fonte com base na largura da viewport */
         margin: 0;
+        color: white;
     }
     
     .btn {
@@ -1340,7 +1363,7 @@ select:focus
         height: 80vh; /* Altura da viewport */
         overflow: hidden; /* Oculta parte do conteúdo que está fora da área visível */
         position: relative;
-        background-color: #ffffff;
+        background-color: transparent;
         text-align: center;
         top: 35vh; /* Posição relativa */
         margin: 0;
@@ -1440,7 +1463,7 @@ select:focus
         height: 80vh; /* Altura da viewport */
         overflow: hidden; /* Oculta parte do conteúdo que está fora da área visível */
         position: relative;
-        background-color: #ffffff;
+        background-color: transparent;
         text-align: center;
         top: 45vh; /* Posição relativa */
         margin: 0;
@@ -1515,6 +1538,8 @@ select:focus
     .content h2
     {
         margin: 0;
+        color: white;
+
     }
     
     .image-item img
@@ -1533,6 +1558,7 @@ select:focus
         margin: 0;
         font-size: 3vw; /* Ajusta o tamanho da fonte com base na largura da viewport */
         margin: 0;
+        color: white;
     }   
     .image-gallery :hover h3
     {
@@ -1595,7 +1621,7 @@ select:focus
     }
     .image-item h3
     {
-        color: #000;
+        color: #ffffff;
         top: -5vh;
     }
     #Valores
@@ -1658,7 +1684,7 @@ select:focus
         height: 80vh; /* Altura da viewport */
         overflow: hidden; /* Oculta parte do conteúdo que está fora da área visível */
         position: relative;
-        background-color: #ffffff;
+        background-color: transparent;
         text-align: center;
         top: 40vh; /* Posição relativa */
         margin: 0;
@@ -1761,6 +1787,8 @@ select:focus
     .content h2
     {
         margin: 0;
+        color: white;
+
     }
     .image-item img
     {
@@ -1776,7 +1804,7 @@ select:focus
         width: 35vw;
         height: 100%;
         margin: 0;
-        color: #000;
+        color: #ffffff;
     }
 
     .image-item a
@@ -1843,6 +1871,7 @@ select:focus
     }
     .content h2
     {
+        color: white;
         margin-bottom: 10%;
     }
     .left-btn
@@ -1969,6 +1998,7 @@ select:focus
     .image-gallery h3 {
         font-size: 3vw; /* Ajusta o tamanho da fonte com base na largura da viewport */
         margin: 0;
+        color: white;
     }
     
     .btn {
@@ -2019,7 +2049,7 @@ select:focus
         height: 100%; /* Altura da viewport */
         overflow: hidden; /* Oculta parte do conteúdo que está fora da área visível */
         position: relative;
-        background-color: #ffffff;
+        background-color: transparent;
         text-align: center;
         top: 50vh; /* Posição relativa */
         margin: 0;
@@ -2064,6 +2094,7 @@ select:focus
       .image-gallery h3
       {
         font-size: 3vw;
+        color: white;
       }
 
       .btn {
@@ -2097,7 +2128,8 @@ select:focus
       }
       .content h2
       {
-          margin-bottom: 25%;
+        color: white;
+        margin-bottom: 25%;
       }
       .left-btn
       {
@@ -2260,7 +2292,7 @@ select:focus
         height: 65vh; /* Altura da viewport */
         overflow: hidden; /* Oculta parte do conteúdo que está fora da área visível */
         position: relative;
-        background-color: #ffffff;
+        background-color: transparent;
         text-align: center;
         top: 55vh; /* Posição relativa */
         margin: 0;
@@ -2347,11 +2379,12 @@ select:focus
     }
     .content h2
     {
+        color: white;
         margin: 0;
     }
     .image-item h3
     {
-        color: #000;
+        color: #ffffff;
         top: -30px;
         font-size: 4vw;
     }
@@ -2528,10 +2561,11 @@ select:focus
         height: 500px; /* Altura da viewport */
         overflow: hidden; /* Oculta parte do conteúdo que está fora da área visível */
         position: relative;
-        background-color: #ffffff;
+        background-color: transparent;
         text-align: center;
         margin-top: 245vh; /* Posição relativa */
         margin: 0;
+        color: #ffffff;
     }
     .slide-content {
         display: flex;
@@ -2544,6 +2578,7 @@ select:focus
         box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
         width: 100%;
         padding: 60px;
+        color: white;
         margin-left: 0;
     }
     .content, .hidden-content 
@@ -2553,6 +2588,7 @@ select:focus
         padding: 10px; /* Ajusta o padding para o tamanho da tela menor */
         box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
         scroll-snap-align: start; /* Faz com que o item se alinhe ao iniciar a rolagem */
+        color: white;
 
     }
     
@@ -2563,6 +2599,8 @@ select:focus
         display: flex;
         flex-direction: column; /* Coloca o conteúdo em coluna para exibir o conteúdo abaixo */
         overflow-x: hidden; /* Remove rolagem horizontal */
+        color: white;
+
     }
     
     .image-gallery {
@@ -2577,7 +2615,7 @@ select:focus
         justify-content: flex-start; /* Alinha horizontalmente ao início */
         scroll-snap-type: x mandatory; /* Facilita a rolagem em itens */
         padding-top: 100px; /* Ajuste conforme necessário */
-
+        color: white;
     }
     
     .image-item {
@@ -2594,11 +2632,15 @@ select:focus
         scroll-snap-align: start; /* Faz com que o item se alinhe ao iniciar a rolagem */
         margin: 0 5%; /* Adiciona margem horizontal para espaçamento */
         left: 25%;
+        color: white;
+
     }
     
     .content h2
     {
         margin: 0;
+        color: white;
+
     }
     
     .image-item img
@@ -2613,7 +2655,7 @@ select:focus
 
     .image-gallery h3
     {
-        color: #000;       
+        color: #ffffff;       
         top: -30px;
         font-size: 15px;
         width: 200px;
@@ -2763,10 +2805,11 @@ select:focus
         height: 600px; /* Altura da viewport */
         overflow: hidden; /* Oculta parte do conteúdo que está fora da área visível */
         position: relative;
-        background-color: #ffffff;
+        background-color: transparent;
         text-align: center;
         top: 60vh; /* Ajuste a posição conforme necessário */
         margin: 0;
+        color: white;
     }
     
     .slide-content {
@@ -2827,26 +2870,28 @@ select:focus
 
     /* Estilo para as barras de rolagem */
     .image-gallery::-webkit-scrollbar {
-        width: 12px; /* Largura da barra de rolagem */
+        background-color: transparent;
+        width: 0px; /* Largura da barra de rolagem */
     }
     .image-item h3
     {
+        color: white;
         max-width: 200px;
-        width: 65%;
+        width: 55%;
         font-size: 15px;
     }
     .image-gallery::-webkit-scrollbar-track {
-        background: #000000; /* Cor da trilha da barra de rolagem */
-        border-radius: 10px; /* Bordas arredondadas da trilha */
+        background: transparent; /* Cor da trilha da barra de rolagem */
+        border-radius: 0; /* Bordas arredondadas da trilha */
     }
     
     .image-gallery::-webkit-scrollbar-thumb {
-        background: #000000; /* Cor do "polegar" (a parte móvel da barra) */
-        border-radius: 10px; /* Bordas arredondadas do "polegar" */
+        background: transparent; /* Cor do "polegar" (a parte móvel da barra) */
+        border-radius: 0px; /* Bordas arredondadas do "polegar" */
     }
     
     .image-gallery::-webkit-scrollbar-thumb:hover {
-        background: #000000; /* Cor do "polegar" quando em hover */
+        background: transparent; /* Cor do "polegar" quando em hover */
     }
     
     /* Estilo dos botões */
@@ -2891,9 +2936,9 @@ select:focus
 }
 .image-item h3
 {
-    width: 85%;
+    width: 70%;
     top: 0;
-    color: #000;
+    color: #ffffff;
 }
 .image-item a 
 {
@@ -2907,7 +2952,13 @@ select:focus
 
 
 }
-
+@media only screen and (orientation: landscape) and (max-width:1300px)
+{
+    .image-item h3
+    {
+        width: 85%;
+    }
+}
 @media only screen and (orientation: landscape) and (max-width:1100px)
 {
         #Project
@@ -3083,7 +3134,7 @@ select:focus
         }
         .image-item h3 
         {
-            color: #000;
+            color: #ffffff;
             top: 0;
         }
 }
@@ -3245,7 +3296,7 @@ select:focus
     .image-item h3 
     {
         top: 0;
-        color: #000;
+        color: #ffffff;
     }
     #Project
     {
@@ -3356,6 +3407,7 @@ select:focus
     }
     .image-item h3 
     {
+        color: white;
         font-size: small;
         margin-top:0 ;
         top: 10vh;
@@ -3491,6 +3543,7 @@ select:focus
     }
     .image-item h3
     {
+        color: white    ;
         font-size: small;
         margin-top:0 ;
         top: 10vh;
