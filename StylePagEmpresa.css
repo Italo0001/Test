@@ -2,9 +2,7 @@ html{
     scroll-behavior: smooth;
 
 }
-body {
-    font-family: 'Montserrat', sans-serif;  
- }
+
 
 /* Outros exemplos de aplicação */
 h1, h2, h3 {
@@ -23,12 +21,18 @@ p {
 }
 
 body {
-    background-color: #ffffff;
     box-sizing: border-box;
     overflow-y: auto; /* Permite a rolagem se necessário */
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;  
+    background-image: url('Imagens/background.jpg');
+    background-attachment: fixed; 
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.4);  /* Cor preta com opacidade */
+    background-blend-mode: overlay; /* Faz a imagem de fundo misturar com a cor */
+    color: white;
 }
 .EM {
     top: 150px;
@@ -37,7 +41,7 @@ body {
     transform: translateX(-50%);
     border-bottom: 4px solid #fffb00; /* Linha sublinhada com 2px de espessura e cor preta */
     font-weight: bold;
-    background-color: #ffffff;
+    background-color: transparent;
 }
 iframe
 {

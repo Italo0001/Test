@@ -1945,7 +1945,7 @@ select:focus
     }
     .clientes
     {
-        top: 60vh;
+        top: 65vh;
     }
     .clientes div ul
     {
@@ -2221,7 +2221,7 @@ select:focus
     .servico
     {
         
-        top: 40vh;
+        top: 50vh;
     }
     .servico ul
     {
@@ -2271,7 +2271,7 @@ select:focus
     }
     .clientes
     {
-        top: 55vh;
+        top: 70vh;
     }
     .clientes div ul
     {
@@ -2487,7 +2487,7 @@ select:focus
     .servico
     {
        width: 100vw; 
-        top: 70vh;
+        top: 75vh;
     }
     .servico ul
     {
@@ -2542,7 +2542,7 @@ select:focus
     .clientes
     {
         width: 100vw;
-        top: 75vh;
+        top: 80vh;
     }
     .clientes div ul
     {
