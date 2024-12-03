@@ -109,7 +109,7 @@ body {
     border-radius: 15px;
     overflow: hidden; /* Garante que os elementos não saiam da área do contêiner */
     margin: 1%;
-    background-color: rgb(255, 255, 255);
+    background-color: transparent;
   }
 .Equipamentos ul.impa
 {
