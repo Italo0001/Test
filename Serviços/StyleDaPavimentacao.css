@@ -2,22 +2,7 @@
 html
 {
     background-color: white; /* Cor de fundo */
-    scroll-behavior: smooth;
-
 }
-body {
-    font-family: 'Raleway', sans-serif; /* Aplica Raleway ao corpo todo */
-}
-
-/* Outros exemplos de aplicação */
-h1, h2, h3 {
-    font-family: 'Raleway', sans-serif; /* Aplica Raleway aos cabeçalhos */
-}
-
-p {
-    font-family: 'Raleway', sans-serif; /* Aplica Raleway aos parágrafos */
-}
-
 body {
     background-color: white; /* Cor de fundo */
     box-sizing: border-box;
@@ -25,12 +10,26 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
+     scroll-behavior: smooth;
 }
+
+/* Outros exemplos de aplicação */
+h1, h2, h3 {
+    font-family: 'Raleway', sans-serif; /* Aplica Raleway aos cabeçalhos */
+}
+
+p 
+{
+    font-family: 'Raleway', sans-serif; /* Aplica Raleway aos parágrafos */
+}
+
+
 .logo
 {
     height: 100%;
 }
-#header {
+#header 
+{
     background-color: #000000;
     position: fixed;
     width: 100%; /* Ajusta a largura do cabeçalho para 100% da largura da viewport */
