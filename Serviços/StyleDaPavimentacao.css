@@ -1,7 +1,7 @@
 /* Configurações básicas do corpo */
 html
 {
-    background-color: rgb(245, 245, 245); /* Cor de fundo */
+    background-color: white; /* Cor de fundo */
     scroll-behavior: smooth;
 
 }
@@ -19,7 +19,7 @@ p {
 }
 
 body {
-    background-color: rgb(245, 245, 245); /* Cor de fundo */
+    background-color: white; /* Cor de fundo */
     box-sizing: border-box;
     overflow-y: auto; /* Permite a rolagem se necessário */
     margin: 0;
