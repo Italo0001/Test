@@ -1,7 +1,7 @@
 /* Configurações básicas do corpo */
 html
 {
-    background-color: rgb(245, 245, 245); /* Cor de fundo */
+    background-color: transparent; /* Cor de fundo */
     scroll-behavior: smooth;
 
 }
@@ -16,12 +16,17 @@ p {
     font-family: 'Montserrat', sans-serif;  }
 
 body {
-    background-color: rgb(245, 245, 245); /* Cor de fundo */
     box-sizing: border-box;
     overflow-y: auto; /* Permite a rolagem se necessário */
     margin: 0;
     padding: 0;
     width: 100%;
+    background-image: url('../Imagens/background.jpg');
+    background-attachment: fixed; 
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.4);  /* Cor preta com opacidade */
+    background-blend-mode: overlay; /* Faz a imagem de fundo misturar com a cor */
+    color: white;
 }
 .logo
 {
@@ -58,9 +63,10 @@ body {
     transform: translateX(-50%);
     border-bottom: 4px solid #fffb00; /* Linha sublinhada com 2px de espessura e cor preta */
     align-items: center; /* Centraliza verticalmente */
-    color: #000000;
+    color: #ffffff;
     position: absolute;
     z-index: 11;
+    
     
 }
 .Introducao
@@ -85,7 +91,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
     width: 100%; /* Ajusta a largura conforme necessário */
-    background-color: rgb(245, 245, 245); /* Cor de fundo */
+    background-color: transparent; /* Cor de fundo */
     text-align: center;
     z-index: 11;
   }
@@ -107,6 +113,7 @@ body {
     overflow: hidden; /* Garante que os elementos não saiam da área do contêiner */
     margin: 1%;
     background-color: rgb(255, 255, 255);
+    color: #000000;
 
   }
 
