@@ -26,71 +26,19 @@ html
 
 }
 body {
+    background-color: #ffffff;
     box-sizing: border-box;
     overflow-y: auto; /* Permite a rolagem se necessário */
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', sans-serif;
-    width: 100%;
+    font-family: 'Montserrat', sans-serif;    
+    width: 100vw;
     scroll-behavior: smooth; /* Adiciona rolagem suave */
-    background-image: url('background.jpg');
+    background-image: url('../1-Site/Imagens/background.jpg');
     background-attachment: fixed; 
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.4);  /* Cor preta com opacidade */
     background-blend-mode: overlay; /* Faz a imagem de fundo misturar com a cor */
-}
-
-
-select
-{
-    background-color: #000;
-    border: none;
-    color: #ccc;
-    font-size: large;
-    font-family: 'Montserrat', sans-serif;
-    border: none;                
-    color: inherit;                  
-    font-size: inherit;           
-    font-family: inherit;         
-    padding: inherit;                
-
-}
-select:focus
-{
-    outline: none;
-    color: #fff;
-}
-.footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: #000000;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    overflow: hidden; /* Esconde o conteúdo que ultrapassa */
-    z-index: 10000;
-
-}
-
-.marquee-container {
-    overflow: hidden; /* Esconde o conteúdo que ultrapassa */
-    white-space: nowrap; /* Mantém o conteúdo em uma linha */
-}
-
-.marquee {
-    display: inline-block;
-    animation: marquee 40s linear infinite; /* Animação */
-}
-
-@keyframes marquee {
-    from {
-        transform: translateX(0%); /* Começa fora da tela à direita */
-    }
-    to {
-        transform: translateX(-100%); /* Termina fora da tela à esquerda */
-    }
 }
 
 h1 {
@@ -100,7 +48,10 @@ h2
 {
     font-weight: 400; 
 }
-
+h3 
+{
+    font-weight: 400; 
+}
 h4 
 {
     font-weight: 400; 
@@ -221,8 +172,6 @@ h4
 /* Estilo para a imagem inicial */
 .ImgInicial 
 {
-    filter: brightness(0.8); /* 70% do brilho original */
-
     width: 100%; /* Ajusta a largura do cabeçalho para 100% da largura da viewport */
     height: auto; /* Mantém a proporção da imagem */
     display: block;
@@ -254,7 +203,6 @@ h4
 /* Regras para dispositivos móveis */
 .servico
 {
-    color: #ffffff;
     display: block; /* Inicialmente escondido */
     position: absolute;
     margin-top: 60vh; /* Centraliza verticalmente */
@@ -266,8 +214,7 @@ h4
     text-align: center;
     z-index: 11;  
     border: none; 
-    opacity: 1;
-
+    color: white;
 }
 .servico ul
 {
@@ -358,7 +305,7 @@ h4
     width: 100%; /* Largura total da viewport */
     height: 95vh; /* Altura ajustada */
     background-color: rgb(2, 2, 2); /* Cor de fundo */
-    color: rgb(255, 255, 255); /* Cor do texto */
+    color: aliceblue; /* Cor do texto */
     text-align: center; /* Centraliza o texto */
     z-index: 11; /* Garante que o conteúdo fique sobre outros conteúdos */
     padding: 0;
@@ -413,12 +360,16 @@ h4
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
     width: 100%; /* Ajusta a largura conforme necessário */
     background-size: cover; /* Faz com que a imagem cubra toda a <div> */
-    height:auto;
-    background-image: url(Imagens/Entorno\ do\ Maracanã-3.png);
-    background-color: rgba(0, 0, 0, 0.8); /* Escurece a imagem com um fundo preto semi-transparente */
+    background-image: url(Imagens/FundoClientes.png);
     text-align: center;
     z-index: 11; /* Garante que o texto fique sobre outros conteúdos */
-    
+    height: auto;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;   /* Coloca os itens na vertical */
+    justify-content: center;  /* Centraliza verticalmente */
+    align-items: center;      /* Centraliza horizontalmente */
+    text-align: center;       /* Alinha o conteúdo do texto ao centro */
 }
 
 .clientes h1
@@ -429,8 +380,11 @@ h4
 }
 .clientes ul
 {
+    border-radius:  5px;
     display: inline-block;
 
+
+    
 }
 .clientes div ul img
 {
@@ -455,7 +409,7 @@ h4
     text-align: left;
     z-index: 11; /* Garante que o texto fique sobre outros conteúdos */
     color: white;
-    padding-bottom: 50px;
+
 }
 .endereço iframe
 {
@@ -515,7 +469,7 @@ h4
     padding-left: 7.5px;         /* Espaçamento entre o texto e a linha */
     height: 50%;                 /* Altura do quadrado, pode ajustar conforme necessário */
     width: 100%;                   /* Largura do quadrado, pode ajustar conforme necessário */
-    box-sizing: border-box;      /* Inclui padding e borda na largura/altura total */
+    box-sizing: border-box; 
 }
 
 /* Remove a borda do último item */
@@ -546,7 +500,7 @@ h4
 /* Estilo para as descrições (h4) dentro dos itens */
 #Valores ul h4 {
     font-size: 1.2em;            /* Tamanho da fonte */
-    color: #ffffff;                 /* Cor do texto */
+    color: #333;                 /* Cor do texto */
     margin: 0.5em 0 0 0;         /* Margem superior para espaço entre h1 e h4 */
     text-align: center;          /* Centraliza o texto dentro do h4 */
 }
@@ -638,8 +592,8 @@ h4
 
 .container ul
 {
-    top: 0;
     color: white;
+    top: 0;
 }
 
 .slide-content {
@@ -658,28 +612,29 @@ h4
     padding: 80px;
     box-sizing: border-box;
     overflow-y: hidden;
-    color: white;
 
 
 }
 
 .hidden-content {
-    background-color: #ffffff;
+    background-color: transparent;
     border-left: 1px solid #ccc;
     display: flex;
     flex-direction: column; /* Coloca o conteúdo em coluna para exibir o conteúdo abaixo */
     overflow-x: hidden; /* Remove rolagem horizontal */
-}
-.slide-content h3
-{
-    color: white    ;
+    color: white;
+
 }
 .slide-content h2 
 {
     position: absolute;
     transform: translateX(50%);
     right: 50%;
-
+    color: white;
+}
+.slide-content h3 
+{
+    color: white;
 }
 .image-gallery {
     margin: 0;
@@ -689,8 +644,6 @@ h4
     overflow-x: auto; /* Permite rolagem horizontal */
     align-items: center; /* Alinha verticalmente ao centro */
     justify-content: center; /* Opcional: alinha horizontalmente ao centro */
-    color: white;
-
 }
 
 .image-item {
@@ -702,14 +655,12 @@ h4
     box-sizing: border-box;
     align-items: center; /* Alinha verticalmente ao centro */
     justify-content: center; /* Opcional: alinha horizontalmente ao centro */ 
-    color: white;
-
 }
 .image-item h3 {
     top: 25vh;
     position: relative; /* Posiciona o texto sobre a imagem */
     color: #fff; /* Cor do texto, ajuste conforme necessário */
-    font-size: 20%;
+    font-size: 40%;
     z-index: 11;
     width:75%;
     font-weight: bold;
@@ -728,7 +679,7 @@ h4
     display: block; /* Remove o espaço abaixo da imagem */
     height: auto; /* Mantém a proporção da imagem */
     border-radius: 15px;   
-    filter: brightness(60%); 
+    filter: brightness(75%); 
     transition: opacity 0.3s ease;
 }
 
@@ -813,31 +764,31 @@ h4
 /* Adiciona estilização à barra de rolagem horizontal e vertical da galeria de imagens */
 .image-gallery {
     overflow: auto; /* Permite rolagem tanto horizontal quanto vertical */
-    scrollbar-width: thin; /* Para Firefox: define a largura da barra de rolagem */
-    scrollbar-color: #ffffff #ffffff; /* Para Firefox: define as cores do thumb (branco) e do trilho (cinza claro) */
+    scrollbar-width: 0px; /* Para Firefox: define a largura da barra de rolagem */
+    scrollbar-color: #8f8f8f #252525; /* Para Firefox: define as cores do thumb (branco) e do trilho (cinza claro) */
 }
 
 /* Personalização para navegadores baseados em WebKit (Chrome, Safari) */
 /* Barra de rolagem horizontal */
 .image-gallery::-webkit-scrollbar {
-    width: 12px; /* Largura da barra de rolagem vertical */
-    height: 12px; /* Altura da barra de rolagem horizontal */
+    width: 0; /* Largura da barra de rolagem vertical */
+    height: 0; /* Altura da barra de rolagem horizontal */
 }
 
 /* Trilho da barra de rolagem */
 .image-gallery::-webkit-scrollbar-track {
-    background: rgba(255, 0, 0, 0.3); /* Cor do trilho da barra de rolagem com transparência */
+    background: rgba(255, 255, 255, 0.3); /* Cor do trilho da barra de rolagem com transparência */
 }
 
 /* Thumb da barra de rolagem */
 .image-gallery::-webkit-scrollbar-thumb {
-    background: rgba(255, 0, 0, 0.5); /* Cor do 'thumb' da barra de rolagem com transparência */
+    background: rgba(255, 255, 255, 0.5); /* Cor do 'thumb' da barra de rolagem com transparência */
     border-radius: 6px; /* Arredondamento dos cantos do 'thumb' */
 }
 
 /* Thumb da barra de rolagem quando o mouse está sobre ele */
 .image-gallery::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 0, 0, 0.7); /* Cor do 'thumb' ao passar o mouse sobre ele com transparência */
+    background: rgba(255, 255, 255, 0.7); /* Cor do 'thumb' ao passar o mouse sobre ele com transparência */
 }
 
 
@@ -929,6 +880,19 @@ h4
     width: 15%;
     z-index: 11;
 }
+select
+{
+    font-family: 'Montserrat', sans-serif;    
+    background-color: #000;
+    border: none;
+    color: white;
+    font-size: large;
+}
+select:focus
+{
+    border: none;
+    outline: none;
+}
 @media (max-width:1400px)
 {
     #desktop-menu {
@@ -1002,7 +966,6 @@ h4
     .image-gallery h3 {
         font-size: 3vw; /* Ajusta o tamanho da fonte com base na largura da viewport */
         margin: 0;
-        color: white;
     }
 }
 
@@ -1082,7 +1045,6 @@ h4
         padding: 0; /* Remove padding extra para ajustar o layout */
         box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
         margin-left: 200px;
-        color: white;
     }
     .content, .hidden-content {
         flex: 0 0 100%; /* Cada bloco ocupa a largura total da viewport */
@@ -1093,7 +1055,7 @@ h4
     }
     
     .hidden-content {
-        background-color: #ffffff;
+        background-color: transparent;
         border-left: 1px solid #ccc;
         display: flex;
         flex-direction: column; /* Coloca o conteúdo em coluna para exibir o conteúdo abaixo */
@@ -1192,6 +1154,8 @@ h4
     .content h2
     {
         margin-bottom: 10%;
+        color: white;
+
     }
     .left-btn
     {
@@ -1356,6 +1320,7 @@ h4
     }
     .image-item h3
     {
+        color: white;
         font-size: x-large;
     }
     
@@ -1573,6 +1538,8 @@ h4
     .content h2
     {
         margin: 0;
+        color: white;
+
     }
     
     .image-item img
@@ -1820,6 +1787,8 @@ h4
     .content h2
     {
         margin: 0;
+        color: white;
+
     }
     .image-item img
     {
@@ -1902,6 +1871,7 @@ h4
     }
     .content h2
     {
+        color: white;
         margin-bottom: 10%;
     }
     .left-btn
@@ -2083,7 +2053,6 @@ h4
         text-align: center;
         top: 50vh; /* Posição relativa */
         margin: 0;
-        color: #fff;
       }
     
       .slide-content {
@@ -2124,8 +2093,8 @@ h4
       }
       .image-gallery h3
       {
-        color: white;
         font-size: 3vw;
+        color: white;
       }
 
       .btn {
@@ -2159,7 +2128,8 @@ h4
       }
       .content h2
       {
-          margin-bottom: 25%;
+        color: white;
+        margin-bottom: 25%;
       }
       .left-btn
       {
@@ -2190,7 +2160,6 @@ h4
 }
 .container{
     height: 100vh;
-    color: #fff;
 }
 .slide-content
 {
@@ -2327,7 +2296,6 @@ h4
         text-align: center;
         top: 55vh; /* Posição relativa */
         margin: 0;
-        color: #fff;
     }
     .slide-content {
         display: flex;
@@ -2342,12 +2310,10 @@ h4
         padding: 60px;
         margin-left: 0;
         top: 5%;
-        color: #fff;
     }
     .content
     {
         height: 100%;
-        color: #fff;
     }
     .left-btn
     {
@@ -2370,7 +2336,6 @@ h4
         scroll-snap-align: start; /* Faz com que o item se alinhe ao iniciar a rolagem */
         margin: 0;
         padding: 20px;
-        color: #fff;
     }
     
     .hidden-content 
@@ -2394,7 +2359,6 @@ h4
         justify-content: flex-start; /* Alinha horizontalmente ao início */
         scroll-snap-type: x mandatory; /* Facilita a rolagem em itens */
         left: 50%;
-        color: #fff;
     }
     
     .image-item 
@@ -2411,10 +2375,11 @@ h4
         justify-content: center; /* Alinha horizontalmente ao centro */
         scroll-snap-align: start; /* Faz com que o item se alinhe ao iniciar a rolagem */
         margin: 0 5%; /* Adiciona margem horizontal para espaçamento */
-        color: #fff;
+
     }
     .content h2
     {
+        color: white;
         margin: 0;
     }
     .image-item h3
@@ -2442,7 +2407,6 @@ h4
         width: 40vw;
         height: 100%;
         margin: 0;
-        color: white;
     }
     .image-item a
     {
@@ -2481,7 +2445,19 @@ h4
 }
 
 @media (max-width:400px)
-{  
+{   #open-menu
+    {
+        left: 85%;
+    }
+    html 
+    {
+        width: 100vw;
+    }
+    #header
+    {
+        width: 100vw;
+    }
+    
     .btn-overlay
     {
         position: relative;
@@ -2495,20 +2471,12 @@ h4
     {
         top: 10vh;
     }
-
-    body {
-        box-sizing: border-box;
-        overflow-y: auto; /* Permite a rolagem se necessário */
-        margin: 0;
-        padding: 0;
-        font-family: 'Calibri', sans-serif;
-    }   
+  
     .ImgInicial
     {
-        width: 100%; /* Ajusta a largura do cabeçalho para 100% da largura da viewport */
-        height: 50vh;
+        width: 100vw; /* Ajusta a largura do cabeçalho para 100% da largura da viewport */
+        height: auto;
         min-height: 500px;
-        object-fit: cover; /* Cobre todo o container, cortando o excesso */
 
     }
     .logo
@@ -2518,7 +2486,7 @@ h4
     }
     .servico
     {
-        
+       width: 100vw; 
         top: 70vh;
     }
     .servico ul
@@ -2570,13 +2538,10 @@ h4
     {
         top:25vh;
     }
-    .header
-    {
-        width: 100%;
-    }
+    
     .clientes
     {
-        width: 100%;
+        width: 100vw;
         top: 75vh;
     }
     .clientes div ul
@@ -2592,7 +2557,7 @@ h4
         width: 20vw;   
     }
     .container {
-        width: 100%; /* Largura da viewport */
+        width: 100vw; /* Largura da viewport */
         height: 500px; /* Altura da viewport */
         overflow: hidden; /* Oculta parte do conteúdo que está fora da área visível */
         position: relative;
@@ -2600,12 +2565,12 @@ h4
         text-align: center;
         margin-top: 245vh; /* Posição relativa */
         margin: 0;
-        color: white;
+        color: #ffffff;
     }
     .slide-content {
         display: flex;
         flex-direction: row;
-        height: 100%;
+        height: 140vw;
         overflow-x: auto; /* Adiciona rolagem horizontal */
         scroll-snap-type: x mandatory; /* Facilita a rolagem em itens */
         -webkit-overflow-scrolling: touch; /* Suporte a rolagem suave em iOS */
@@ -2613,16 +2578,12 @@ h4
         box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
         width: 100%;
         padding: 60px;
-        margin-left: 0;
         color: white;
+        margin-left: 0;
     }
-    .slide-content h3
-{
-    color: white    ;
-}
     .content, .hidden-content 
     {
-        flex: 0 0 100%; /* Cada bloco ocupa a largura total da viewport */
+        flex: 0 0 100vw; /* Cada bloco ocupa a largura total da viewport */
         height: 100%;
         padding: 10px; /* Ajusta o padding para o tamanho da tela menor */
         box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
@@ -2639,11 +2600,12 @@ h4
         flex-direction: column; /* Coloca o conteúdo em coluna para exibir o conteúdo abaixo */
         overflow-x: hidden; /* Remove rolagem horizontal */
         color: white;
+
     }
     
     .image-gallery {
         height: 90%;
-        width: 100%;
+        width: 100vw;
         margin: 0;
         padding: 0;
         display: flex;
@@ -2654,15 +2616,14 @@ h4
         scroll-snap-type: x mandatory; /* Facilita a rolagem em itens */
         padding-top: 100px; /* Ajuste conforme necessário */
         color: white;
-
     }
     
     .image-item {
         margin-top: 120px; /* Aumente para 150px ou mais, conforme necessário */
         text-align: center;
         flex: 0 0 auto; /* Mantém o tamanho fixo dos itens */
-        width: 65vw; /* Ajusta a largura para 65% da largura da viewport */
-        height: 1%; /* Ajusta a altura */
+        width: 60vw; /* Ajusta a largura para 65% da largura da viewport */
+        height: 100%; /* Ajusta a altura */
         box-sizing: border-box;
         display: flex; /* Usa flexbox para centralizar o conteúdo */
         flex-direction: column; /* Organiza o conteúdo verticalmente */
@@ -2677,17 +2638,19 @@ h4
     
     .content h2
     {
-        color: #fff;
         margin: 0;
+        color: white;
+
     }
     
     .image-item img
     {
         top: 10px;
-        width: 110%; /* Garante que a imagem não ultrapasse a largura do item */
+        width: 100%; /* Garante que a imagem não ultrapasse a largura do item */
         height: auto; /* Mantém a proporção da imagem */
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
+        height: auto;
     }
 
     .image-gallery h3
@@ -2735,8 +2698,13 @@ h4
     }
     #Valores
     {
+        width: 100vw;
         text-align: center;
         top:60vh;
+    }
+    #Valores ul 
+    {
+       font-size: small;
     }
     .endereço
     {
@@ -2769,12 +2737,10 @@ h4
 {
     .container
     {
-        color: #fff;
         top: 60vh;
     }
     .slide-content
     {
-        color: #fff;
         margin-left: 0;
     }
     .left-btn
@@ -2843,7 +2809,7 @@ h4
         text-align: center;
         top: 60vh; /* Ajuste a posição conforme necessário */
         margin: 0;
-        color: #ffffff;
+        color: white;
     }
     
     .slide-content {
@@ -2855,7 +2821,6 @@ h4
         overflow-x: auto; /* Adiciona rolagem horizontal */
         padding: 0; /* Remove padding extra para ajustar o layout */
         scroll-snap-type: x mandatory; /* Facilita o alinhamento dos itens na rolagem */
-        color: #fff;
     }
     
     .content h2 {
@@ -2905,53 +2870,29 @@ h4
 
     /* Estilo para as barras de rolagem */
     .image-gallery::-webkit-scrollbar {
-        width: 12px; /* Largura da barra de rolagem */
+        background-color: transparent;
+        width: 0px; /* Largura da barra de rolagem */
     }
     .image-item h3
     {
-        max-width: 175PX;
-        width: 65%;
-        font-size: 100%;
         color: white;
+        max-width: 200px;
+        width: 65%;
+        font-size: 15px;
     }
-    .image-gallery {
-        width: 100%; /* Largura da galeria */
-        height: 300px; /* Altura da galeria */
-        overflow-y: scroll; /* Ativa a rolagem vertical */
-    }
-    
-    .image-gallery {
-        width: 100%;
-        height: 300px;
-        overflow-y: scroll;
-    }
-    
-    /* Para navegadores WebKit */
-    .image-gallery::-webkit-scrollbar {
-        width: 12px; /* Largura da barra de rolagem */
-    }
-    
     .image-gallery::-webkit-scrollbar-track {
-        background: transparent; /* Cor da trilha da barra de rolagem (transparente) */
-        border-radius: 10px; /* Bordas arredondadas da trilha */
+        background: transparent; /* Cor da trilha da barra de rolagem */
+        border-radius: 0; /* Bordas arredondadas da trilha */
     }
     
     .image-gallery::-webkit-scrollbar-thumb {
-        background: transparent; /* Cor do "polegar" (transparente) */
-        border-radius: 10px; /* Bordas arredondadas do "polegar" */
+        background: transparent; /* Cor do "polegar" (a parte móvel da barra) */
+        border-radius: 0px; /* Bordas arredondadas do "polegar" */
     }
     
     .image-gallery::-webkit-scrollbar-thumb:hover {
-        background: transparent; /* Cor do "polegar" quando em hover (opaco) */
+        background: transparent; /* Cor do "polegar" quando em hover */
     }
-    
-    /* Para Firefox */
-    .image-gallery {
-        scrollbar-width: thin; /* Largura da barra de rolagem */
-        scrollbar-color: transparent transparent; /* "Polegar" e trilha (transparente) */
-    }
-    
-    
     
     /* Estilo dos botões */
 
@@ -3129,12 +3070,10 @@ h4
         }
         .container
         {
-            color: #fff;
             top: 110vh;
         }
         .image-item
         {
-            color: #fff;
             height: 100%;
         }
         .image-item a
@@ -3462,6 +3401,7 @@ h4
     }
     .image-item h3 
     {
+        color: white;
         font-size: small;
         margin-top:0 ;
         top: 10vh;
@@ -3597,6 +3537,7 @@ h4
     }
     .image-item h3
     {
+        color: white    ;
         font-size: small;
         margin-top:0 ;
         top: 10vh;
