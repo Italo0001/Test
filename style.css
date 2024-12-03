@@ -2360,7 +2360,7 @@ select:focus
     .servico
     {
        width: 100vw; 
-        top: 75vh;
+        top: 45vh;
     }
     .servico ul
     {
@@ -2611,7 +2611,7 @@ select:focus
     }
     
 }
-@media (max-width:350px)
+@media (max-width:380px)
 {   #open-menu
     {
         left: 85%;
@@ -2654,7 +2654,7 @@ select:focus
     .servico
     {
        width: 100vw; 
-        top: 55vh;
+        top: 70vh;
     }
     .servico ul
     {
