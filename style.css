@@ -205,7 +205,7 @@ h4
 {
     display: block; /* Inicialmente escondido */
     position: absolute;
-    margin-top: 60vh; /* Centraliza verticalmente */
+    margin-top: 50vh;
     left: 50%;
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
     width: 100vw; /* Ajusta a largura conforme necessário */
@@ -310,7 +310,7 @@ h4
     z-index: 11; /* Garante que o conteúdo fique sobre outros conteúdos */
     padding: 0;
     margin: 0;
-    font-size: small;
+    font-size: large;
 }
 
 .Contatos h1 {
@@ -925,6 +925,10 @@ select:focus
     {
         height: 5vh;
     }
+    .contatos ul a
+    {
+        display: none;
+    }
 
 }
 @media (max-width:1100px)
@@ -967,161 +971,26 @@ select:focus
         font-size: 3vw; /* Ajusta o tamanho da fonte com base na largura da viewport */
         margin: 0;
     }
+
+
 }
-
-/* Media Queries para diferentes tamanhos de tela */
-@media only screen and (orientation: portrait) and (max-width:1100px) 
+@media only screen and (orientation: portrait) and (max-width: 1100px)
 {
-    
-
-    #curriculum-header {
-        display: none; /* Esconde o cabeçalho "Trabalhe Conosco" */
-    }
-    .Contatos ul a
-    {
-        display: none;
-    }
-    .Contatos ul h2
-    {
-        text-align: justify;
-        display: flex;
-        justify-content: space-between; /* Alinha o texto nas pontas */
-        padding: 10%; /* Espaçamento interno */
-        border-radius: 5px; /* Bordas arredondadas, se desejado */
-    }
-    .Contatos ul h4
-    {
-        font-size: medium;
-        width: 80vw;
-        text-align: justify;
-    }
     .servico
     {
-        margin-top: 25vh;
-        height: 25%;
-    }
-    .servico ul img
-    {
-        filter: brightness(70%);
-    }
-    .servico ul:hover a
-    {
-        background-color: transparent;
-    }
-    .btn-overlay
-    {
-        font-size: 4vh;
-    }
-    .clientes
-    {
-        margin-top: 40vh;
-    }
-    .btn-overlay
-    {
-        line-height: 1.5; /* Ajuste a altura da linha se necessário */
-        font-weight: bold; /* Deixa o texto do botão em negrito */
-        border-bottom-left-radius:15px ;
-        border-bottom-right-radius:15px ;
-        font-size: 50px;
-    }
-    
-    .container {
-        width: 100%; /* Largura da viewport */
-        height:100%;
-        overflow: hidden; /* Oculta parte do conteúdo que está fora da área visível */
-        position: relative;
-        background-color: transparent;
-        text-align: center;
-        top: 30vh; /* Posição relativa */
-        margin: 0;
-    }
-    .slide-content {
-        display: flex;
-        flex-direction: row;
-        height: 100%;
-        overflow-x: auto; /* Adiciona rolagem horizontal */
-        scroll-snap-type: x mandatory; /* Facilita a rolagem em itens */
-        -webkit-overflow-scrolling: touch; /* Suporte a rolagem suave em iOS */
-        padding: 0; /* Remove padding extra para ajustar o layout */
-        box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
-        margin-left: 200px;
-    }
-    .content, .hidden-content {
-        flex: 0 0 100%; /* Cada bloco ocupa a largura total da viewport */
-        height: 100%;
-        padding: 10px; /* Ajusta o padding para o tamanho da tela menor */
-        box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
-        scroll-snap-align: start; /* Faz com que o item se alinhe ao iniciar a rolagem */
-    }
-    
-    .hidden-content {
-        background-color: transparent;
-        border-left: 1px solid #ccc;
-        display: flex;
-        flex-direction: column; /* Coloca o conteúdo em coluna para exibir o conteúdo abaixo */
-        overflow-x: hidden; /* Remove rolagem horizontal */
-    }
-    
-    .image-gallery {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-wrap: nowrap; /* Impede a quebra de linha */
-        overflow-x: auto; /* Permite rolagem horizontal */
-        align-items: center; /* Alinha verticalmente ao centro */
-        justify-content: flex-start; /* Alinha horizontalmente ao início */
-        scroll-snap-type: x mandatory; /* Facilita a rolagem em itens */
-    }
-    
-    .image-item {
-        text-align: center;
-        flex: 0 0 auto; /* Mantém o tamanho fixo dos itens */
-        width: 40vw; /* Ajusta a largura para 80% da largura da viewport */
-        height: 100%; /* Ajusta a altura para 60% da altura da viewport */
-        box-sizing: border-box;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-        display: flex; /* Usa flexbox para centralizar o conteúdo */
-        flex-direction: column; /* Organiza o conteúdo verticalmente */
-        align-items: center; /* Alinha verticalmente ao centro */
-        justify-content: center; /* Alinha horizontalmente ao centro */
-        scroll-snap-align: start; /* Faz com que o item se alinhe ao iniciar a rolagem */
-        margin: 0 5%; /* Adiciona margem horizontal para espaçamento */
-    
+        top: 80vh;
     }
 
-    
-    .image-item img {
-        max-width: 100%; /* Garante que a imagem não ultrapasse a largura do item */
-        height: auto; /* Mantém a proporção da imagem */
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-    }
-    
-    .image-gallery h3 {
-        font-size: 3vw; /* Ajusta o tamanho da fonte com base na largura da viewport */
-        margin: 0;
-        color: white;
-    }
-    .left-btn
-    {
-        width: 10%;
-        height: 10%;
-        font-size: 70px;
-    }
-    .right-btn
-    {
-        width: 10%;
-        height: 10%;
-        font-size: 70px;
-    }
 }
+
+
 @media only screen and (orientation: portrait) and (max-width: 1000px)
 {
+
     #curriculum-header {
         display: none; /* Esconde o cabeçalho "Trabalhe Conosco" */
     }
-    .Contatos ul a
+    .contatos ul a
     {
         display: none;
     }
@@ -1404,11 +1273,11 @@ select:focus
 
     .clientes
     {
-        top: 55vh;
+        top: 80vh;
     }
     #Valores
     {
-        top: 50vh;
+        top: 60vh;
     }
     .endereço
     {
@@ -1421,7 +1290,7 @@ select:focus
     .servico
     {
         
-        top: 20vh;
+        top: 40vh;
     }
     .servico ul
     {
@@ -1429,6 +1298,7 @@ select:focus
         display: inline-block;
         width: 30%;
         height: 10%;
+        padding-bottom: 1px ;    
     }
     .servico ul h3
     {
@@ -1460,13 +1330,17 @@ select:focus
     }
     .container {
         width: 100%; /* Largura da viewport */
-        height: 80vh; /* Altura da viewport */
+        height: 100vh; /* Altura da viewport */
         overflow: hidden; /* Oculta parte do conteúdo que está fora da área visível */
         position: relative;
         background-color: transparent;
         text-align: center;
-        top: 45vh; /* Posição relativa */
+        top: 80vh; /* Posição relativa */
         margin: 0;
+    }
+    .container h2 
+    {
+        font-size:60px;
     }
     .btn-overlay
     {
@@ -1626,7 +1500,7 @@ select:focus
     }
     #Valores
     {
-        top: 25vh;
+        top: 45vh;
     }
     .Contatos ul h2 
     {
@@ -1647,10 +1521,7 @@ select:focus
 }
 @media (max-width: 800px)
 {
-    #Valores
-    {
-        top: 0;
-    }
+
     .toggle-btn
     {
         top: 5vh;
@@ -1675,10 +1546,7 @@ select:focus
     {
         left: 50%;
     }
-    .servico
-    {
-        top: 20vh;
-    }
+
     .container {
         width: 100%; /* Largura da viewport */
         height: 80vh; /* Altura da viewport */
@@ -1686,13 +1554,13 @@ select:focus
         position: relative;
         background-color: transparent;
         text-align: center;
-        top: 40vh; /* Posição relativa */
+        top: 60vh; /* Posição relativa */
         margin: 0;
     }
     .servico
     {
         
-        top: 15vh;
+        top: 35vh;
     }
     .servico ul
     {
@@ -1834,7 +1702,7 @@ select:focus
     }
     .clientes
     {
-        top: 55vh;
+        top: 75vh;
     }
     .btn 
     {
@@ -2221,14 +2089,15 @@ select:focus
     .servico
     {
         
-        top: 50vh;
+        top: 45vh;
     }
     .servico ul
     {
         list-style-type: none; /* Remove os marcadores padrão */
         display: inline-block;
         width: 30%;
-        height: 70%;
+        height: 15vh;
+   
     }
     .servico ul h3
     {
@@ -2296,6 +2165,10 @@ select:focus
         text-align: center;
         top: 55vh; /* Posição relativa */
         margin: 0;
+    }
+    .container h2
+    {
+        font-size: xx-large;
     }
     .slide-content {
         display: flex;
@@ -2567,6 +2440,10 @@ select:focus
         margin: 0;
         color: #ffffff;
     }
+    .container h2 
+    {
+        font-size: xx-large;
+    }
     .slide-content {
         display: flex;
         flex-direction: row;
@@ -2581,6 +2458,301 @@ select:focus
         color: white;
         margin-left: 0;
     }
+
+    .content, .hidden-content 
+    {
+        flex: 0 0 100vw; /* Cada bloco ocupa a largura total da viewport */
+        height: 100%;
+        padding: 10px; /* Ajusta o padding para o tamanho da tela menor */
+        box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
+        scroll-snap-align: start; /* Faz com que o item se alinhe ao iniciar a rolagem */
+        color: white;
+
+    }
+    
+    .hidden-content 
+    {
+        background-color: #ffffff;
+        border-left: 1px solid #ccc;
+        display: flex;
+        flex-direction: column; /* Coloca o conteúdo em coluna para exibir o conteúdo abaixo */
+        overflow-x: hidden; /* Remove rolagem horizontal */
+        color: white;
+
+    }
+    
+    .image-gallery {
+        height: 90%;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: nowrap; /* Impede a quebra de linha */
+        overflow-x: auto; /* Permite rolagem horizontal */
+        align-items: center; /* Alinha verticalmente ao centro */
+        justify-content: flex-start; /* Alinha horizontalmente ao início */
+        scroll-snap-type: x mandatory; /* Facilita a rolagem em itens */
+        padding-top: 100px; /* Ajuste conforme necessário */
+        color: white;
+    }
+    
+    .image-item {
+        margin-top: 120px; /* Aumente para 150px ou mais, conforme necessário */
+        text-align: center;
+        flex: 0 0 auto; /* Mantém o tamanho fixo dos itens */
+        width: 60vw; /* Ajusta a largura para 65% da largura da viewport */
+        height: 100%; /* Ajusta a altura */
+        box-sizing: border-box;
+        display: flex; /* Usa flexbox para centralizar o conteúdo */
+        flex-direction: column; /* Organiza o conteúdo verticalmente */
+        align-items: center; /* Alinha verticalmente ao centro */
+        justify-content: center; /* Alinha horizontalmente ao centro */
+        scroll-snap-align: start; /* Faz com que o item se alinhe ao iniciar a rolagem */
+        margin: 0 5%; /* Adiciona margem horizontal para espaçamento */
+        left: 25%;
+        color: white;
+
+    }
+    
+    .content h2
+    {
+        margin: 0;
+        color: white;
+
+    }
+    
+    .image-item img
+    {
+        top: 10px;
+        width: 100%; /* Garante que a imagem não ultrapasse a largura do item */
+        height: auto; /* Mantém a proporção da imagem */
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        height: auto;
+    }
+
+    .image-gallery h3
+    {
+        color: #ffffff;       
+        top: -30px;
+        font-size: 15px;
+        width: 200px;
+        height: 100%;
+        margin: 0;
+    }
+    .image-item:hover h3
+    {
+      opacity: 1;
+    }
+
+    .image-item a
+    {
+        position: relative;
+        color: #fff;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        top: -35px;
+        width: 75%;
+        opacity: 1;    
+        z-index: 11; 
+        height: 50px;
+        font-size: 25px;
+        font-weight: bold; 
+        top: -65px;
+    }
+    .btn 
+    {
+        background-color: transparent;
+        padding: 100px 0px; /* Aumenta a altura e o espaçamento horizontal */
+        height: 500px;
+        opacity: 1;
+        width: 100vw;
+    }
+    .btn:hover
+    {
+        background-color: transparent;
+    }
+    #Valores
+    {
+        width: 100vw;
+        text-align: center;
+        top:60vh;
+    }
+    #Valores ul 
+    {
+       font-size: small;
+    }
+    .endereço
+    {
+        top: 100vh;
+    }
+    .Contatos
+    {
+
+        top: 100vh;
+    }
+    .Contatos ul 
+    {
+        padding: 1vh;
+    }
+    .left-btn
+    {   
+        font-size: larger;
+        top: 45px;
+        left: 2vw;
+    }
+    .right-btn
+    {
+        font-size: larger;
+        top: 45px;
+        left: 88%;
+    }
+    
+}
+@media (max-width:350px)
+{   #open-menu
+    {
+        left: 85%;
+    }
+    html 
+    {
+        width: 100vw;
+    }
+    #header
+    {
+        width: 100vw;
+    }
+    
+    .btn-overlay
+    {
+        position: relative;
+        width: 25vw;
+        border-radius: 0;
+        opacity: 0;
+        top: -10vh;
+        background-color: transparent;
+    }
+    .toggle-btn
+    {
+        top: 10vh;
+    }
+  
+    .ImgInicial
+    {
+        width: 100vw; /* Ajusta a largura do cabeçalho para 100% da largura da viewport */
+        height: auto;
+        min-height: 500px;
+
+    }
+    .logo
+    {
+        height: 5vh;
+        width: 20vh;
+    }
+    .servico
+    {
+       width: 100vw; 
+        top: 55vh;
+    }
+    .servico ul
+    {
+        list-style-type: none; /* Remove os marcadores padrão */
+        display: inline-block;
+        width: 20%;
+        width: 100px;
+        height: 125px;
+        border-radius: 15px;
+        margin: 0;
+    }
+
+    .servico ul h4
+    {
+        font-size:  60%;
+    }
+    .servico ul a 
+    {
+        text-align: center; /* Centraliza horizontalmente todos os elementos filhos, se o botão tiver display inline-block */
+        transform: translateX(50%);
+        justify-content: center;
+        margin-top: 0;
+        top: -120px;
+        height: 120px;
+        width: 100%;
+        border-radius: none;
+        background-color: none;
+        color: #fff;
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+    .servico ul a:hover 
+    {
+        background-color: transparent;
+    }
+
+    .servico ul img
+    {
+        filter: brightness(80%); /* Ajuste o valor para escurecer mais ou menos */
+        border-radius: 15px;
+    }
+    .servico ul:hover img
+    {
+        filter: none;
+    }
+
+    .LogoSemFundo
+    {
+        top:25vh;
+    }
+    
+    .clientes
+    {
+        width: 100vw;
+        top: 80vh;
+    }
+    .clientes div ul
+    {
+
+        padding: 2vw;
+    }
+ 
+    .clientes div ul img
+    {
+        background-color: #ffffff;
+        border-radius: 5px;
+        width: 20vw;   
+    }
+    .container {
+        width: 100vw; /* Largura da viewport */
+        height: 500px; /* Altura da viewport */
+        overflow: hidden; /* Oculta parte do conteúdo que está fora da área visível */
+        position: relative;
+        background-color: transparent;
+        text-align: center;
+        margin-top: 245vh; /* Posição relativa */
+        margin: 0;
+        color: #ffffff;
+    }
+    .container h2 
+    {
+        font-size: xx-large;
+    }
+    .slide-content {
+        display: flex;
+        flex-direction: row;
+        height: 140vw;
+        overflow-x: auto; /* Adiciona rolagem horizontal */
+        scroll-snap-type: x mandatory; /* Facilita a rolagem em itens */
+        -webkit-overflow-scrolling: touch; /* Suporte a rolagem suave em iOS */
+        padding: 0; /* Remove padding extra para ajustar o layout */
+        box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
+        width: 100%;
+        padding: 60px;
+        color: white;
+        margin-left: 0;
+    }
+
     .content, .hidden-content 
     {
         flex: 0 0 100vw; /* Cada bloco ocupa a largura total da viewport */
@@ -2913,11 +3085,15 @@ select:focus
         top: 2vh;
     }
 }
-@media only screen and (orientation: landscape) and (max-width:1300px)
+@media only screen and (orientation: landscape) and (max-width:1400px)
 {
 .logo
 {
     height: 5vh;
+}
+.servico
+{
+    margin-top: 90vh;
 }
 .servico img 
 {
@@ -2948,6 +3124,10 @@ select:focus
     top: -50%;
     opacity: 1;
     width: 100%;
+}
+.clientes
+{
+    margin-top: 80vh;
 }
 
 
@@ -3000,6 +3180,7 @@ select:focus
         {
             top: 40vh;
         }
+
         .servico ul 
         {
             width: 25vw;
@@ -3503,6 +3684,7 @@ select:focus
     .servico
     {
         font-size: large ;
+   
     }
     .servico ul a
     {
