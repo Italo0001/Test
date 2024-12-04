@@ -22,7 +22,6 @@
 /* Configurações básicas do corpo */
 html
 {
-    scroll-behavior: smooth;
     background-image: url('Imagens/background.jpg');
     background-attachment: fixed; 
     background-size: cover;
