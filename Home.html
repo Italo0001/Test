@@ -336,16 +336,23 @@ imageGallery.addEventListener('touchmove', (event) => {
 <script>
     function updateContactHeader() {
         const contactHeader = document.getElementById('contact-header');
-        if (window.innerWidth < 1100) {
+        const contactLinks = document.querySelectorAll('.Contatos ul a');
+        
+        if (window.innerWidth < 1400) {
             contactHeader.innerHTML = '<h2>Contatos para o envio de currículos e mais detalhes sobre nossos serviços.</h2>';
+            // Oculta os links
+            contactLinks.forEach(link => link.style.display = 'none');
         } else {
             contactHeader.innerHTML = '<h1>Entre em contato</h1>';
+            // Mostra os links
+            contactLinks.forEach(link => link.style.display = '');
         }
     }
 
     window.addEventListener('resize', updateContactHeader);
     window.addEventListener('load', updateContactHeader); // Atualiza no carregamento
 </script>
+
 
 
  <a href="https://wa.me/552137998249?text=Olá,%20vim%20pelo%20site." class="whatsapp">
