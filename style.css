@@ -23,6 +23,11 @@
 html
 {
     scroll-behavior: smooth;
+    background-image: url('Imagens/background.jpg');
+    background-attachment: fixed; 
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.4);  /* Cor preta com opacidade */
+    background-blend-mode: overlay; /* Faz a imagem de fundo misturar com a cor */
 
 }
 body {
@@ -34,11 +39,7 @@ body {
     font-family: 'Montserrat', sans-serif;    
     width: 100vw;
     scroll-behavior: smooth; /* Adiciona rolagem suave */
-    background-image: url('Imagens/background.jpg');
-    background-attachment: fixed; 
-    background-size: cover;
-    background-color: rgba(0, 0, 0, 0.4);  /* Cor preta com opacidade */
-    background-blend-mode: overlay; /* Faz a imagem de fundo misturar com a cor */
+    background: transparent;
 }
 
 h1 {
