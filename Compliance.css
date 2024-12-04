@@ -1,9 +1,14 @@
 html
 {
+    background-image: url('Imagens/background.jpg');
+    background-attachment: fixed; 
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.4);  /* Cor preta com opacidade */
+    background-blend-mode: overlay; /* Faz a imagem de fundo misturar com a cor */
     scroll-behavior: smooth;
 }
 body {
-    background-color: #ffffff;
+    background-color: transparent;
     box-sizing: border-box;
     overflow-y: auto; /* Permite a rolagem se necessário */
     margin: 0;
