@@ -6,6 +6,8 @@ html
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.4);  /* Cor preta com opacidade */
     background-blend-mode: overlay; /* Faz a imagem de fundo misturar com a cor */
+    scroll-behavior: smooth;
+
 }
 body {
     font-family: 'Montserrat', sans-serif;   }
@@ -75,7 +77,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
     width: 80%; /* Ajusta a largura conforme necessário */
-    background-color: rgb(255, 255, 255); /* Cor de fundo */
+    background-color: transparent; /* Cor de fundo */
     border-radius: 15px; /* Raio de borda arredondado */
     padding: 20px;
     margin-left: 0;

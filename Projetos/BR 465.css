@@ -57,6 +57,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     border-bottom: 4px solid #fffb00; /* Linha sublinhada com 2px de espessura e cor preta */
+    scroll-behavior: smooth;
 
 
 }
@@ -75,7 +76,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
     width: 80%; /* Ajusta a largura conforme necessário */
-    background-color: rgb(255, 255, 255); /* Cor de fundo */
+    background-color: transparent; /* Cor de fundo */
     border-radius: 15px; /* Raio de borda arredondado */
     padding: 20px;
     margin-left: 0;
