@@ -1,9 +1,11 @@
 /* Configurações básicas do corpo */
 html
 {
-    background-color: #ffffff;
-    scroll-behavior: smooth;
-
+    background-image: url('../Imagens/background.jpg');
+    background-attachment: fixed; 
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.4);  /* Cor preta com opacidade */
+    background-blend-mode: overlay; /* Faz a imagem de fundo misturar com a cor */
 }
 body {
     font-family: 'Montserrat', sans-serif;   
@@ -21,11 +23,14 @@ p {
 }
 
 body {
-    background-color: #ffffff;
+    background-color: transparent;
     box-sizing: border-box;
     overflow-y: auto; /* Permite a rolagem se necessário */
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
+    color: white;
+
 }
 
 #header {
