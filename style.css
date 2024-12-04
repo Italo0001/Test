@@ -28,6 +28,7 @@ html
     background-color: rgba(0, 0, 0, 0.4);  /* Cor preta com opacidade */
     scroll-behavior: smooth;
     background-blend-mode: overlay; /* Faz a imagem de fundo misturar com a cor */
+    transform: none; /* Verifique se transformações não estão sendo aplicadas */
 
 }
 body {
