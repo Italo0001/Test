@@ -5,7 +5,7 @@ $senha_input = $_POST['senha']; // Senha do formulário
 
 // Configurações do banco de dados
 $host = 'localhost'; // Endereço do servidor MySQL
-$dbname = 'nome_do_banco'; // Nome do banco de dados
+$dbname = 'v3'; // Nome do banco de dados
 $username = 'root'; // Usuário do banco de dados
 $password = 'v3v3'; // Senha do banco de dados
 
