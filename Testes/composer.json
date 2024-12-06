@@ -1,0 +1,7 @@
+{
+    "name": "meu-projeto-login",
+    "description": "Projeto simples de login PHP",
+    "require": {
+        "php": ">=7.4"
+    }
+}
