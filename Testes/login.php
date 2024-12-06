@@ -1,55 +1,37 @@
 <?php
-// Recebe os dados do formulário
-$usuario_input = $_POST['usuario']; // Nome de usuário do formulário
-$senha_input = $_POST['senha']; // Senha do formulário
+// Conexão com o banco de dados (substitua pelos seus dados de conexão)
+$servername = "localhost";
+$username = "root";
+$password = "v3v3";
+$dbname = "v3";
 
-// Configurações do banco de dados
-$host = 'localhost'; // Endereço do servidor MySQL
-$dbname = 'v3'; // Nome do banco de dados
-$username = 'root'; // Usuário do banco de dados
-$password = 'v3v3'; // Senha do banco de dados
+// Criando conexão
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-// Conexão com o banco de dados usando PDO
-try {
-    // Criação da conexão
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    
-    // Configuração para tratar erros com exceções
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
-    // Preparando a consulta SQL para verificar o usuário
-    $sql = "SELECT * FROM usuarios WHERE usuario = :usuario LIMIT 1";
-    $stmt = $pdo->prepare($sql);
-    
-    // Bind do valor do usuário
-    $stmt->bindParam(':usuario', $usuario_input);
-    
-    // Executa a consulta
-    $stmt->execute();
-    
-    // Verifica se um usuário foi encontrado
-    if ($stmt->rowCount() > 0) {
-        // Obtém o resultado
-        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-        
-        // Verifica se a senha fornecida corresponde à senha do banco
-        if (password_verify($senha_input, $usuario['senha'])) {
-            // Senha correta, redireciona para a página HTML
-            header("Location: pagina_de_sucesso.html");
-            exit();  // Interrompe a execução do script após o redirecionamento
-        } else {
-            // Se a senha estiver incorreta, redireciona com mensagem de erro
-            header("Location: login.php?erro=Senha incorreta!");
-            exit();
-        }
-    } else {
-        // Se o usuário não for encontrado, redireciona com mensagem de erro
-        header("Location: login.php?erro=Usuário não encontrado!");
-        exit();
-    }
-
-} catch (PDOException $e) {
-    // Caso ocorra um erro na conexão, exibirá a mensagem
-    echo 'Erro de conexão: ' . $e->getMessage();
+// Verificando conexão
+if ($conn->connect_error) {
+    die("Conexão falhou: " . $conn->connect_error);
 }
+
+// Recebendo os dados do formulário
+$usuario = $_POST['usuario'];
+$senha = $_POST['senha'];
+
+// Consultando o banco de dados
+$sql = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND senha = '$senha'";
+$result = $conn->query($sql);
+
+// Verificando se encontrou um usuário
+if ($result->num_rows > 0) {
+    // Login bem-sucedido
+    echo "Login bem-sucedido!";
+    // Redirecionar para uma página protegida
+    header('Location: dashboard.html');
+    exit();
+} else {
+    // Login falhou
+    echo "Usuário ou senha incorretos!";
+}
+
+$conn->close();
 ?>
