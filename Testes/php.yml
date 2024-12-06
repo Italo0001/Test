@@ -1,22 +1,31 @@
 name: PHP CI
 
-on: [push]
+on:
+  push:
+    branches:
+      - main  # Rode o workflow sempre que houver um push para a branch principal
+  pull_request:
+    branches:
+      - main  # Rode o workflow quando um pull request for feito para a branch principal
 
 jobs:
   php:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Usando o Ubuntu mais recente
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v2  # Faz checkout do código
 
     - name: Set up PHP
-      uses: shivammathur/setup-php@v2
+      uses: shivammathur/setup-php@v2  # Configura o PHP
       with:
-        php-version: '7.4'
+        php-version: '7.4'  # Define a versão do PHP que você quer usar
 
     - name: Install dependencies
-      run: composer install
+      run: composer install  # Instala as dependências do PHP, se você estiver usando o Composer
 
-    - name: Run PHP server
-      run: php -S localhost:8000
+    - name: Run PHP tests
+      run: php -S localhost:8000 & # Executa um servidor PHP local (caso necessário)
+      
+    - name: Run PHPUnit tests
+      run: ./vendor/bin/phpunit --configuration phpunit.xml  # Execute testes unitários com PHPUnit
