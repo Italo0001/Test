@@ -11,7 +11,7 @@ html{
 
 /* Outros exemplos de aplicação */
 h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;  
+    font-family: 'Open Sans', sans-serif;  
  }
  h1
  {
@@ -22,7 +22,7 @@ h1, h2, h3 {
     text-align: center;
  }
 p {
-    font-family: 'Montserrat', sans-serif;   
+    font-family: 'Open Sans', sans-serif;   
 }
 
 body {
@@ -31,7 +31,7 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    font-family: 'Montserrat', sans-serif;  
+    font-family: 'Open Sans', sans-serif;  
     background: transparent;
     color: white;
     scroll-behavior: smooth;
@@ -73,11 +73,13 @@ h4 {
     z-index: 100; /* Garante que o cabeçalho fique sobre outros conteúdos */
     padding: 0;
     margin: 0;
+    font-family: 'Open Sans', sans-serif;   
+
 }
 #header nav
 {
     top: 2.5%;
-    font-size: larger;
+    font-size: medium;
 }
 /* Menu de desktop */
 #desktop-menu {
