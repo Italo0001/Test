@@ -224,6 +224,8 @@ h4
     color: rgb(251, 255, 0);
 
 }
+
+
 .servico ul
 {
     padding: 0; /* Remove o preenchimento interno da lista */
@@ -783,7 +785,7 @@ h4
 .image-gallery {
     overflow: auto; /* Permite rolagem tanto horizontal quanto vertical */
     scrollbar-width: 0px; /* Para Firefox: define a largura da barra de rolagem */
-    scrollbar-color: #8f8f8f #252525; /* Para Firefox: define as cores do thumb (branco) e do trilho (cinza claro) */
+    scrollbar-color: transparent; /* Para Firefox: define as cores do thumb (branco) e do trilho (cinza claro) */
 }
 
 /* Personalização para navegadores baseados em WebKit (Chrome, Safari) */
@@ -795,18 +797,18 @@ h4
 
 /* Trilho da barra de rolagem */
 .image-gallery::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.3); /* Cor do trilho da barra de rolagem com transparência */
+    background: transparent; /* Cor do trilho da barra de rolagem com transparência */
 }
 
 /* Thumb da barra de rolagem */
 .image-gallery::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.5); /* Cor do 'thumb' da barra de rolagem com transparência */
+    background: transparent; /* Cor do 'thumb' da barra de rolagem com transparência */
     border-radius: 6px; /* Arredondamento dos cantos do 'thumb' */
 }
 
 /* Thumb da barra de rolagem quando o mouse está sobre ele */
 .image-gallery::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.7); /* Cor do 'thumb' ao passar o mouse sobre ele com transparência */
+    background: transparent; /* Cor do 'thumb' ao passar o mouse sobre ele com transparência */
 }
 
 
