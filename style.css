@@ -658,8 +658,8 @@ h4
     margin: 10px;
     text-align: center;
     flex: 0 0 auto; /* Mantém o tamanho fixo dos itens */
-    width: 100%;
-    height: 90%;
+    width: 85%;
+    height: 100%;
     box-sizing: border-box;
     align-items: center; /* Alinha verticalmente ao centro */
     justify-content: center; /* Opcional: alinha horizontalmente ao centro */ 
@@ -3043,7 +3043,7 @@ select:focus
         text-align: center;
         flex: 0 0 auto; /* Mantém o tamanho fixo dos itens */
         width: 20%; /* Ajusta a largura para 20% da largura da viewport */
-        height: 450px; /* Ajusta a altura para 40% da altura da viewport */
+        height: 85%; /* Ajusta a altura para 40% da altura da viewport */
         box-sizing: border-box;
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
