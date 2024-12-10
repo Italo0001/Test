@@ -45,18 +45,25 @@ body {
 
 h1 {
     font-weight: 400; 
+    color: yellow;
 }
 h2
 {
     font-weight: 400; 
+    color: yellow;
+
 }
 h3 
 {
     font-weight: 400; 
+    color: yellow;
+
 }
 h4 
 {
     font-weight: 400; 
+    color: yellow;
+
 }
 /* Estilo do cabeçalho */
 #header {
