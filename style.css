@@ -49,20 +49,14 @@ h1 {
 h2
 {
     font-weight: 400; 
-
-
 }
 h3 
 {
     font-weight: 400; 
-
-
 }
 h4 
 {
     font-weight: 400; 
-
-
 }
 /* Estilo do cabeçalho */
 #header {
@@ -227,7 +221,9 @@ h4
     text-align: center;
     z-index: 11;  
     border: none; 
-    color: rgb(255, 255, 25);}
+    color: rgb(251, 255, 0);
+
+}
 .servico ul
 {
     padding: 0; /* Remove o preenchimento interno da lista */
@@ -243,10 +239,12 @@ h4
 {   
     margin-top: 5%;
     text-align: center;
+    font-size:250%;
+
 }
 .servico h4 {
     width: 100%;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: normal; /* Adiciona o negrito */
 }
 
@@ -365,6 +363,7 @@ h4
 }
 .clientes
 {
+    color: #ffffff;
     position: relative;;
     margin-top: 35vh; /* Centraliza verticalmente */
     left: 50%;
@@ -381,7 +380,6 @@ h4
     justify-content: center;  /* Centraliza verticalmente */
     align-items: center;      /* Centraliza horizontalmente */
     text-align: center;       /* Alinha o conteúdo do texto ao centro */
-    color: white;
 }
 
 .clientes h1
@@ -389,11 +387,6 @@ h4
     display: block;
     padding: 0;
     margin: 0;
-    color: white;
-}
-.clientes h3
-{
-    color: white;
 }
 .clientes ul
 {
@@ -425,7 +418,8 @@ h4
     background-color: transparent; /* Cor de fundo */
     text-align: left;
     z-index: 11; /* Garante que o texto fique sobre outros conteúdos */
-    color: white;
+    color: rgb(251, 255, 0);
+
 
 }
 .endereço iframe
@@ -438,7 +432,9 @@ h4
 }
 .endereço h1
 {
+    font-size:250%;
     text-align: center;
+    margin-bottom: 15vh;
 }
 .endereço ul
 {
@@ -462,7 +458,7 @@ h4
     display: flex;               /* Usa Flexbox para alinhar os itens horizontalmente */
     justify-content: space-around; /* Distribui os itens com espaço igual entre eles */
     align-items: center;         /* Alinha os itens verticalmente ao centro */
-    color: #ffffff;
+    color: rgb(251, 255, 0);
     left: 50%;
     transform: translateX(-50%); /* Centraliza horizontalmente */
     width: 100%;                 /* Ajusta a largura conforme necessário */
@@ -509,7 +505,7 @@ h4
 /* Estilo para os títulos (h1) dentro dos itens */
 #Valores ul h1 {
     font-size: 2vw ; /* Tamanho da fonte em pontos */;              /* Tamanho da fonte */
-    color: #ffffff;                 /* Cor do texto */
+    color: rgb(251, 255, 0);
     margin: 0;
     text-align: center;          /* Centraliza o texto dentro do h1 */
 }
@@ -598,18 +594,18 @@ h4
 
 .container {
     width: 100%; /* Largura da viewport */
-    height: 520px; /* Altura da viewport */
+    height: 500px; /* Altura da viewport */
     overflow: hidden; /* Oculta parte do conteúdo que está fora da área visível */
     position: relative;
     background-color: transparent;
     text-align: center;
     margin-top: 30vh; /* Posição relativa */
-    color: rgb(255, 255, 25);
+    color: rgb(251, 255, 0);
 }
-
 
 .container ul
 {
+    color: white;
     top: 0;
 }
 
@@ -621,6 +617,8 @@ h4
     flex-direction: row;
     transition: transform 0.3s ease;
     overflow-x: auto; /* Adiciona rolagem horizontal */
+    color: rgb(251, 255, 0);
+
 }
 
 .content, .hidden-content {
@@ -647,9 +645,10 @@ h4
     position: absolute;
     transform: translateX(50%);
     right: 50%;
-    color: rgb(255, 255, 25);
-}
+    color: rgb(251, 255, 0);
+    font-size:250%;
 
+}
 .slide-content h3 
 {
     color: white;
@@ -662,13 +661,14 @@ h4
     overflow-x: auto; /* Permite rolagem horizontal */
     align-items: center; /* Alinha verticalmente ao centro */
     justify-content: center; /* Opcional: alinha horizontalmente ao centro */
+
 }
 
 .image-item {
     margin: 10px;
     text-align: center;
     flex: 0 0 auto; /* Mantém o tamanho fixo dos itens */
-    width: 65%;
+    width: 100%;
     height: 100%;
     box-sizing: border-box;
     align-items: center; /* Alinha verticalmente ao centro */
@@ -2968,10 +2968,6 @@ select:focus
 }
 @media (orientation: landscape) 
 {
-    .servico
-    {
-        color: rgb(255, 255, 25);
-    }
     .servico ul h3
     {
         font-size: large;
@@ -3011,7 +3007,7 @@ select:focus
         text-align: center;
         top: 60vh; /* Ajuste a posição conforme necessário */
         margin: 0;
-        color: rgb(255, 255, 25);
+        color: rgb(251, 255, 0);
     }
     
     .slide-content {
@@ -3023,15 +3019,12 @@ select:focus
         overflow-x: auto; /* Adiciona rolagem horizontal */
         padding: 0; /* Remove padding extra para ajustar o layout */
         scroll-snap-type: x mandatory; /* Facilita o alinhamento dos itens na rolagem */
-
-
     }
-    .slide-content h2
-    {
-        color: rgb(255, 255, 25);
-
+    
+    .content h2 {
+        margin: 0;
+        
     }
-
     
     .hidden-content {
         background-color: #ffffff;
@@ -3060,7 +3053,7 @@ select:focus
         text-align: center;
         flex: 0 0 auto; /* Mantém o tamanho fixo dos itens */
         width: 20%; /* Ajusta a largura para 20% da largura da viewport */
-        height: 65%; /* Ajusta a altura para 40% da altura da viewport */
+        height: 30vh; /* Ajusta a altura para 40% da altura da viewport */
         box-sizing: border-box;
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
@@ -3080,6 +3073,7 @@ select:focus
     }
     .image-item h3
     {
+        color: white;
         max-width: 200px;
         width: 70%;
         font-size: 100%;
@@ -3141,14 +3135,6 @@ select:focus
     width: 100%;
     left: -50%;
 
-}
-.container
-{
-    color: rgb(255, 255, 25);
-}
-.image-item
-{
-    height: 100%;
 }
 .image-item h3
 {
