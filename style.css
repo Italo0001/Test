@@ -588,7 +588,7 @@ h4
 
 .container {
     width: 100%; /* Largura da viewport */
-    height: 500px; /* Altura da viewport */
+    height: 520px; /* Altura da viewport */
     overflow: hidden; /* Oculta parte do conteúdo que está fora da área visível */
     position: relative;
     background-color: transparent;
