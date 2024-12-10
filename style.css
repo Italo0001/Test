@@ -3080,7 +3080,6 @@ select:focus
     }
     .image-item h3
     {
-        color: white;
         max-width: 200px;
         width: 70%;
         font-size: 100%;
@@ -3142,6 +3141,10 @@ select:focus
     width: 100%;
     left: -50%;
 
+}
+.container
+{
+    color: rgb(255, 255, 25);
 }
 .image-item
 {
