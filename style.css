@@ -648,8 +648,9 @@ h4
     position: absolute;
     transform: translateX(50%);
     right: 50%;
-    color: white;
+    color: rgb(255, 255, 25);
 }
+
 .slide-content h3 
 {
     color: white;
@@ -3024,7 +3025,11 @@ select:focus
         padding: 0; /* Remove padding extra para ajustar o layout */
         scroll-snap-type: x mandatory; /* Facilita o alinhamento dos itens na rolagem */
     }
-    
+    .slide-content h2
+    {
+        color: rgb(255, 255, 25);
+
+    }
     .content h2 {
         margin: 0;
         color: rgb(255, 255, 25);
