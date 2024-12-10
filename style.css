@@ -604,13 +604,12 @@ h4
     background-color: transparent;
     text-align: center;
     margin-top: 30vh; /* Posição relativa */
-    color: white;
+    color: rgb(255, 255, 25);
 }
 
 
 .container ul
 {
-    color: white;
     top: 0;
 }
 
@@ -3012,7 +3011,7 @@ select:focus
         text-align: center;
         top: 60vh; /* Ajuste a posição conforme necessário */
         margin: 0;
-
+        color: rgb(255, 255, 25);
     }
     
     .slide-content {
@@ -3024,17 +3023,15 @@ select:focus
         overflow-x: auto; /* Adiciona rolagem horizontal */
         padding: 0; /* Remove padding extra para ajustar o layout */
         scroll-snap-type: x mandatory; /* Facilita o alinhamento dos itens na rolagem */
+
+
     }
     .slide-content h2
     {
         color: rgb(255, 255, 25);
 
     }
-    .content h2 {
-        margin: 0;
-        color: rgb(255, 255, 25);
-        
-    }
+
     
     .hidden-content {
         background-color: #ffffff;
