@@ -2990,7 +2990,7 @@ select:focus
     .container {
         overflow-y: hidden; /* Permite a rolagem se necessário */
         width: 100%; /* Largura da viewport */
-        height: 600px; /* Altura da viewport */
+        height: 700px; /* Altura da viewport */
         overflow: hidden; /* Oculta parte do conteúdo que está fora da área visível */
         position: relative;
         background-color: transparent;
