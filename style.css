@@ -677,14 +677,13 @@ h4
     justify-content: center; /* Opcional: alinha horizontalmente ao centro */ 
 }
 .image-item h3 {
-    top: 25vh;
+    top: 0vh;
     position: relative; /* Posiciona o texto sobre a imagem */
-    color: #fff; /* Cor do texto, ajuste conforme necessário */
+    color: rgb(251, 255, 0);
     font-size: 40%;
     z-index: 11;
     width:70%;
     font-weight: bold;
-    transition: opacity 0.3s ease;
 }
 .image-item img {
     position: relative;
@@ -777,10 +776,7 @@ h4
   .image-item:hover .btn {
       opacity: 1;
   }
-  .image-item:hover h3
-  {
-    opacity: 0;
-  }
+
 /* Adiciona estilização à barra de rolagem horizontal e vertical da galeria de imagens */
 .image-gallery {
     overflow: auto; /* Permite rolagem tanto horizontal quanto vertical */
@@ -1301,7 +1297,7 @@ select:focus
 
     .clientes
     {
-        top: 80vh;
+        top: 105vh;
     }
     #Valores
     {
@@ -1318,7 +1314,7 @@ select:focus
     .servico
     {
         
-        top: 40vh;
+        top: 60vh;
     }
     .servico ul
     {
@@ -1363,7 +1359,7 @@ select:focus
         position: relative;
         background-color: transparent;
         text-align: center;
-        top: 80vh; /* Posição relativa */
+        top: 95vh; /* Posição relativa */
         margin: 0;
     }
     .container h2 
@@ -1528,7 +1524,11 @@ select:focus
     }
     #Valores
     {
-        top: 45vh;
+        top: 65vh;
+    }
+    #Valores ul h1
+    {
+        font-size: xx-large;
     }
     .Contatos ul h2 
     {
@@ -1546,6 +1546,10 @@ select:focus
     {
         left: 88%;
     }
+    .endereço
+    {
+        top: 110vh;
+    }
 }
 @media (max-width: 800px)
 {
@@ -1556,15 +1560,20 @@ select:focus
     }
     #Valores
     {
-        top: 45vh;
+        top: 80vh;
+    }
+    #Valores ul h1
+    {
+        font-size: xx-large;
     }
     .endereço
     {
-        top: 75vh;
+        top: 125vh;
     }
+
     .Contatos
     {
-        top: 50vh;
+        top: 95vh;
     }
     .left-btn
     {
@@ -1582,13 +1591,13 @@ select:focus
         position: relative;
         background-color: transparent;
         text-align: center;
-        top: 60vh; /* Posição relativa */
+        top: 90vh; /* Posição relativa */
         margin: 0;
     }
     .servico
     {
         
-        top: 35vh;
+        top: 60vh;
     }
     .servico ul
     {
@@ -1695,8 +1704,8 @@ select:focus
     }
     .image-gallery h3
     {
-        top: -10vh;
-        font-size: 4vw;
+        top: -9vh;
+        font-size: 25px;
         width: 35vw;
         height: 100%;
         margin: 0;
@@ -1716,7 +1725,7 @@ select:focus
         opacity: 1;    
         z-index: 11; 
         height: 20px;
-        font-size: 25px;
+        font-size: 20px;
         font-weight: bold; 
         font-size: 5vw;
     }
@@ -1730,7 +1739,7 @@ select:focus
     }
     .clientes
     {
-        top: 75vh;
+        top: 95vh;
     }
     .btn 
     {
@@ -1750,6 +1759,7 @@ select:focus
         top: 150px;
         left: 88%;
     }
+
 }
 
 @media (max-width: 700px)
@@ -2129,7 +2139,11 @@ select:focus
     }
     .servico ul h3
     {
-        font-size:  75%;
+        font-size:  50%;
+    }
+    .servico ul h4
+    {
+        font-size:  15px;
     }
     .servico ul:hover img
     {
@@ -2330,6 +2344,10 @@ select:focus
         text-align: center;
         top:65vh;
     }
+    #Valores ul h1
+    {
+        font-size: larger;
+    }
     .endereço
     {
         top: 100vh;
@@ -2346,6 +2364,7 @@ select:focus
 }
 
 @media (max-width:400px)
+
 {   #open-menu
     {
         left: 85%;
@@ -2375,7 +2394,7 @@ select:focus
   
     .ImgInicial
     {
-        width: 100vw; /* Ajusta a largura do cabeçalho para 100% da largura da viewport */
+        width: 100%; /* Ajusta a largura do cabeçalho para 100% da largura da viewport */
         height: auto;
         min-height: 500px;
 
@@ -2403,7 +2422,7 @@ select:focus
 
     .servico ul h4
     {
-        font-size:  60%;
+        font-size:  10px;
     }
     .servico ul a 
     {
@@ -2459,7 +2478,7 @@ select:focus
     }
     .container {
         width: 100vw; /* Largura da viewport */
-        height: 500px; /* Altura da viewport */
+        height: 600px; /* Altura da viewport */
         overflow: hidden; /* Oculta parte do conteúdo que está fora da área visível */
         position: relative;
         background-color: transparent;
@@ -2490,7 +2509,7 @@ select:focus
     .content, .hidden-content 
     {
         flex: 0 0 100vw; /* Cada bloco ocupa a largura total da viewport */
-        height: 100%;
+        height: 110%;
         padding: 10px; /* Ajusta o padding para o tamanho da tela menor */
         box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
         scroll-snap-align: start; /* Faz com que o item se alinhe ao iniciar a rolagem */
@@ -2529,7 +2548,7 @@ select:focus
         text-align: center;
         flex: 0 0 auto; /* Mantém o tamanho fixo dos itens */
         width: 60vw; /* Ajusta a largura para 65% da largura da viewport */
-        height: 100%; /* Ajusta a altura */
+        height: 85%; /* Ajusta a altura */
         box-sizing: border-box;
         display: flex; /* Usa flexbox para centralizar o conteúdo */
         flex-direction: column; /* Organiza o conteúdo verticalmente */
@@ -2608,9 +2627,10 @@ select:focus
         text-align: center;
         top:60vh;
     }
-    #Valores ul 
+
+    #Valores ul h1
     {
-       font-size: small;
+        font-size: 20px;
     }
     .endereço
     {
@@ -2637,7 +2657,7 @@ select:focus
         top: 45px;
         left: 88%;
     }
-    
+
 }
 @media (max-width:380px)
 {   #open-menu
@@ -2817,7 +2837,7 @@ select:focus
         padding-top: 100px; /* Ajuste conforme necessário */
         color: white;
     }
-    
+
     .image-item {
         margin-top: 120px; /* Aumente para 150px ou mais, conforme necessário */
         text-align: center;
@@ -2931,17 +2951,22 @@ select:focus
         top: 45px;
         left: 88%;
     }
-    
+    .endereço ul h1 
+    {
+        font-size: 35px;
+    }
 }
 @media (max-width:350px)
 {
     .container
     {
         top: 60vh;
+        height: 60vh;
     }
     .slide-content
     {
         margin-left: 0;
+        height: 100%;
     }
     .left-btn
     {
@@ -2950,6 +2975,10 @@ select:focus
     .right-btn
     {
         font-size: larger;
+    }
+    .image-item
+    {
+        height: 15vh;
     }
     .image-item a
     {
@@ -2967,6 +2996,7 @@ select:focus
         font-size: 25px;
         font-weight: bold; 
     }
+    
 }
 @media (orientation: landscape) 
 {
@@ -3277,11 +3307,11 @@ select:focus
         .servico
         {
             font-size: medium ;
-            top: 90vh;
+            top: 100vh;
         }
         .clientes
         {
-            top:120vh;
+            top:130vh;
         }
         .container
         {
@@ -3345,6 +3375,10 @@ select:focus
         {
             color: #ffffff;
             top: 0;
+        }
+        #Valores ul h1
+        {
+            font-size: xx-large;
         }
 }
 @media only screen and (orientation: landscape) and (max-width: 1000px)
@@ -3574,7 +3608,8 @@ select:focus
     }
     .image-item 
     {
-        height: 45%;
+        top: 25vh;
+        height: 40%;
     }
     .image-item a 
     {
@@ -3742,8 +3777,9 @@ select:focus
     }
     .image-item
     {
+        margin-top: 20px;
         width:30%;
-        height: 50%;
+        height: 40%;
     }
 
     .image-gallery
@@ -3783,7 +3819,7 @@ select:focus
     {
         background-color: transparent;
         top: -10%;
-        height: 50%;
+        height: 60%;
     }
     #Valores
     {
