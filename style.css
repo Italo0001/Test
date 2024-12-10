@@ -3126,6 +3126,10 @@ select:focus
     left: -50%;
 
 }
+.image-item
+{
+    height: 100%;
+}
 .image-item h3
 {
     width: 70%;
