@@ -659,7 +659,7 @@ h4
     text-align: center;
     flex: 0 0 auto; /* Mantém o tamanho fixo dos itens */
     width: 100%;
-    height: 100%;
+    height: 450px;
     box-sizing: border-box;
     align-items: center; /* Alinha verticalmente ao centro */
     justify-content: center; /* Opcional: alinha horizontalmente ao centro */ 
