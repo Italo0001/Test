@@ -45,24 +45,23 @@ body {
 
 h1 {
     font-weight: 400; 
-    color: rgb(255, 255, 25);
 }
 h2
 {
     font-weight: 400; 
-    color: rgb(255, 255, 25);
+
 
 }
 h3 
 {
     font-weight: 400; 
-    color: rgb(255, 255, 25);
+
 
 }
 h4 
 {
     font-weight: 400; 
-    color: rgb(255, 255, 25);
+
 
 }
 /* Estilo do cabeçalho */
@@ -228,8 +227,7 @@ h4
     text-align: center;
     z-index: 11;  
     border: none; 
-    color: white;
-}
+    color: rgb(255, 255, 25);}
 .servico ul
 {
     padding: 0; /* Remove o preenchimento interno da lista */
@@ -2970,6 +2968,10 @@ select:focus
 }
 @media (orientation: landscape) 
 {
+    .servico
+    {
+        color: rgb(255, 255, 25);
+    }
     .servico ul h3
     {
         font-size: large;
@@ -3009,7 +3011,7 @@ select:focus
         text-align: center;
         top: 60vh; /* Ajuste a posição conforme necessário */
         margin: 0;
-        color: white;
+
     }
     
     .slide-content {
@@ -3025,6 +3027,7 @@ select:focus
     
     .content h2 {
         margin: 0;
+        color: rgb(255, 255, 25);
         
     }
     
