@@ -564,7 +564,7 @@ body > *:not(.Contatos) {
     }
     .whatsapp img
     {
-        top: 80vh;
+        top: 80%;
         width: 15%;
     }
 }
