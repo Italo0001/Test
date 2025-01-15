@@ -20,6 +20,12 @@
 } */
 
 /* Configurações básicas do corpo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html
 {
     background-image: url('Imagens/background.jpg');
@@ -41,6 +47,9 @@ body {
     width: 100vw;
     scroll-behavior: smooth;
     background: transparent;
+    min-height: 100vh; /* Garante que o body ocupe toda a altura da tela */
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -65,10 +74,10 @@ h4
     width: 100%; /* Ajusta a largura do cabeçalho para 100% da largura da viewport */
     height: 8%; /* Mantém a altura do cabeçalho como uma porcentagem da altura da viewport */
     min-height: 40px;
-    top: 0;
     z-index: 100; /* Garante que o cabeçalho fique sobre outros conteúdos */
     padding: 0;
     margin: 0;
+
 }
 #header nav 
 {
@@ -242,12 +251,17 @@ h4
     margin-top: 5%;
     text-align: center;
     font-size:250%;
+    margin-bottom: 10vh;
 
 }
 .servico h4 {
     width: 100%;
     font-size: 20px;
     font-weight: normal; /* Adiciona o negrito */
+}
+.servico ul .servicopar
+{
+    margin-bottom: 5vh;
 }
 
 
@@ -304,57 +318,51 @@ h4
 {
     font-weight: 2vw;
 }
-.Contatos {
-    top: 90vh;
-    display: flex; /* Usa flexbox para o alinhamento do conteúdo */
-    flex-direction: column; /* Alinha os itens em coluna (verticalmente) */
-    justify-content: center; /* Centraliza verticalmente o conteúdo dentro do container */
-    align-items: center; /* Centraliza horizontalmente o conteúdo dentro do container */
-    position: relative; /* Fixa o elemento no viewport */
-    bottom: 0; /* Posiciona o elemento na parte inferior da página */
-    left: 50%; /* Move o elemento para o meio horizontalmente */
-    transform: translateX(-50%); /* Ajusta a posição horizontal para centralizar exata */
-    width: 100%; /* Largura total da viewport */
-    height: 95vh; /* Altura ajustada */
-    background-color: rgb(2, 2, 2); /* Cor de fundo */
-    color: aliceblue; /* Cor do texto */
-    text-align: center; /* Centraliza o texto */
-    z-index: 11; /* Garante que o conteúdo fique sobre outros conteúdos */
-    padding: 0;
+/* Resetando margens e padding padrão */
+* {
     margin: 0;
-    font-size: large;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.Contatos h1 {
-    margin: 0; /* Remove a margem do título */
+/* Estilo do body */
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh; /* Garante que o body ocupe toda a altura da tela */
 }
 
-.Contatos ul {
-    margin: 5vh 0 0 0; /* Margem superior */
+/* Conteúdo principal */
+.content {
+    padding: 20px;
+    padding-bottom: 60px; /* Espaço para o header fixo */
+    text-align: center;
+}
+
+/* Estilo do header fixo na parte inferior */
+.contato-fixo {
+    background-color: #000000; /* Cor de fundo */
+    position: fixed; /* Fixa o header na tela */
+    left: 0; /* Alinha à esquerda */
+    bottom: 0; /* Coloca o header na parte inferior */
+    width: 100%; /* Largura total da tela */
+    height: 8vh; /* Altura do header */
+    z-index: 1000; /* Garante que o header fique acima de outros conteúdos */
+    display: flex; /* Usado para o alinhamento do conteúdo */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    color: #fff; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+
+.contact-info {
     padding: 0; /* Remove o padding */
-    height: 5vh; /* Altura ajustada */
-    width: 100%; /* Largura total do container */
-    display: flex; /* Usa flexbox para alinhamento dos itens da lista */
+    margin: 0 10px; /* Espaço entre as listas */
+    display: flex; /* Usa flexbox para alinhar os itens da lista */
     align-items: center; /* Alinha os itens ao centro verticalmente */
     justify-content: center; /* Alinha os itens ao centro horizontalmente */
 }
 
-.Contatos ul a {
-    transition: background-color 0.3s; /* Corrige a propriedade de transição e define uma duração mais curta */
-    text-decoration: none; /* Remove o sublinhado dos links */
-    padding: 10px 15px; /* Espaçamento interno */
-    color: #ffffff; /* Cor do texto dos links */
-    margin: 0 10px; /* Margem lateral */
-}
-
-.Contatos ul a:hover {
-    background-color: rgb(59, 59, 59); /* Cor de fundo ao passar o mouse */
-}
-
-
-.Contatos ul a:hover {
-    background-color: rgb(59, 59, 59); /* Cor de fundo ao passar o mouse */
-}
 
 
 /* Contatos fim */
@@ -392,10 +400,12 @@ h4
 }
 .clientes ul
 {
+    font-size: 20px;
     border-radius:  5px;
     display: inline-block;
-
-
+    padding-left: 5%;
+    padding-right: 5%;
+   margin-top: 10vh;
     
 }
 .clientes div ul img
@@ -421,6 +431,7 @@ h4
     text-align: left;
     z-index: 11; /* Garante que o texto fique sobre outros conteúdos */
     color: rgb(251, 255, 0);
+    margin-bottom: 90vh;
 
 
 }
@@ -889,12 +900,12 @@ h4
 }
 .whatsapp img
 {
-    display: none;
-    right: 5%;
-    top: 90%;
+    display: flex;
+    right: 2%;
+    top: 80%;
     position: fixed;
-    width: 15%;
-    z-index: 11;
+    width: 4%;
+    z-index: 101;
 }
 select
 {
@@ -994,6 +1005,11 @@ select:focus
     .image-gallery h3 {
         font-size: 3vw; /* Ajusta o tamanho da fonte com base na largura da viewport */
         margin: 0;
+    }
+    .servico ul .servicopar
+
+    {
+        margin-bottom: 0;
     }
 
 
@@ -3169,10 +3185,14 @@ select:focus
     left: -50%;
 
 }
+.servico ul a:hover
+{
+    background-color: transparent;
+}
 .image-item h3
 {
     width: 70%;
-    top: 90%;
+    top: 100%;
     color: #ffffff;
 }
 .image-item a 
@@ -3190,6 +3210,7 @@ select:focus
 }
 
 
+
 }
 @media only screen and (orientation: landscape) and (max-width:1300px)
 {
@@ -3199,9 +3220,14 @@ select:focus
     }
     .image-item a 
     {
-        background-color: #e6a800;
+        background-color: transparent;
         width: 75%;
         height: 15%;
+    }
+    .image-item h3
+    {
+        width: 75%;
+        top: 85%;
     }
 }
 @media only screen and (orientation: landscape) and (max-width:1100px)
@@ -3379,7 +3405,7 @@ select:focus
         }
         .whatsapp img   
         {
-            top: 90%;
+            top: 85%;
             width: 5%;
         }
         .image-item h3 
