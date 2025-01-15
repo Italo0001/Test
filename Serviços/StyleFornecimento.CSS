@@ -100,6 +100,7 @@ body {
     background-color: transparent; /* Cor de fundo */
     text-align: center;
     z-index: 11;
+    margin-bottom: 35%;
   }
 
 
@@ -365,12 +366,35 @@ body {
 }
 .whatsapp img
 {
-    display: none;
+    display: flex;
     right: 5%;
-    top: 90%;
+    top: 80%;
     position: fixed;
-    width: 15%;
+    width: 5%;
     z-index: 11;
+}
+.contato-fixo {
+    background-color: #000000; /* Cor de fundo */
+    position: fixed; /* Fixa o header na tela */
+    left: 0; /* Alinha à esquerda */
+    bottom: 0; /* Coloca o header na parte inferior */
+    width: 100%; /* Largura total da tela */
+    height: 8vh; /* Altura do header */
+    z-index: 1000; /* Garante que o header fique acima de outros conteúdos */
+    display: flex; /* Usado para o alinhamento do conteúdo */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    color: #fff; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+
+.contact-info {
+    padding: 0; /* Remove o padding */
+    margin: 0 10px; /* Espaço entre as listas */
+    display: flex; /* Usa flexbox para alinhar os itens da lista */
+    align-items: center; /* Alinha os itens ao centro verticalmente */
+    justify-content: center; /* Alinha os itens ao centro horizontalmente */
 }
 @media (max-width:1100px)
 {
@@ -480,6 +504,11 @@ body {
         border-radius: 15px;
         cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
       }
+      .whatsapp img 
+      {
+        top: 80%;
+        width: 10%;
+      }
 
 }
 @media (max-width: 800px)
@@ -509,12 +538,21 @@ body {
         border-radius: 15px;
         cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
       }
+      .whatsapp img
+      {
+        top: 80%;
+        width: 10%;
+      }
       
 
 }
 
 @media (max-width:500px)
 {
+    .Introducao
+    {
+        top: 40%;
+    }
     .Equipamentos
     {
         top: 200vh;
@@ -544,6 +582,15 @@ body {
       {
         top: 1vh;
         margin-top: 0;
+      }
+      .whatsapp img 
+      {
+        top: 85%;
+        width: 10%;
+      }
+      .contact-info
+      {
+        font-size: x-small;
       }
 }
 @media (orientation: landscape) 
@@ -592,7 +639,8 @@ body {
     }
     .Equipamentos
     {
-        top: 120vh;
+        top: 140vh;
+        margin-bottom: 65%;
     }
     .Equipamentos ul {
         padding: 2px;
@@ -602,7 +650,12 @@ body {
         box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
         margin: 1%; /* Adiciona margem horizontal para espaçamento entre os itens */
         position: relative; /* Necessário para posicionar o modal corretamente */
-        height:40vh;
+        height:50vh;
+        max-height: 250px;
+    }
+    .Equipamentos ul img 
+    {
+        height: 100%;
     }
     .zoomed-overlay img {
         background-color: #ffffff;
@@ -613,7 +666,7 @@ body {
       }
       .whatsapp img 
       {
-          width: 15vh;
+          width: 10vh;
       }
   
 }
@@ -650,7 +703,7 @@ body {
       }
       .whatsapp img 
       {
-          width: 15vh;
+          width: 10vh;
       }
   
   
@@ -688,7 +741,7 @@ body {
       }
     .whatsapp img 
     {
-        width: 15vh;
+        width: 10vh;
     }
 
 
