@@ -307,6 +307,7 @@ body {
     position: relative;
     top: 20vh;
     padding: 50px;
+    margin-bottom: 15%;
 }
 .TextoResponsivo h1
 {
@@ -411,44 +412,50 @@ body > *:not(.Contatos) {
 }
 .whatsapp img
 {
-    display: none;
-    right: 5%;
-    top: 90%;
+    display: flex;
+    right: 2%;
+    top: 80%;
     position: fixed;
-    width: 10%;
-    z-index: 11;
+    width: 4%;
+    z-index: 101;
+}
+.contato-fixo {
+    background-color: #000000; /* Cor de fundo */
+    position: fixed; /* Fixa o header na tela */
+    left: 0; /* Alinha à esquerda */
+    bottom: 0; /* Coloca o header na parte inferior */
+    width: 100%; /* Largura total da tela */
+    height: 8vh; /* Altura do header */
+    z-index: 1000; /* Garante que o header fique acima de outros conteúdos */
+    display: flex; /* Usado para o alinhamento do conteúdo */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    color: #fff; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+
+.contact-info {
+    padding: 0; /* Remove o padding */
+    margin: 0 10px; /* Espaço entre as listas */
+    display: flex; /* Usa flexbox para alinhar os itens da lista */
+    align-items: center; /* Alinha os itens ao centro verticalmente */
+    justify-content: center; /* Alinha os itens ao centro horizontalmente */
 }
 @media (max-width: 1200px)
 {
     .TextoResponsivo
     {
         width: 80%;
+        margin-bottom: 25vh;
     }
 
     #curriculum-header {
         display: none; /* Esconde o cabeçalho "Trabalhe Conosco" */
     }
-    .Contatos ul a
-    {
-        display: none;
-    }
-    .Contatos ul h2
-    {
-        text-align: justify;
-        display: flex;
-        justify-content: space-between; /* Alinha o texto nas pontas */
-        padding: 10%; /* Espaçamento interno */
-        border-radius: 5px; /* Bordas arredondadas, se desejado */
-    }
-    .Contatos ul h4
-    {
-        width: 80vw;
-        text-align: justify;
-    }
-    
     .whatsapp img
     {
-        display: flex;
+        width: 5%;
     }
     #desktop-menu 
     {
@@ -501,5 +508,89 @@ body > *:not(.Contatos) {
     .Contatos
     {
         margin-top: 10px; /* Ajusta a margem do Contatos */
+    }
+}
+@media (max-width: 1100px) {
+    .contact-info
+    {
+        font-size:  x-large;
+    }
+    .whatsapp img
+    {
+        width: 10%;
+    }
+    
+}
+@media (max-width: 700px)
+{
+    .TextoResponsivo
+    {
+        margin-bottom: 40vh;
+    }
+    .contact-info
+    {
+        font-size:  small;
+    }
+    .whatsapp img
+    {
+        width: 10%;
+    }
+}
+@media (max-width:500px) {
+    .TextoResponsivo
+    {
+        margin-bottom: 40vh;
+    }
+    .contact-info
+    {
+        font-size:  small;
+    }
+    .whatsapp img
+    {
+        top: 85vh;
+        width: 10%;
+    }
+    
+}
+@media (max-width:370px) {
+
+    .TextoResponsivo
+    {
+        margin-bottom: 40vh;
+    }
+    .contact-info
+    {
+        font-size:  x-small;
+    }
+    .whatsapp img
+    {
+        top: 80vh;
+        width: 15%;
+    }
+}
+@media only screen and (orientation: landscape) and (max-width: 1400px)
+{
+    .TextoResponsivo
+    {
+        margin-bottom: 40%;
+    }
+    .whatsapp img
+    {
+        top: 75%;
+        width: 7%;
+    }
+}
+
+
+@media only screen and (orientation: landscape) and (max-width: 700px) 
+{
+    .TextoResponsivo
+    {
+        margin-bottom: 40%;
+    }
+    .whatsapp img
+    {
+        top: 75%;
+        width: 9%;
     }
 }
