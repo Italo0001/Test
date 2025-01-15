@@ -688,10 +688,9 @@ body {
     justify-content: center; /* Opcional: alinha horizontalmente ao centro */ 
 }
 .image-item h3 {
-    top: 100%;
+    top: 110%;
     position: relative; /* Posiciona o texto sobre a imagem */
     color: rgb(251, 255, 0);
-    font-size: 40%;
     z-index: 11;
     width:70%;
     font-weight: bold;
@@ -1020,6 +1019,10 @@ select:focus
     {
         top: 80vh;
     }
+    .whatsapp img 
+    {
+        width: 10%;
+    }
 
 }
 
@@ -1029,7 +1032,7 @@ select:focus
 {
     .whatsapp img 
     {
-        width: 15%;
+        width: 10%;
     }
 
     #curriculum-header {
@@ -2101,6 +2104,10 @@ select:focus
 }
 @media (max-width:500px)
 {  
+    .whatsapp img 
+    {
+        width: 15%;
+    }
     .btn-overlay
     {
         line-height: 1.5; /* Ajuste a altura da linha se necessário */
@@ -2382,6 +2389,10 @@ select:focus
     .slide-content h2 
     {
         top: 0;
+    }
+    .contact-info
+    {
+        font-size: small;
     }
     
 }
@@ -2683,7 +2694,8 @@ select:focus
 
 }
 @media (max-width:380px)
-{   #open-menu
+{   
+     #open-menu
     {
         left: 85%;
     }
@@ -2981,6 +2993,10 @@ select:focus
 }
 @media (max-width:350px)
 {
+    .contact-info
+    {
+        font-size: x-small;
+    }
     .container
     {
         top: 60vh;
@@ -3018,6 +3034,14 @@ select:focus
         height: 50px;
         font-size: 25px;
         font-weight: bold; 
+    }
+    .clientes
+    {
+        top: 80vh;
+    }
+    .clientes ul h3 
+    {
+        font-size: small;
     }
     
 }
@@ -3199,17 +3223,17 @@ select:focus
 .image-item h3
 {
     width: 70%;
-    top: 100%;
+    top: 110%;
     color: #ffffff;
 }
 .image-item a 
 {
-
     color: #fff;
     background-color: transparent ;
-    top: -50%;
+    top: -65%;
     opacity: 1;
     width: 100%;
+    font-size: large;
 }
 .clientes
 {
@@ -3227,6 +3251,7 @@ select:focus
     }
     .image-item a 
     {
+        top: 15%;
         background-color: transparent;
         width: 75%;
         height: 15%;
