@@ -1024,8 +1024,13 @@ select:focus
 }
 
 
+
 @media only screen and (orientation: portrait) and (max-width: 1000px)
 {
+    .whatsapp img 
+    {
+        width: 15%;
+    }
 
     #curriculum-header {
         display: none; /* Esconde o cabeçalho "Trabalhe Conosco" */
@@ -1264,9 +1269,11 @@ select:focus
     {
         top: 0vh;
     }
+
 }
 @media  (orientation: portrait) , (max-width:900px)
 {
+
     .container {
         width: 100%; /* Largura da viewport */
         height: 80vh; /* Altura da viewport */
@@ -3405,7 +3412,7 @@ select:focus
         }
         .whatsapp img   
         {
-            top: 85%;
+            top: 80%;
             width: 5%;
         }
         .image-item h3 
@@ -3553,10 +3560,7 @@ select:focus
         width: 80vw;
         text-align: center;
     }
-    .whatsapp img 
-    {
-        width:10vh;
-    }
+
     .endereço
     {
         top: 300vh;
@@ -3682,10 +3686,7 @@ select:focus
     {
         top: 220vh;
     }
-    .whatsapp img 
-    {
-        width:10vh;
-    }
+
     .image-item h3 
     {
         color: white;
