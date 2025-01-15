@@ -6,17 +6,18 @@ html
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.4);  /* Cor preta com opacidade */
     background-blend-mode: overlay; /* Faz a imagem de fundo misturar com a cor */
+    scroll-behavior: smooth;
 
 }
 body {
-    font-family: 'Montserrat', sans-serif;  }
+    font-family: 'Open Sans', sans-serif;  }
 
 /* Outros exemplos de aplicação */
 h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;  }
+    font-family: 'Open Sans', sans-serif;  }
 
 p {
-    font-family: 'Montserrat', sans-serif;  }
+    font-family: 'Open Sans', sans-serif;  }
 
 body {
     box-sizing: border-box;
