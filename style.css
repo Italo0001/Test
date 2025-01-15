@@ -365,7 +365,6 @@ body {
 
 
 
-/* Contatos fim */
 #customers
 {
     scroll-margin-top: 8vh; /* Ajuste conforme a altura do seu rodapé */
@@ -897,15 +896,7 @@ body {
     color: white;
     cursor: pointer;
 }
-.whatsapp img
-{
-    display: flex;
-    right: 2%;
-    top: 80%;
-    position: fixed;
-    width: 4%;
-    z-index: 101;
-}
+
 select
 {
     font-family: 'Montserrat', sans-serif;    
@@ -920,7 +911,15 @@ select:focus
     outline: none;
 }
 /* Ajustes para o select na versão mobile */
-
+.whatsapp img
+{
+    display: flex;
+    right: 2%;
+    top: 80%;
+    position: fixed;
+    width: 4%;
+    z-index: 101;
+}
 @media (max-width:1400px)
 {
 
@@ -1010,7 +1009,11 @@ select:focus
     {
         margin-bottom: 0;
     }
-
+  
+    .endereço
+    {
+        margin-bottom: 110vh;
+    }
 
 }
 @media only screen and (orientation: portrait) and (max-width: 1100px)
@@ -1023,7 +1026,7 @@ select:focus
     {
         width: 10%;
     }
-
+   
 }
 
 
@@ -3256,7 +3259,7 @@ select:focus
     }
     .image-item a 
     {
-        top: 15%;
+        top: -50%;
         background-color: transparent;
         width: 75%;
         height: 15%;
@@ -3357,7 +3360,7 @@ select:focus
             align-items: center; /* Centraliza verticalmente o conteúdo */
             justify-content: center; /* Centraliza horizontalmente o conteúdo */
             font-size: medium;
-            background-color: #e6a800;
+            background-color: transparent;
         }
         .image-item img 
         {
@@ -3400,9 +3403,10 @@ select:focus
             border-top-left-radius: 0;
             border-top-right-radius: 0;
             opacity: 1;
-            background-color: #e6a800;
+            background-color: transparent;
             border-radius: 15px;
             width: 50%;
+            font-size: medium;
         }
         .image-item:hover h3
         {
@@ -3442,6 +3446,7 @@ select:focus
         }
         .whatsapp img   
         {
+            display: flex;
             top: 80%;
             width: 5%;
         }
@@ -3454,6 +3459,8 @@ select:focus
         {
             font-size: xx-large;
         }
+  
+        
 }
 @media only screen and (orientation: landscape) and (max-width: 1000px)
 {
@@ -3478,7 +3485,7 @@ select:focus
     }
     .servico ul a
     {
-        top: -65vh;
+        top: -50vh;
         left: -50%;
         width: 100%;
         font-size: medium;
@@ -3555,10 +3562,8 @@ select:focus
     {
         top: 260vh;
     }
-    .endereço
-    {
-        top: 240vh;
-    }
+
+    
     .Contatos
     {
         top: 280vh;
@@ -3594,6 +3599,9 @@ select:focus
     .endereço
     {
         top: 300vh;
+        margin-bottom: 130%;
+
+
     }
     .image-item a
     {   background-color: transparent;
@@ -3626,6 +3634,7 @@ select:focus
         top: 0;
         left: 93%;
     }
+ 
 }
 @media only screen and (orientation: landscape) and (max-width: 900px)
 {
@@ -3648,9 +3657,13 @@ select:focus
         font-size: medium ;
         top: 140vh;
     }
+    .servico ul 
+    {
+        margin-top:5% ;
+    }
     .servico ul a
     {
-        top: -35vh;
+        top: -20vh;
         left: -50%;
         width: 100%;
         font-size: medium;
@@ -3711,6 +3724,7 @@ select:focus
     .endereço
     {
         top: 240vh;
+        margin-bottom: 100%;
     }
     .Contatos
     {
@@ -3796,7 +3810,8 @@ select:focus
     
     .servico
     {
-        top: 150vh;
+        top: 100vh;
+
     }
     .toggle-btn
     {
@@ -3812,14 +3827,13 @@ select:focus
     {
         left: 55%;
     } 
-    .servico
+    .servico ul
     {
-        font-size: large ;
-   
+        margin-top: 5%;
     }
     .servico ul a
     {
-        top: -25vh;
+        top: -10vh;
         left: -50%;
         width: 100%;
         font-size: medium;
@@ -3835,7 +3849,7 @@ select:focus
     {
         filter: brightness(50%); /* Escurece a imagem para 50% do brilho original */
     }
-    .servico ul h3
+    .servico ul h4
     {
         font-size: small;
     }
@@ -3896,6 +3910,7 @@ select:focus
     .endereço
     {
         top: 220vh;
+        margin-bottom: 200vh;
     }
     .Contatos
     {
