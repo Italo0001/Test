@@ -6,19 +6,20 @@ html
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.4);  /* Cor preta com opacidade */
     background-blend-mode: overlay; /* Faz a imagem de fundo misturar com a cor */
+    scroll-behavior: smooth;
 }
 body {
-    font-family: 'Raleway', sans-serif; /* Aplica Raleway ao corpo todo */
+    font-family: 'Open Sans', sans-serif; /* Aplica Open Sans ao corpo todo */
     
 }
 
 /* Outros exemplos de aplicação */
 h1, h2, h3 {
-    font-family: 'Raleway', sans-serif; /* Aplica Raleway aos cabeçalhos */
+    font-family: 'Open Sans', sans-serif; /* Aplica Open Sans aos cabeçalhos */
 }
 
 p {
-    font-family: 'Raleway', sans-serif; /* Aplica Raleway aos parágrafos */
+    font-family: 'Open Sans', sans-serif; /* Aplica Open Sans aos parágrafos */
 }
 
 body {
@@ -32,7 +33,6 @@ body {
     overflow-y: auto; /* Permite a rolagem se necessário */
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth;
     color: white;
 }
 .logo
@@ -88,8 +88,6 @@ body {
     font-size: medium;
 }
 .Equipamentos {
-
- 
     display: flex; /* Define o layout como flexbox */
     flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte se necessário */
     align-items: center; /* Centraliza horizontalmente */
@@ -104,6 +102,7 @@ body {
     text-align: center;
     z-index: 11;
     background-color: transparent;
+    margin-bottom: 10%;
   }
 
 
@@ -129,7 +128,7 @@ body {
   .Equipamentos ul.impa
   {
   
-      margin-top: 4%; /* Distância maior para as uls com a classe impa */
+     margin-top: 4%; /* Distância maior para as uls com a classe impa */
   }
   .Equipamentos ul h3 {
     font-size: medium;
@@ -180,10 +179,10 @@ body {
   
 .Contatos {
     top: 160vh;
-    display: flex; /* Usa flexbox para o alinhamento do conteúdo */
-    flex-direction: column; /* Alinha os itens em coluna (verticalmente) */
-    justify-content: center; /* Centraliza verticalmente o conteúdo dentro do container */
-    align-items: center; /* Centraliza horizontalmente o conteúdo dentro do container */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
     position: relative; /* Fixa o elemento no viewport */
     bottom: 0; /* Posiciona o elemento na parte inferior da página */
     left: 50%; /* Move o elemento para o meio horizontalmente */
@@ -372,18 +371,42 @@ body {
 
 .whatsapp img
 {
-    display: none;
+    display: flex;
     right: 5%;
-    top: 90%;
+    top: 80%;
     position: fixed;
-    width: 15%;
+    width: 5%;
     z-index: 11;
+}
+
+.contato-fixo {
+    background-color: #000000; /* Cor de fundo */
+    position: fixed; /* Fixa o header na tela */
+    left: 0; /* Alinha à esquerda */
+    bottom: 0; /* Coloca o header na parte inferior */
+    width: 100%; /* Largura total da tela */
+    height: 8vh; /* Altura do header */
+    z-index: 1000; /* Garante que o header fique acima de outros conteúdos */
+    display: flex; /* Usado para o alinhamento do conteúdo */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    color: #fff; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+
+.contact-info {
+    padding: 0; /* Remove o padding */
+    margin: 0 10px; /* Espaço entre as listas */
+    display: flex; /* Usa flexbox para alinhar os itens da lista */
+    align-items: center; /* Alinha os itens ao centro verticalmente */
+    justify-content: center; /* Alinha os itens ao centro horizontalmente */
 }
 @media (max-width:1100px)
 {
     h1,h2,h3,h4
     {
-        font-family: 'Raleway', sans-serif; /* Usando a fonte Raleway */
+        font-family: 'Open Sans', sans-serif; /* Usando a fonte Open Sans */
     }
 
     .Equipamentos ul img:hover
@@ -498,6 +521,7 @@ body {
     .Equipamentos
     {
         top: 80vh;
+        margin-bottom: 25%;
     }
 
     .Equipamentos ul
@@ -508,6 +532,10 @@ body {
     {
         top: 230vh;
     }
+    .whatsapp img 
+    {
+        width: 10%;
+    }
 
 }
 
@@ -517,6 +545,7 @@ body {
     {
         top: 160vh;
         max-width: 450px;
+        margin-bottom: 45%;
 
     }
     .Equipamentos ul {
@@ -544,19 +573,39 @@ body {
         max-width: 300px;
         height: 80%;
     }
-    .Contatos
-    {
-        top: 460vh;
-    }
+
     .open-btn
     {
         top: 3px;
         align-items: center; /* Centraliza horizontalmente */
         justify-content: center; /* Centraliza verticalmente */
     }
+    .contact-info
+    {
+        font-size: small;
+    }
+    .whatsapp img
+    {
+        width: 15%;
+    } 
 
 }
-
+@media (max-width:400px)
+{
+    .Equipamentos
+    {
+        margin-bottom: 80%;
+    }
+    .Equipamentos ul img
+    {
+        width: 100%;
+        height: 100%;
+    }
+    .contact-info
+    {
+        font-size: x-small;
+    }
+}
 @media only screen and (orientation: landscape) and (max-width:1200px)
 {
     .logo
@@ -603,8 +652,8 @@ body {
     .whatsapp img
     {
         display: flex;
-        top: 80%;
-        width: 15vh;
+        top: 75%;
+        width: 10%;
     }
     .Contatos a
     {
@@ -656,7 +705,7 @@ body {
     }
     .whatsapp img
     {
-        top: 80%;
+        top: 75%;
         width: 15vh;
     }
 
