@@ -87,7 +87,7 @@ body {
     justify-content: center; /* Centraliza os itens horizontalmente */
     align-items: flex-start; /* Alinha os itens no topo */
     position: relative;
-    top: 120vh; /* Ajuste conforme necessário */
+    top: 90vh; /* Ajuste conforme necessário */
     left: 50%;
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
     width: 100%; /* Ajusta a largura conforme necessário */
@@ -95,6 +95,7 @@ body {
     text-align: center;
     z-index: 11;
     color: #000000;
+    margin-bottom: 40%;
   }
 
 
@@ -138,7 +139,11 @@ body {
     width: 80%;
 
   }
-
+  .Equipamentos ul.impa
+  {
+  
+      margin-top: 4%; /* Distância maior para as uls com a classe impa */
+  }
 
   .zoomed-overlay {
     position: fixed;
@@ -211,6 +216,29 @@ body {
     background-color: rgb(59, 59, 59); /* Cor de fundo ao passar o mouse */
 }
 
+.contato-fixo {
+    background-color: #000000; /* Cor de fundo */
+    position: fixed; /* Fixa o header na tela */
+    left: 0; /* Alinha à esquerda */
+    bottom: 0; /* Coloca o header na parte inferior */
+    width: 100%; /* Largura total da tela */
+    height: 8vh; /* Altura do header */
+    z-index: 1000; /* Garante que o header fique acima de outros conteúdos */
+    display: flex; /* Usado para o alinhamento do conteúdo */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    color: #fff; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+
+.contact-info {
+    padding: 0; /* Remove o padding */
+    margin: 0 10px; /* Espaço entre as listas */
+    display: flex; /* Usa flexbox para alinhar os itens da lista */
+    align-items: center; /* Alinha os itens ao centro verticalmente */
+    justify-content: center; /* Alinha os itens ao centro horizontalmente */
+}
 /* Menu de desktop */
 #desktop-menu {
     position: fixed;
@@ -354,18 +382,18 @@ body {
 }
 .whatsapp img
 {
-    display: none;
+    display: flex;
     right: 5%;
-    top: 90%;
+    top: 80%;
     position: fixed;
-    width: 15%;
+    width: 5%;
     z-index: 11;
 }
 @media (max-width:1100px)
 {
     .Equipamentos ul img:hover
     {
-        width: 80%;
+        width: 90%;
     } 
     .whatsapp img 
     {
@@ -429,23 +457,15 @@ body {
         font-size: 3vw; /* Ajusta o tamanho da fonte com base na largura da viewport */
         margin: 0;
     }
+    .contact-info
+    {
+        font-size: larger;
+    }
 }
 /* Media Queries para diferentes tamanhos de tela */
-@media only screen and (orientation: portrait) and (max-width:1100px) 
-{
-    
 
-}
-@media only screen and (orientation: portrait) and (max-width: 1000px)
-{
-
-}
 @media  (orientation: portrait) , (max-width:900px)
 {
-    .Equipamentos ul img 
-    {
-        border-radius: 15px;
-    }
     .logo
     {
         height: 100%;
@@ -453,8 +473,10 @@ body {
     .Equipamentos
     {
         top: 120vh;
+        margin-bottom: 80vh;
     }
-    .Equipamentos ul {
+    .Equipamentos ul
+    {
         margin-top: 2%;
         background-color: #ffffff;
         border-top-left-radius: 15px;
@@ -464,6 +486,7 @@ body {
         transition: transform 0.3s ease; /* Transição suave para o efeito de zoom */
         cursor: pointer; /* Adiciona um cursor de ponteiro para indicar que é clicável */
         height: 50vh;
+
     }
     .zoomed-overlay img {
         background-color: #ffffff;
@@ -471,18 +494,19 @@ body {
         border-radius: 15px;
         cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
       }
-      .Contatos
-      {
-        top: 80vh;
-      }
+    .whatsapp img 
+    {
+        top: 75%;
+        width: 10%;
+    }
+    .contact-info
+    {
+        font-size: large;
+    }
+
 }
 @media (max-width: 800px)
 {
-    .Equipamentos ul img 
-    {
-        border-radius: 15px;
-        width: 80%;
-    }
     .logo
     {
         height: 100%;
@@ -490,6 +514,7 @@ body {
     .Equipamentos
     {
         top: 130vh;
+        margin-bottom: 100vh;
     }
     .Equipamentos ul {
         margin-top: 2%;
@@ -501,6 +526,7 @@ body {
         transition: transform 0.3s ease; /* Transição suave para o efeito de zoom */
         cursor: pointer; /* Adiciona um cursor de ponteiro para indicar que é clicável */
         height: 50vh;
+
     }
     .zoomed-overlay img {
         background-color: #ffffff;
@@ -508,12 +534,11 @@ body {
         border-radius: 15px;
         cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
       }
-      .Contatos
+      .whatsapp img
       {
-          top: 80vh;
+        width: 10%;
       }
       
-         
 
 }
 
@@ -521,12 +546,8 @@ body {
 {
     .Equipamentos
     {
-        top: 290vh;
-    }
-    .Equipamentos ul img 
-    {
-        border-radius: 15px;
-        width: 80%;
+        top: 280vh;
+        margin-bottom: 180vh;
     }
     .Equipamentos ul {
         padding: 2px;
@@ -537,6 +558,7 @@ body {
         margin: 5%; /* Adiciona margem horizontal para espaçamento entre os itens */
         position: relative; /* Necessário para posicionar o modal corretamente */
         height: 60vh;
+
     }
     .zoomed-overlay img {
         background-color: #ffffff;
@@ -544,17 +566,35 @@ body {
         border-radius: 15px;
         cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
       }
-    .Contatos
-    {
-        top: 160vh;
-    }
-      
-
-}
-@media (orientation: landscape) 
+      .open-btn
+      {
+          top: 3px;
+          align-items: center; /* Centraliza horizontalmente */
+          justify-content: center; /* Centraliza verticalmente */
+      }
+      .whatsapp img
+      {
+        width: 15%;
+      }
+      .contact-info
+      {
+        font-size: x-small;
+      }
+      @media (max-width:400px)
 {
- 
-    
+    .Equipamentos
+    {
+        top: 330vh;
+        margin-bottom: 250vh;
+    }
+}
+}
+@media only screen and (orientation: landscape) and (max-width:1300px)
+{
+.Equipamentos
+{
+    top: 120vh;
+}
 }
 @media only screen and (orientation: landscape) and (max-width:1200px)
 {
@@ -564,7 +604,9 @@ body {
     }
     .Equipamentos
     {
-        top: 140vh;
+        top: 130vh;
+        margin-bottom: 110vh;
+
     }
     .Equipamentos ul {
         padding: 2px;
@@ -575,6 +617,7 @@ body {
         margin: 1%; /* Adiciona margem horizontal para espaçamento entre os itens */
         position: relative; /* Necessário para posicionar o modal corretamente */
         height:40vh;
+
     }
     .zoomed-overlay img {
         background-color: #ffffff;
@@ -582,10 +625,6 @@ body {
         height: 80%;
         border-radius: 15px;
         cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
-      }
-      .whatsapp img 
-      {
-        width: 15vh;
       }
 }
 @media only screen and (orientation: landscape) and (max-width:1100px)
@@ -596,11 +635,9 @@ body {
     }
     .Equipamentos
     {
-        top: 200vh;
-    }
-    .Equipamentos ul img
-    {
-        border-radius: 15px;
+        top: 170vh;
+        margin-bottom: 110vh;
+
     }
     .Equipamentos ul {
         padding: 2px;
@@ -610,45 +647,11 @@ body {
         box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
         margin: 1%; /* Adiciona margem horizontal para espaçamento entre os itens */
         position: relative; /* Necessário para posicionar o modal corretamente */
-        height: 80vh;
-    }
-    .zoomed-overlay img {
-        background-color: #ffffff;
-        width: auto;
-        height: 80%;
-        border-radius: 15px;
-        cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
-      }
-    .Contatos
-    {
-        top: 120vh;
-    }
-    .whatsapp img 
-    {
-      width: 15vh;
-    }
-}
-@media only screen and (orientation: landscape) and (max-width: 900px)
-{
-    .logo
-    {
-        height: 100%;
-    }
-    .Equipamentos
-    {
-        top: 210vh;
+        height: 70vh;
+        max-height: 400px;
+
     }
 
-    .Equipamentos ul {
-        padding: 2px;
-        padding: 0; /* Remove o preenchimento interno da lista */
-        list-style-type: none; /* Remove os marcadores padrão */
-        width: 25%; /* Ajusta a largura dos itens conforme necessário */
-        box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
-        margin: 1%; /* Adiciona margem horizontal para espaçamento entre os itens */
-        position: relative; /* Necessário para posicionar o modal corretamente */
-        height: 80vh;
-    }
     .zoomed-overlay img {
         background-color: #ffffff;
         width: auto;
@@ -656,15 +659,32 @@ body {
         border-radius: 15px;
         cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
       }
-    .Contatos
+      .whatsapp img 
+      {
+        width: 5%;
+      }
+
+  
+}
+@media only screen and (orientation: landscape) and (max-width:1000px)
+{
+    .Equipamentos
     {
-        top: 170vh;
-    }
-    .whatsapp img 
-    {
-      width: 15vh;
+        top: 215vh;
+        margin-bottom: 180vh;
+
     }
 }
+@media only screen and (orientation: landscape) and (max-width:900px)
+{
+    .Equipamentos
+    {
+        top: 255vh;
+        margin-bottom: 180vh;
+
+    }
+}
+
 @media only screen and (orientation: landscape) and (max-width: 800px) 
 {
     .logo
@@ -673,7 +693,8 @@ body {
     }
     .Equipamentos
     {
-        top: 210vh;
+        top: 280vh;
+        margin-bottom: 260vh;
     }
     .Equipamentos ul {
         padding: 2px;
@@ -692,12 +713,10 @@ body {
         border-radius: 15px;
         cursor: pointer; /* Cursor de ponteiro para o botão de fechar */
       }
-      .Contatos
-      {
-        top: 160vh;
-      }
       .whatsapp img 
       {
-        width: 15vh;
+        width: 5%;
       }
+
+
 }
