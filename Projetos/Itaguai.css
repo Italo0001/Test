@@ -312,13 +312,36 @@ body {
     color: white;
     cursor: pointer;
 }
+.contato-fixo {
+    background-color: #000000; /* Cor de fundo */
+    position: fixed; /* Fixa o header na tela */
+    left: 0; /* Alinha à esquerda */
+    bottom: 0; /* Coloca o header na parte inferior */
+    width: 100%; /* Largura total da tela */
+    height: 8vh; /* Altura do header */
+    z-index: 1000; /* Garante que o header fique acima de outros conteúdos */
+    display: flex; /* Usado para o alinhamento do conteúdo */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    color: #fff; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+
+.contact-info {
+    padding: 0; /* Remove o padding */
+    margin: 0 10px; /* Espaço entre as listas */
+    display: flex; /* Usa flexbox para alinhar os itens da lista */
+    align-items: center; /* Alinha os itens ao centro verticalmente */
+    justify-content: center; /* Alinha os itens ao centro horizontalmente */
+}
 .whatsapp img
 {
-    display: none;
+    display: flex;
     right: 5%;
-    top: 90%;
+    top: 80%;
     position: fixed;
-    width: 15%;
+    width: 5%;
     z-index: 11;
 }
 @media (max-width: 1200px)
@@ -393,7 +416,14 @@ body {
         margin-top: -40vh;
         border-radius: 15px;
     }
- 
+    .whatsapp img 
+    {
+        width: 10%;
+    }
+    .contact-info
+    {
+        font-size: x-large;
+    }
 
 }
 
@@ -421,7 +451,14 @@ body {
         margin-top: -40vh;
         
     }
-
+    .whatsapp img 
+    {
+        width: 10%;
+    }
+    .contact-info
+    {
+        font-size: large;
+    }
 }
 @media (max-width: 600px)
 {
@@ -480,6 +517,14 @@ body {
         border-radius: 15px;
         margin-top: -40vh;
     }
+    .whatsapp img 
+    {
+        width: 15%;
+    } 
+    .contact-info
+    {
+        font-size: small;
+    }
 
 }
 @media (max-width:400px)
@@ -519,6 +564,14 @@ body {
     {
         top: 3px;
     }  
+    .whatsapp img 
+    {
+        width: 15%;
+    }
+    .contact-info
+    {
+        font-size: x-small;
+    }
 }
 
 
@@ -597,7 +650,7 @@ body {
     .ObraItaguai
     {
         width: 80vw;    
-        margin-top: 850px;
+        margin-top: 800px;
     }
     .whatsapp img 
     {
