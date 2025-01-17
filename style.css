@@ -3215,23 +3215,15 @@ select:focus
 }
 .servico ul a
 {
-    background-color: transparent;
-    color: #fff;
-    opacity: 1;
-    top: -25vh;    
-    height: 25vh;
-    width: 100%;
-    left: -50%;
+ height: 40px;
+ top: -15vh;
 
 }
-.servico ul a:hover
-{
-    background-color: transparent;
-}
+
 .image-item h3
 {
     width: 70%;
-    top: 110%;
+    top: 240px;
     color: #ffffff;
 }
 .image-item a 
@@ -3242,12 +3234,18 @@ select:focus
     opacity: 1;
     width: 100%;
     font-size: large;
+    height: 25px;
 }
+
+
 .clientes
 {
     margin-top: 80vh;
 }
-
+.servico ul .servicopar
+{
+    margin-bottom: 2.5vh;
+}
 
 
 }
