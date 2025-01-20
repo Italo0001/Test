@@ -236,6 +236,7 @@ h3
     border-radius: 5px;
     transition: all 0.5s ease;
     cursor: pointer;
+    margin-bottom: 100px;
 }
 
 .download:hover {
@@ -294,6 +295,39 @@ h3
 .Contatos ul a:hover {
     background-color: rgb(59, 59, 59); /* Cor de fundo ao passar o mouse */
 }
+
+.contato-fixo {
+    background-color: #000000; /* Cor de fundo */
+    position: fixed; /* Fixa o header na tela */
+    left: 0; /* Alinha à esquerda */
+    bottom: 0; /* Coloca o header na parte inferior */
+    width: 100%; /* Largura total da tela */
+    height: 8vh; /* Altura do header */
+    z-index: 1000; /* Garante que o header fique acima de outros conteúdos */
+    display: flex; /* Usado para o alinhamento do conteúdo */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    color: #fff; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+
+.contact-info {
+    padding: 0; /* Remove o padding */
+    margin: 0 10px; /* Espaço entre as listas */
+    display: flex; /* Usa flexbox para alinhar os itens da lista */
+    align-items: center; /* Alinha os itens ao centro verticalmente */
+    justify-content: center; /* Alinha os itens ao centro horizontalmente */
+}
+.whatsapp img
+{
+    display: flex;
+    right: 5%;
+    top: 80%;
+    position: fixed;
+    width: 5%;
+    z-index: 11;
+}
 @media  (max-width: 1400px) {
 
     .Titulo
@@ -346,28 +380,66 @@ h3
     width: 35vw;
     left: 25%; 
 }
-@media  (max-width: 1100px) 
-{
-    .Contatos ul a 
+}
+@media (max-width:1200px) {
+    .whatsapp img 
     {
-        display: none;
+        width: 10%;
     }
-    #curriculum-header
+    .contact-info
     {
-        display: none;
+        font-size: x-large;
     }
-    .Contatos ul h2 
+    .download
     {
-        text-align: justify;
-        display: flex;
-        justify-content: space-between; /* Alinha o texto nas pontas */
-        padding: 10%; /* Espaçamento interno */
-    }
-    .Contatos ul h4
-    {
-        font-size: medium;
-        width: 80vw;
-        text-align: justify;
+        left: 30%;
     }
 }
+@media (max-width:900px)
+{
+ 
+    .whatsapp img 
+    {
+        width: 10%;
+    }
+    .contact-info
+    {
+        font-size: large;
+    }
+}
+@media (max-width:500px)
+{
+    .whatsapp img 
+    {
+        width: 15%;
+    } 
+    .contact-info
+    {
+        font-size: small;
+    }  
+}
+@media (max-width: 400px) {
+   
+    .whatsapp img 
+    {
+        width: 15%;
+    }
+    .contact-info
+    {
+        font-size: x-small;
+    }
+    
+}
+@media only screen and (orientation: landscape) and (max-width:1400px){
+.download
+{
+    left: 35%;
+}
+}
+@media only screen and (orientation: landscape) and (max-width:1100px){
+
+    .whatsapp img 
+    {
+      width: 10vh;
+    }
 }
