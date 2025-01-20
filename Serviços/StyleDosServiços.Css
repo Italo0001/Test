@@ -87,7 +87,7 @@ body {
     justify-content: center; /* Centraliza os itens horizontalmente */
     align-items: flex-start; /* Alinha os itens no topo */
     position: relative;
-    top: 120vh; /* Ajuste conforme necessário */
+    top: 125vh; /* Ajuste conforme necessário */
     left: 50%;
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
     width: 100%; /* Ajusta a largura conforme necessário */
@@ -95,6 +95,8 @@ body {
     text-align: center;
     z-index: 11;
     margin-bottom: 25%;
+    box-sizing: border-box;
+    border-radius: 15px;
   }
  
 
@@ -117,11 +119,9 @@ body {
     background-color: rgb(255, 255, 255);
     color: #000000;
   }
-  .Equipamentos ul .equipamentopar 
-  {
-    top: 4vh;
-  }
-
+  .Equipamentos ul.equipamentopar {
+    margin-top: 4%; /* Aplica o deslocamento de 4vh para as uls com a classe "equipamentopar" */
+}
   .Equipamentos ul h3 {
     font-size: medium;
   }
@@ -390,6 +390,10 @@ body {
 }
 @media (max-width:1100px)
 {
+    .Equipamentos ul.equipamentopar
+    {
+        margin-top: 0;
+    }
     .Equipamentos ul img:hover
     {
         width: 90%;
