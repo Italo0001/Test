@@ -383,7 +383,7 @@ body {
     text-align: center;
     z-index: 11; /* Garante que o texto fique sobre outros conteúdos */
     height: auto;
-    min-height: 400px;
+    min-height: 450px;
     display: flex;
     flex-direction: column;   /* Coloca os itens na vertical */
     justify-content: center;  /* Centraliza verticalmente */
@@ -962,10 +962,15 @@ select:focus
     {
         display: none;
     }
+    .servico ul .servicopar
 
+    {
+        margin-bottom: 0;
+    }
 }
 @media (max-width:1100px)
 {
+    .
     .whatsapp img 
     {
         display: flex;
@@ -1768,7 +1773,7 @@ select:focus
     }
     .clientes
     {
-        top: 95vh;
+        top: 105vh;
     }
     .btn 
     {
@@ -2215,7 +2220,7 @@ select:focus
     }
     .clientes
     {
-        top: 70vh;
+        top: 95vh;
     }
     .clientes div ul
     {
@@ -2504,7 +2509,7 @@ select:focus
     .clientes
     {
         width: 100vw;
-        top: 80vh;
+        top: 95vh;
     }
     .clientes div ul
     {
@@ -2800,7 +2805,7 @@ select:focus
     .clientes
     {
         width: 100vw;
-        top: 80vh;
+        top: 105vh;
     }
     .clientes div ul
     {
@@ -3045,7 +3050,7 @@ select:focus
     }
     .clientes
     {
-        top: 80vh;
+        top: 85vh;
     }
     .clientes ul h3 
     {
