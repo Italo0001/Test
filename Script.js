@@ -16,6 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
       menuBurguer.classList.remove('show');
       body.classList.remove('menu-open'); // Remove a classe do body para restaurar a opacidade do conteúdo
   });
+  
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+gtag('config', 'G-4LEVGBSNSX');
 
   // Controle da rotação do botão
   let isAdditionalContentVisible = false;
