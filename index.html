@@ -14,18 +14,24 @@
 <!--      -->
 <script>
   (function() {
+    // Criando um novo elemento <script>
     var script = document.createElement('script');
+    // Definindo a URL do script externo
     script.src = 'https://www.googletagmanager.com/gtag/js?id=G-4LEVGBSNSX';
+    // Tornando o script assíncrono para não bloquear o carregamento da página
     script.async = true;
+    // Definindo uma função para rodar após o script ser carregado
     script.onload = function() {
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
       gtag('config', 'G-4LEVGBSNSX');
     };
+    // Adicionando o script ao <head> do documento
     document.head.appendChild(script);
   })();
 </script>
+
 
 
 
