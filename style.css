@@ -967,10 +967,11 @@ select:focus
     {
         margin-bottom: 0;
     }
+   
 }
 @media (max-width:1100px)
 {
-    .
+ 
     .whatsapp img 
     {
         display: flex;
@@ -1019,7 +1020,8 @@ select:focus
     {
         margin-bottom: 110vh;
     }
-
+   
+  
 }
 @media only screen and (orientation: portrait) and (max-width: 1100px)
 {
@@ -1031,9 +1033,21 @@ select:focus
     {
         width: 10%;
     }
-   
+    
 }
+@media screen and (min-width: 1024px) and (max-width: 1024px) and (min-height: 1024px) and (max-height: 1024px) {
+    .image-item h3 {
+         
+        transform: translate(-0%, 40vh);  /* Ajusta o título para ficar exatamente no centro */
+        
+      }
+      .image-item a 
+      {
+        transform: translate(-0%, -40%);  /* Ajusta o título para ficar exatamente no centro */
 
+      }
+          
+}
 
 
 @media only screen and (orientation: portrait) and (max-width: 1000px)
@@ -3379,7 +3393,8 @@ select:focus
         }
         .image-item 
         {
-            width: 30vw;
+            width: 25vw;
+           
         }
         .servico
         {
