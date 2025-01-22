@@ -920,6 +920,12 @@ select:focus
     width: 5%;
     z-index: 101;
 }
+@media (max-width:1500px) {
+    .image-item h3 
+    {
+        top: 90%;
+    }
+}
 @media (max-width:1400px)
 {
 
