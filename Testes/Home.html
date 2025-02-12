@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V3 construções</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../Imagens/icon.png" type="image/x-icon" width="10%">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
+</head>
+<body style="font-size: 100%;">
+    <header id="header" style="font-size: 100%;">
+        <a href="https://v3construtora.com.br">
+            <img src="../Imagens/LogoSemFundo (2).png" class="logo">
+        </a>
+        <nav id="desktop-menu">
+                
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#service">Serviços</a></li>
+                <li><a href="#customers">Clientes</a></li>
+                <li><a href="#Project">Projetos</a></li>
+                <li><a href="#adress">Endereço</a></li>
+                <li><a href="COMPLIANCE.html">Compliace</a> </li>
+                <li><a href="Empresa.html">Empresa</a> </li>
+
+
+            </ul>
+        </nav>
+        <button id="open-menu" class="open-btn">☰</button>
+    </header>
+    <div id="menu-burguer" class="hidden">
+        <button id="close-menu" class="close-btn">&times;</button>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#service">Serviços</a></li>
+                <li><a href="#customers">Clientes</a></li>
+                <li><a href="#Project">Projetos</a></li>
+                <li><a href="#adress">Endereço</a></li>
+                <li><a href="COMPLIANCE.html">Compliance</a></li>
+                <li><a href="Empresa.html"> Empresa</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <img src="../Imagens/ImagemInicial.jpg" class="ImgInicial" id="home">  
+    <div class="LogoSemFundo" >
+        <a  href="../Empresa.html">
+            <img src="../Imagens/LogoSemFundo.png"  >
+        </a>
+    </div>  
+
+    <script>
+        document.getElementById("accessibility-btn").addEventListener("click", function() {
+    const textSizeControls = document.getElementById("text-size-controls");
+    textSizeControls.classList.toggle("visible"); // Alterna a visibilidade dos botões
+});
+
+    </script>
+    
+<!-- Serviços prontos -->
+ <div id="service"></div>
+<div class="servico" >
+
+        <h1>Tipos de serviços</h1>
+  
+        <ul>
+                <h4>PAVIMENTAÇÃO ASFÁLTICA</h4>
+                <img src="../Imagens/ServiçoPav.png" alt="Pavimentação Asfáltica">
+                <a class="btn-overlay" href="../Serviços/PaginaPavimentação.html">Saiba Mais</a>
+        </ul>
+        <ul class="servicopar">
+                <h4>EQUIPAMENTOS</h4>
+                <img class="servicopar" src="../Imagens/Quinta da Boa Vista-2.png" alt="Equipamentos">
+                <a class="btn-overlay" href="../Serviços/PaginaEquipamentos.html">Saiba Mais</a>
+        </ul>
+        <ul>
+                <h4>FORNECIMENTO DE ASFALTO</h4>
+                <img src="../Imagens/Corredor Expresso Transolímpica.png" alt="Fornecimento de Asfalto">
+                <a class="btn-overlay" href="../Serviços/PaginaFornecimentoAsfalto.html">Saiba Mais</a>
+        </ul>
+        <ul >
+                <h4>FRESAGEM DE PAVIMENTO</h4>
+                <img class="servicopar" src="../Imagens/Fornecimento.png" alt="Fresagem de Pavimento" >
+                <a class="btn-overlay" href="../Serviços/Fresagem.html">Saiba Mais</a>
+        </ul>
+        <ul>
+                <h4>CONTROLES LABORATORIAIS</h4>
+                <img src="../Imagens/Laboratorio4 (1).png" alt="Controles Laboratoriais">
+                <a class="btn-overlay" href="../Serviços/PageLaboratorio.html">Saiba Mais</a>
+        </ul>
+    <script src="Script.js"></script>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll('.btn-overlay');
+    
+    if (window.innerWidth < 1100) {
+        buttons.forEach(button => {
+            button.textContent = "Clique e Saiba Mais";
+        });
+    }
+});  
+</script>
+
+
+    <!-- Clientes -->
+<div class="clientes" id="customers" >
+
+    <div>
+        <h1>Alguns dos nossos clientes</h1>
+        <ul class="notranslate"><h3>Prefeitura do Rio </h3></ul>
+        <ul class="notranslate"><h3>Aesan </h3></ul>
+        <ul class="notranslate"><h3>EcoRioMinas </h3></ul>
+        <ul class="notranslate"><h3>EGTC </h3></ul>
+        <ul class="notranslate"><h3>Enimont</h3></ul>
+        <ul class="notranslate"><h3>Lamsa</h3></ul>
+        <ul class="notranslate"><h3>Elvima</h3></ul>
+        <ul class="notranslate"><h3>Galeão</h3></ul>
+        <!-- <ul><img src="Imagens/Rio.png"></a></ul>  -->
+        <!-- <ul> <img src="Imagens/Aesan.png"></ul>   
+        <ul><img src="Imagens/EcoRioMinas.png"></ul>    
+        <ul><img src="Imagens/EGTC.png"></ul>          
+        <ul> <img src="Imagens/Enimont.png"></ul>
+        <ul><img src="Imagens/Lamsa.jpg"></ul>    
+        <ul><img src="Imagens/Elvima.png"></ul>    
+        <ul> <img src="Imagens/Galeao.png"></ul>  -->
+  
+    </div>
+</div>
+<div id="Project"></div>
+<div class="container">
+    <div class="slide-content">
+        <h2>Projetos</h2>
+        
+        <button class="toggle-btn left-btn"><</button>
+        <button class="toggle-btn right-btn">></button>
+        <div class="content">
+
+
+            <div class="image-gallery">
+
+                <div class="image-item">
+                    <h4 class="notranslate">Quinta da Boa Vista São Cristovão/RJ</h4>
+                    <img src="../Imagens/Quinta da Boa Vista-2.png" alt="Serviço Pavimentação">
+                    <a class="btn" href="../Projetos/Quinta da Boa Vista.html">Saiba Mais</a>
+                </div>
+
+                <div class="image-item">
+                    <h4 class="notranslate">Rodovia Presidente Dutra BR 116/RJ</h4>
+                    <img src="../Imagens/Br116-2.png" alt="Serviço Pavimentação">
+                    <a class="btn" href="../Projetos/BR 116.html">Saiba Mais</a>
+                </div>   
+                
+                <div class="image-item">
+                    <h4>Estrada Rio-São Paulo BR 465/RJ</h4>
+                    <img src="../Imagens/BR 465RJ-2.png" alt="Serviço Pavimentação">
+                    <a class="btn" href="../Projetos/BR 465.html">Saiba Mais</a>
+                </div>  
+
+                <div class="image-item">
+                    <h4>Aeroporto Santos Dumont SDU/RJ</h4>
+                    <img src="../Imagens/SDU RJ-1.png" alt="Serviço Pavimentação">
+                    <a class="btn" href="../Projetos/SDU.html">Saiba Mais</a>
+                </div>
+
+                <div class="image-item">
+                    <h4>Arco Metropolitano BR 493/RJ </h4>
+                    <img src="../Imagens/BR 493RJ-2.png" alt="Serviço Pavimentação">
+                    <a class="btn" href="../Projetos/BR 493.html">Saiba Mais</a>
+                </div>
+
+                <div class="image-item">
+                    <h4>Estrada do Mato Alto Obra Asfaltinho</h4>
+                    <img src="../Imagens/Estrada do Mato Alto-1.png" alt="Serviço Pavimentação">
+                    <a class="btn" href="../Projetos/Obra_Asfaltinho.html">Saiba Mais</a>
+                </div>
+                
+                <div class="image-item">
+                    <h4>Mangaratiba BR 101/RJ</h4>
+                    <img src="../Imagens/BR 101RJ-1.png" alt="Serviço Pavimentação">
+                    <a class="btn" href="../Projetos/Mangaratiba.html">Saiba Mais</a>
+                </div>
+
+                <div class="image-item">
+                    <h4>Porto de Itaguaí Ilha da Madeira</h4>
+                    <img src="../Imagens/Porto de Itaguaí-1.png" alt="Serviço Pavimentação">
+                    <a class="btn" href="../Projetos/Itaguai.html">Saiba Mais</a>
+                </div>
+                
+                <div class="image-item">
+                    <h4>Corredor Expresso Transolímpica</h4>
+                    <img src="../Imagens/Corredor Expresso Transolímpica-5.png" alt="Serviço Pavimentação">
+                    <a class="btn" href="../Projetos/Corredor_Expresso.html">Saiba Mais</a>
+                </div>
+
+                <div class="image-item">
+                    <h4>Campos Olimpícos Quadra de Hóquei</h4>
+                    <img src="../Imagens/Campos Olimpícos - Quadra de Hóquei-2 Copia.png" alt="Serviço Pavimentação">
+                    <a class="btn" href="../Projetos/Quadra_de_Hóquei.html">Saiba Mais</a>
+                </div>
+
+                
+                <div class="image-item">
+                    <h4>Entorno do Maracanã RJ</h4>
+                    <img src="../Imagens/Entorno do Maracanã-1.png" alt="Serviço Pavimentação">
+                    <a class="btn" href="../Projetos/Maracana.html">Saiba Mais</a>
+
+                </div>
+                <!--  -->
+                
+                <!-- Repita os blocos .image-item conforme necessário -->
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<div id="Valores">
+    <ul><h1>Mais de 1 milhão de toneladas de CBUQ usinado</h1></ul>
+</div>
+<!-- Endereço -->
+<div  class="endereço" id="adress">
+<ul >
+    <h1 >Endereço no mapa</h1>
+</ul>
+<ul>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d453265.5027241348!2d-43.94668259744893!3d-22.724568678843262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x995b85644571b7%3A0x4da4f90ddc1976bd!2sUsina%20de%20Asfalto%20-%20V3%20Constru%C3%A7%C3%B5es!5e1!3m2!1spt-BR!2sbr!4v1723567561767!5m2!1spt-BR!2sbr" width="95%" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<button id="accessibility-btn" aria-label="Acessibilidade">
+    <i class="fas fa-eye"></i> <!-- Ícone de olho -->
+
+    <div id="text-size-controls" class="hidden">
+        
+        <a id="increase-font" aria-label="Aumentar Tamanho do Texto">+</a>
+        <a id="decrease-font" aria-label="Diminuir Tamanho do Texto">-</a>
+        <!-- <button id="LuaSol" class="LuaSol" style="display: none;"> 
+            <span class="icon sun" onclick="sol()"><i class="fas fa-sun"></i></span>
+            <span class="icon moon" onclick="lua()"><i class="fas fa-moon"></i></span>
+        </button> -->
+    </div>
+    <span id="accessibility-text" >Acessibilidade</span>
+
+</button>
+<!-- Script para botão que altera a cor da página -->
+<!-- <script>
+    let header = document.getElementById('header');
+    let nav = document.querySelector('header nav');
+    let links = document.querySelectorAll('header nav ul li a');
+    let contatos = document.getElementById('contact');  // Seletor para a div de contato
+    
+    function lua() {
+        header.style.backgroundColor = 'white';
+        nav.style.backgroundColor = 'white';
+        
+        links.forEach(function(link) {
+            link.style.color = 'black';  // Altera a cor de todos os links
+            // Alterar o efeito de hover para o modo claro
+
+            link.onmouseover = function() {
+                link.style.backgroundColor = '#f0f0f0';  // Cor de fundo ao passar o mouse (modo claro)
+            };
+            link.onmouseout = function() {
+                link.style.backgroundColor = '';  // Remove a cor de fundo ao sair
+            };
+        });
+        
+        // Alterar o fundo da div de contato para branco no modo claro
+        contatos.style.backgroundColor = 'white';
+        contatos.style.color = 'black';  // Para garantir que o texto também fique visível no modo claro
+    }
+    
+    function sol() {
+        header.style.backgroundColor = 'black';
+        nav.style.backgroundColor = 'black';
+        links.forEach(function(link) {
+            link.style.color = 'white';  // Altera a cor de todos os links
+    
+            // Alterar o efeito de hover para o modo escuro
+            link.onmouseover = function() {
+                link.style.backgroundColor = '#333';  // Cor de fundo ao passar o mouse (modo escuro)
+            };
+            link.onmouseout = function() {
+                link.style.backgroundColor = '';  // Remove a cor de fundo ao sair
+            };
+        });
+        
+        // Alterar o fundo da div de contato para preto no modo escuro
+        contatos.style.backgroundColor = 'black';
+        contatos.style.color = 'white';  // Para garantir que o texto fique visível no modo escuro
+    }
+</script> -->
+    
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Seletor para todos os elementos de lista (li) dentro de <ul> ou <ol>
+    const allListItems = document.querySelectorAll('ul li, ol li, div ul, div ul h1, div ul h4, div ul a, div h1, div h2, div h4,div div div div div h4, div div div div div a');
+    
+    // Referências para os botões de aumento e diminuição de fonte
+    const accessibilityBtn = document.getElementById('accessibility-btn');
+    const increaseFontBtn = document.getElementById('increase-font');
+    const decreaseFontBtn = document.getElementById('decrease-font');
+    const accessibilityText = document.getElementById('accessibility-text'); // Referência para o texto "Acessibilidade"
+
+
+
+
+    // Armazenar o tamanho de fonte original de cada item de lista
+    const originalFontSizes = [];
+
+    // Captura o tamanho de fonte original de cada <li> e armazena na lista originalFontSizes
+    allListItems.forEach(item => {
+        const fontSize = window.getComputedStyle(item).fontSize;
+        originalFontSizes.push({
+            element: item,
+            originalSize: parseFloat(fontSize)
+        });
+    });
+    
+    // Função para aumentar o tamanho da fonte de cada item de lista
+    function increaseFontSize() {
+        let canIncrease = false; // Variável para verificar se o aumento é possível
+
+        // Itera sobre cada item da lista e aumenta seu tamanho de fonte
+        originalFontSizes.forEach(item => {
+            let currentSize = window.getComputedStyle(item.element).fontSize;
+            currentSize = parseFloat(currentSize); // Converte o tamanho da fonte para número
+
+            // Aumenta o tamanho da fonte em 10%, mas não ultrapassa 110% do original
+            if (currentSize < item.originalSize * 1.1) {
+                item.element.style.fontSize = (currentSize * 1.1) + "px"; // Aumenta o tamanho da fonte
+                canIncrease = true;
+            }
+        });
+
+        // Se o aumento não for mais possível, desabilita o botão e altera a cor de fundo
+        if (!canIncrease) {
+            increaseFontBtn.disabled = true;
+            increaseFontBtn.style.backgroundColor = 'gray'; // Indica que o botão está desabilitado
+            alert("O aumento foi desabilitado porque já atingiu o tamanho máximo.");
+        } else {
+            // Se o aumento foi possível, e o botão de diminuir estava desabilitado, habilite-o
+            if (decreaseFontBtn.disabled) {
+                decreaseFontBtn.disabled = false;
+                decreaseFontBtn.style.backgroundColor = ''; // Restaura a cor de fundo do botão de diminuir
+            }
+        }
+    }
+
+    // Função para diminuir o tamanho da fonte de cada item de lista
+    function decreaseFontSize() {
+        let canDecrease = false; // Variável para verificar se a diminuição é possível
+
+        // Itera sobre cada item da lista e diminui seu tamanho de fonte
+        originalFontSizes.forEach(item => {
+            let currentSize = window.getComputedStyle(item.element).fontSize;
+            currentSize = parseFloat(currentSize); // Converte o tamanho da fonte para número
+
+            // Diminui o tamanho da fonte em 10%, mas não cai abaixo de 90% do original
+            if (currentSize > item.originalSize * 0.9) {
+                item.element.style.fontSize = (currentSize * 0.9) + "px"; // Diminui o tamanho da fonte
+                canDecrease = true;
+            }
+        });
+
+        // Se a diminuição não for mais possível, desabilita o botão e altera a cor de fundo
+        if (!canDecrease) {
+            decreaseFontBtn.disabled = true;
+            decreaseFontBtn.style.backgroundColor = 'gray'; // Indica que o botão está desabilitado
+            alert("O botão de diminuir foi desabilitado, porque atingiu o limite mínimo.");
+        } else {
+            // Se a diminuição foi possível, e o botão de aumentar estava desabilitado, habilite-o
+            if (increaseFontBtn.disabled) {
+                increaseFontBtn.disabled = false;
+                increaseFontBtn.style.backgroundColor = ''; // Restaura a cor de fundo do botão de aumentar
+            }
+        }
+    }
+
+    // Mostrar ou ocultar os controles de tamanho ao clicar no botão de acessibilidade
+    accessibilityBtn.addEventListener('click', function () {
+        accessibilityBtn.classList.toggle('active'); // Alterna a visibilidade dos controles
+    });
+
+    // Adicionar eventos para os links de aumentar e diminuir a fonte
+    increaseFontBtn.addEventListener('click', increaseFontSize);
+    decreaseFontBtn.addEventListener('click', decreaseFontSize);
+});
+</script>
+
+<!-- <script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Verifica se os elementos necessários estão disponíveis no DOM
+    const accessibilityBtn = document.getElementById('accessibility-btn');
+    const luaSolBtn = document.getElementById('LuaSol');
+    
+    if (!accessibilityBtn || !luaSolBtn) {
+        console.error('Elementos não encontrados!');
+        return;
+    }
+
+    // Evento para mostrar o botão de troca de tema quando o botão de acessibilidade for clicado
+    accessibilityBtn.addEventListener('click', function () {
+        const controls = document.getElementById('text-size-controls');
+        controls.classList.toggle('hidden'); // Alterna a visibilidade dos controles
+        
+        // Exibe o botão LuaSol ao clicar no botão de acessibilidade
+        luaSolBtn.style.display = luaSolBtn.style.display === 'none' ? 'block' : 'none';
+    });
+
+    // Evento para alternar entre tema claro e escuro no botão LuaSol
+    luaSolBtn.addEventListener('click', function () {
+        document.body.classList.toggle('dark-theme'); // Alterna a classe de tema
+
+        // Verifica o tema atual para alternar o ícone
+        const isDarkTheme = document.body.classList.contains('dark-theme');
+        if (!isDarkTheme) {
+            luaSolBtn.querySelector('.sun').style.display = 'none';  // Esconde o ícone de sol
+            luaSolBtn.querySelector('.moon').style.display = 'block'; // Exibe o ícone de lua
+        } else {
+            luaSolBtn.querySelector('.sun').style.display = 'block';  // Exibe o ícone de sol
+            luaSolBtn.querySelector('.moon').style.display = 'none'; // Esconde o ícone de lua
+        }
+    });
+
+
+
+</script> -->
+
+
+
+
+
+
+<div class="contato-fixo" id="contact">
+    <div class="contact-info">
+        <h4>Email: v3@v3construtora.com.br</h4>
+    </div>
+    <div class="contact-info">
+        <h4>Telefone: (21) 3799-8249</h4>
+    </div>
+
+
+</div>
+
+ <a href="https://wa.me/552137998249?text=Olá,%20vim%20pelo%20site." class="whatsapp">
+
+    <img src="../Imagens/Whatsapp.png" alt="">
+    
+    </a>
+</body>
+</html>
