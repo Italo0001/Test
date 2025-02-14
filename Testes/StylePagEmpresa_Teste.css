@@ -1,14 +1,142 @@
 html{
+    background-image: url('Design\ sem\ nome\ \(2\).png');
+    background-attachment: fixed; 
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.4);  /* Cor preta com opacidade */
+    background-blend-mode: overlay; /* Faz a imagem de fundo misturar com a cor */
     scroll-behavior: smooth;
 
 }
-body {
-    font-family: 'Montserrat', sans-serif;  
- }
+
+#accessibility-btn {
+    position: fixed;
+    top: 200px;
+    left: 1%;
+    background-color: #008CBA;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Estilo de hover e foco para o botão de acessibilidade */
+#accessibility-btn:hover {
+    background-color: #005f73;
+}
+
+#accessibility-btn:focus {
+    outline: none;
+}
+
+/* O div com os controles de texto começa invisível */
+#text-size-controls {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    top: -40px; /* Posiciona os controles acima do botão */
+    left: 0;
+    width: 100%;
+    justify-content: center;
+    visibility: hidden; /* Inicialmente invisível */
+    opacity: 0;
+    display: flex; /* Usar flexbox para alinhar os botões */
+    align-items: center; /* Centralizar os botões horizontalmente */
+    transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
+    flex-direction: column;
+}
+
+/* Exibe os controles quando o botão de acessibilidade é ativo */
+#accessibility-btn.active #text-size-controls {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Estilo dos botões de aumentar e diminuir */
+#text-size-controls button {
+    background-color: #008CBA;
+    color: white;
+    font-size: 20px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#text-size-controls button:hover {
+    background-color: #005f73;
+}
+
+#text-size-controls button:focus {
+    outline: none;
+}
+#increase-font, #decrease-font {
+    top: 20px;
+    display: block; /* Faz com que os botões fiquem em blocos separados */
+    width: auto; /* Largura ajustável para acomodar o texto completo */
+    max-width: 300px; /* Limita a largura dos botões */
+    padding: 10px 20px; /* Adiciona espaço interno para o texto */
+    background-color: #007BFF; /* Cor de fundo azul */
+    color: white; /* Cor do texto */
+    text-align: center; /* Alinha o texto no centro */
+    border-radius: 8px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+    text-decoration: none; /* Remove o sublinhado */
+    cursor: pointer; /* Aparece como uma mãozinha ao passar o mouse */
+    margin: -1px -2px; /* Espaçamento entre os botões */
+    transition: all 0.3s ease; /* Animação suave para efeitos de hover */
+    white-space: nowrap; /* Impede o texto de quebrar em várias linhas */
+    left: 100%;
+    position: relative;
+    left: 60px;
+    width: 20px;
+    height: 20px;
+     
+}
+.LuaSol {
+    position: fixed;
+    top: 275px;
+    left: 80px;
+    background-color: #007BFF; /* Cor de fundo azul */
+    color: white;
+    font-size: 18px;
+    padding: 9px 9px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 50px;
+    height: 40px;
+}
+
+.LuaSol .icon {
+    margin: 0 5px;
+}
+
+.LuaSol .sun {
+    display: none;
+}
+
+.LuaSol .moon {
+    display: block;
+}
+
 
 /* Outros exemplos de aplicação */
 h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;  
+    font-family: 'Open Sans', sans-serif;  
  }
  h1
  {
@@ -19,25 +147,28 @@ h1, h2, h3 {
     text-align: center;
  }
 p {
-    font-family: 'Montserrat', sans-serif;   
+    font-family: 'Open Sans', sans-serif;   
 }
 
 body {
-    background-color: #ffffff;
     box-sizing: border-box;
     overflow-y: auto; /* Permite a rolagem se necessário */
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    font-family: 'Open Sans', sans-serif;  
+    background: transparent;
+    color: white;
+    scroll-behavior: smooth;
 }
 .EM {
-    top: 100px;
+    top: 150px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     border-bottom: 4px solid #fffb00; /* Linha sublinhada com 2px de espessura e cor preta */
     font-weight: bold;
-    background-color: #ffffff;
+    background-color: transparent;
 }
 iframe
 {
@@ -67,11 +198,13 @@ h4 {
     z-index: 100; /* Garante que o cabeçalho fique sobre outros conteúdos */
     padding: 0;
     margin: 0;
+    font-family: 'Open Sans', sans-serif;   
+
 }
 #header nav
 {
     top: 2.5%;
-    font-size: larger;
+    font-size: medium;
 }
 /* Menu de desktop */
 #desktop-menu {
@@ -297,8 +430,9 @@ body {
     left: 50%;
     transform: translate(-50%, -0%); /* Ajusta a posição para o centro */
     position: relative;
-    top: 10vh;
+    top: 20vh;
     padding: 50px;
+    margin-bottom: 15%;
 }
 .TextoResponsivo h1
 {
@@ -403,44 +537,50 @@ body > *:not(.Contatos) {
 }
 .whatsapp img
 {
-    display: none;
-    right: 5%;
-    top: 90%;
+    display: flex;
+    right: 2%;
+    top: 80%;
     position: fixed;
-    width: 10%;
-    z-index: 11;
+    width: 4%;
+    z-index: 101;
+}
+.contato-fixo {
+    background-color: #000000; /* Cor de fundo */
+    position: fixed; /* Fixa o header na tela */
+    left: 0; /* Alinha à esquerda */
+    bottom: 0; /* Coloca o header na parte inferior */
+    width: 100%; /* Largura total da tela */
+    height: 8vh; /* Altura do header */
+    z-index: 1000; /* Garante que o header fique acima de outros conteúdos */
+    display: flex; /* Usado para o alinhamento do conteúdo */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    color: #fff; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+
+.contact-info {
+    padding: 0; /* Remove o padding */
+    margin: 0 10px; /* Espaço entre as listas */
+    display: flex; /* Usa flexbox para alinhar os itens da lista */
+    align-items: center; /* Alinha os itens ao centro verticalmente */
+    justify-content: center; /* Alinha os itens ao centro horizontalmente */
 }
 @media (max-width: 1200px)
 {
     .TextoResponsivo
     {
         width: 80%;
+        margin-bottom: 25vh;
     }
 
     #curriculum-header {
         display: none; /* Esconde o cabeçalho "Trabalhe Conosco" */
     }
-    .Contatos ul a
-    {
-        display: none;
-    }
-    .Contatos ul h2
-    {
-        text-align: justify;
-        display: flex;
-        justify-content: space-between; /* Alinha o texto nas pontas */
-        padding: 10%; /* Espaçamento interno */
-        border-radius: 5px; /* Bordas arredondadas, se desejado */
-    }
-    .Contatos ul h4
-    {
-        width: 80vw;
-        text-align: justify;
-    }
-    
     .whatsapp img
     {
-        display: flex;
+        width: 5%;
     }
     #desktop-menu 
     {
@@ -493,5 +633,89 @@ body > *:not(.Contatos) {
     .Contatos
     {
         margin-top: 10px; /* Ajusta a margem do Contatos */
+    }
+}
+@media (max-width: 1100px) {
+    .contact-info
+    {
+        font-size:  x-large;
+    }
+    .whatsapp img
+    {
+        width: 10%;
+    }
+    
+}
+@media (max-width: 700px)
+{
+    .TextoResponsivo
+    {
+        margin-bottom: 40vh;
+    }
+    .contact-info
+    {
+        font-size:  small;
+    }
+    .whatsapp img
+    {
+        width: 10%;
+    }
+}
+@media (max-width:500px) {
+    .TextoResponsivo
+    {
+        margin-bottom: 40vh;
+    }
+    .contact-info
+    {
+        font-size:  small;
+    }
+    .whatsapp img
+    {
+        top: 80%;
+        width: 15%;
+    }
+    
+}
+@media (max-width:370px) {
+
+    .TextoResponsivo
+    {
+        margin-bottom: 40vh;
+    }
+    .contact-info
+    {
+        font-size:  x-small;
+    }
+    .whatsapp img
+    {
+        top: 80%;
+        width: 15%;
+    }
+}
+@media only screen and (orientation: landscape) and (max-width: 1400px)
+{
+    .TextoResponsivo
+    {
+        margin-bottom: 40%;
+    }
+    .whatsapp img
+    {
+        top: 75%;
+        width: 7%;
+    }
+}
+
+
+@media only screen and (orientation: landscape) and (max-width: 700px) 
+{
+    .TextoResponsivo
+    {
+        margin-bottom: 40%;
+    }
+    .whatsapp img
+    {
+        top: 75%;
+        width: 9%;
     }
 }
