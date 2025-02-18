@@ -253,7 +253,7 @@ h4
 #text-size-controls {
     display: none; /* Inicialmente oculto */
     gap: 10px;
-    position: absolute;
+    position: fixed;
     top: 10px; /* Posiciona os controles acima do botão */
     left: 0;
     width: 100%;
@@ -317,6 +317,7 @@ h4
     display: none;
 }
 #increase-font, #decrease-font {
+    position: fixed;
     top: 170px;
     display: block; /* Faz com que os botões fiquem em blocos separados */
     width: auto; /* Largura ajustável para acomodar o texto completo */
