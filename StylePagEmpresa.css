@@ -8,6 +8,11 @@ html{
 
 }
 
+
+
+
+
+/* Estilo para o botão de acessibilidade */
 #accessibility-btn {
     position: fixed;
     top: 200px;
@@ -37,52 +42,77 @@ html{
 
 /* O div com os controles de texto começa invisível */
 #text-size-controls {
-    display: flex;
+    display: none; /* Inicialmente oculto */
     gap: 10px;
-    position: absolute;
-    top: -40px; /* Posiciona os controles acima do botão */
+    position: fixed;
+    top: 10px; /* Posiciona os controles acima do botão */
     left: 0;
     width: 100%;
     justify-content: center;
-    visibility: hidden; /* Inicialmente invisível */
-    opacity: 0;
-    display: flex; /* Usar flexbox para alinhar os botões */
-    align-items: center; /* Centralizar os botões horizontalmente */
-    transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
     flex-direction: column;
 }
 
-/* Exibe os controles quando o botão de acessibilidade é ativo */
-#accessibility-btn.active #text-size-controls {
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
+/* Exibe os controles quando o botão de acessibilidade for clicado */
+#accessibility-btn.active + #text-size-controls {
+    display: flex; /* Torna os controles visíveis */
 }
 
-/* Estilo dos botões de aumentar e diminuir */
-#text-size-controls button {
-    background-color: #008CBA;
-    color: white;
-    font-size: 20px;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+/* Estilo para os botões de aumentar e diminuir o tamanho */
+#text-size-controls a {
+    background-color: #007BFF; /* Cor de fundo azul */
+    color: white; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+    text-align: center; /* Alinha o texto no centro */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 10px 20px; /* Adiciona espaço interno para o texto */
+    text-decoration: none; /* Remove o sublinhado */
+    cursor: pointer; /* Aparece como uma mãozinha ao passar o mouse */
+    margin: -1px -2px; /* Espaçamento entre os botões */
+    transition: all 0.3s ease; /* Animação suave para efeitos de hover */
+    white-space: nowrap; /* Impede o texto de quebrar em várias linhas */
 }
 
-#text-size-controls button:hover {
+/* Estilo de hover para os botões de aumentar/diminuir */
+#text-size-controls a:hover {
     background-color: #005f73;
 }
 
-#text-size-controls button:focus {
-    outline: none;
+/* Estilo para a caixa de mensagem (tooltip) */
+.tooltip {
+    display: none;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -30px; /* Alinhar abaixo do botão */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* Tooltip oculto */
+.tooltip.hidden {
+    display: none;
+}
+
+/* Exibe o tooltip quando o mouse passa sobre o botão de acessibilidade */
+#accessibility-btn:hover #tooltip {
+    display: block;
+}
+
+/* Esconde o tooltip quando o mouse passa sobre os botões de aumentar/diminuir */
+#text-size-controls a:hover ~ #tooltip {
+    display: none;
 }
 #increase-font, #decrease-font {
-    top: 20px;
+    position: fixed;
+    top: 170px;
     display: block; /* Faz com que os botões fiquem em blocos separados */
     width: auto; /* Largura ajustável para acomodar o texto completo */
-    max-width: 300px; /* Limita a largura dos botões */
-    padding: 10px 20px; /* Adiciona espaço interno para o texto */
+    padding: 50px 100px; /* Adiciona espaço interno para o texto */
     background-color: #007BFF; /* Cor de fundo azul */
     color: white; /* Cor do texto */
     text-align: center; /* Alinha o texto no centro */
@@ -96,42 +126,17 @@ html{
     white-space: nowrap; /* Impede o texto de quebrar em várias linhas */
     left: 100%;
     position: relative;
-    left: 60px;
-    width: 20px;
-    height: 20px;
+    left: 80px;
+    width: 50px;
+    height: 35px;
      
 }
-.LuaSol {
-    position: fixed;
-    top: 275px;
-    left: 80px;
-    background-color: #007BFF; /* Cor de fundo azul */
-    color: white;
-    font-size: 18px;
-    padding: 9px 9px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    width: 50px;
-    height: 40px;
-}
 
-.LuaSol .icon {
-    margin: 0 5px;
-}
 
-.LuaSol .sun {
-    display: none;
-}
 
-.LuaSol .moon {
-    display: block;
-}
+
+
+
 
 
 /* Outros exemplos de aplicação */
@@ -636,6 +641,10 @@ body > *:not(.Contatos) {
     }
 }
 @media (max-width: 1100px) {
+    #accessibility-container
+    {
+        display: none;
+    }
     .contact-info
     {
         font-size:  x-large;
