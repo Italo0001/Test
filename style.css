@@ -259,6 +259,8 @@ h4
     width: 100%;
     justify-content: center;
     flex-direction: column;
+    z-index: 50;
+
 }
 
 /* Exibe os controles quando o botão de acessibilidade for clicado */
@@ -280,6 +282,7 @@ h4
     margin: -1px -2px; /* Espaçamento entre os botões */
     transition: all 0.3s ease; /* Animação suave para efeitos de hover */
     white-space: nowrap; /* Impede o texto de quebrar em várias linhas */
+    z-index: 100000000000;
 }
 
 /* Estilo de hover para os botões de aumentar/diminuir */
@@ -338,6 +341,7 @@ h4
     left: 80px;
     width: 50px;
     height: 35px;
+    z-index: 111111111;
      
 }
 
