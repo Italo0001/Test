@@ -1104,7 +1104,10 @@ select:focus
 }
 @media (max-width:1100px)
 {
- 
+    #accessibility-container
+    {
+        display: none;
+    }
     .whatsapp img 
     {
         display: flex;
