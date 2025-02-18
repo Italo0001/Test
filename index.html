@@ -58,34 +58,31 @@
     </div>  
 
 <!-- Botão acessebilidade aumenta a font -->
+<div id="accessibility-container">
     <button id="accessibility-btn" aria-label="Acessibilidade">
         <i class="fas fa-eye"></i> <!-- Ícone de olho -->
-    
-        <div id="text-size-controls" class="hidden">
-            
-            <a id="increase-font" aria-label="Aumentar Tamanho do Texto">+</a>
-            <a id="decrease-font" aria-label="Diminuir Tamanho do Texto">-</a>
-            <!-- <button id="LuaSol" class="LuaSol" style="display: none;"> 
-                <span class="icon sun" onclick="sol()"><i class="fas fa-sun"></i></span>
-                <span class="icon moon" onclick="lua()"><i class="fas fa-moon"></i></span>
-            </button> -->
-        </div>
+        <div id="tooltip" class="tooltip hidden">Acessibilidade</div>
     </button>
 
+    <div id="text-size-controls" class="hidden">
+        <a id="increase-font" aria-label="Aumentar Tamanho do Texto">+</a>
+        <a id="decrease-font" aria-label="Diminuir Tamanho do Texto">-</a>
+    </div>
+</div>
+
+
+
     <!-- script que faz o botão funcionar -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
             // Seletor para todos os elementos de lista (li) dentro de <ul> ou <ol>
-            const allListItems = document.querySelectorAll('ul li, ol li, div ul, div ul h1, div ul h4, div ul a, div h1, div h2, div h3,div h4,div div div div div h4, div div div div div a');
+            const allListItems = document.querySelectorAll('ul li, ol li, div ul, div ul h1, div ul h4, div ul a, div h1, div h2, div h3,div h4,div div div div div h4, div div div div div a, h1, h2, h3, h4');
             
             // Referências para os botões de aumento e diminuição de fonte
             const accessibilityBtn = document.getElementById('accessibility-btn');
             const increaseFontBtn = document.getElementById('increase-font');
             const decreaseFontBtn = document.getElementById('decrease-font');
             const accessibilityText = document.getElementById('accessibility-text'); // Referência para o texto "Acessibilidade"
-        
-        
-        
         
             // Armazenar o tamanho de fonte original de cada item de lista
             const originalFontSizes = [];
@@ -159,16 +156,36 @@
                 }
             }
         
-            // Mostrar ou ocultar os controles de tamanho ao clicar no botão de acessibilidade
-            accessibilityBtn.addEventListener('click', function () {
-                accessibilityBtn.classList.toggle('active'); // Alterna a visibilidade dos controles
-            });
+
         
             // Adicionar eventos para os links de aumentar e diminuir a fonte
             increaseFontBtn.addEventListener('click', increaseFontSize);
             decreaseFontBtn.addEventListener('click', decreaseFontSize);
         });
-        </script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const accessibilityBtn = document.getElementById('accessibility-btn');
+    const textSizeControls = document.getElementById('text-size-controls');
+    const increaseFontBtn = document.getElementById('increase-font');
+    const decreaseFontBtn = document.getElementById('decrease-font');
+
+    // Alterna a visibilidade dos controles de tamanho de texto ao clicar no botão de acessibilidade
+    accessibilityBtn.addEventListener('click', function () {
+        // Alterna a classe 'active' para mostrar/ocultar os controles de tamanho de texto
+        accessibilityBtn.classList.toggle('active');
+    });
+
+    // Adiciona eventos de clique para aumentar e diminuir o tamanho da fonte
+    increaseFontBtn.addEventListener('click', function () {
+        document.body.style.fontSize = 'larger'; // Aumenta o tamanho do texto
+    });
+
+    decreaseFontBtn.addEventListener('click', function () {
+        document.body.style.fontSize = 'smaller'; // Diminui o tamanho do texto
+    });
+});
+
+</script>
 
 <!-- Serviços prontos -->
  <div id="service"></div>
