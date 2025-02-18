@@ -216,6 +216,104 @@ h4
     width: 100%; /* Ajusta o tamanho da imagem conforme o contêiner */
     height: auto; /* Mantém a proporção da imagem */
 }
+
+#accessibility-btn {
+    position: fixed;
+    top: 200px;
+    left: 1%;
+    background-color: #008CBA;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Estilo de hover e foco para o botão de acessibilidade */
+#accessibility-btn:hover {
+    background-color: #005f73;
+}
+
+#accessibility-btn:focus {
+    outline: none;
+}
+
+/* O div com os controles de texto começa invisível */
+#text-size-controls {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    top: -40px; /* Posiciona os controles acima do botão */
+    left: 0;
+    width: 100%;
+    justify-content: center;
+    visibility: hidden; /* Inicialmente invisível */
+    opacity: 0;
+    display: flex; /* Usar flexbox para alinhar os botões */
+    align-items: center; /* Centralizar os botões horizontalmente */
+    transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
+    flex-direction: column;
+}
+
+/* Exibe os controles quando o botão de acessibilidade é ativo */
+#accessibility-btn.active #text-size-controls {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Estilo dos botões de aumentar e diminuir */
+#text-size-controls button {
+    background-color: #008CBA;
+    color: white;
+    font-size: 20px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#text-size-controls button:hover {
+    background-color: #005f73;
+}
+
+#text-size-controls button:focus {
+    outline: none;
+}
+#increase-font, #decrease-font {
+    top: 20px;
+    display: block; /* Faz com que os botões fiquem em blocos separados */
+    width: auto; /* Largura ajustável para acomodar o texto completo */
+    max-width: 300px; /* Limita a largura dos botões */
+    padding: 10px 20px; /* Adiciona espaço interno para o texto */
+    background-color: #007BFF; /* Cor de fundo azul */
+    color: white; /* Cor do texto */
+    text-align: center; /* Alinha o texto no centro */
+    border-radius: 8px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+    text-decoration: none; /* Remove o sublinhado */
+    cursor: pointer; /* Aparece como uma mãozinha ao passar o mouse */
+    margin: -1px -2px; /* Espaçamento entre os botões */
+    transition: all 0.3s ease; /* Animação suave para efeitos de hover */
+    white-space: nowrap; /* Impede o texto de quebrar em várias linhas */
+    left: 100%;
+    position: relative;
+    left: 60px;
+    width: 50px;
+    height: 40px;
+     
+}
+
+
+
+
 /* Regras para dispositivos móveis */
 .servico
 {
@@ -2185,7 +2283,7 @@ select:focus
     .servico
     {
         
-        top:55vh;
+        top:60vh;
     }
     .servico ul
     {
@@ -3023,6 +3121,7 @@ select:focus
     {
         font-size: 35px;
     }
+
 }
 @media (max-width:350px)
 {
@@ -3076,7 +3175,46 @@ select:focus
     {
         font-size: small;
     }
+    .container
+    {
+        height: 500px
+    }
+    .content
+    {
+        height: 100%;
+    }
+    .image-item
+    {
+        height: 50%;
+    }
+    .image-item h3
+    {
+        top: 5%;
+    }
     
+}
+@media (max-width:320px)
+{
+    .servico
+    {
+        top: 100vh;
+    }
+    .clientes
+    {
+        top: 120vh;
+    }
+    .container
+    {
+        top: 110vh;
+    }
+    #Valores
+    {
+        top: 125vh;
+    }
+    .endereço
+    {
+        top: 210vh;
+    }
 }
 @media (orientation: landscape) 
 {
