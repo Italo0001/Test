@@ -521,6 +521,12 @@ h3
         left: 30%;
     }
 }
+@media (max-width: 1100px) {
+    #accessibility-container
+    {
+        display: none;
+    } 
+}
 @media (max-width:900px)
 {
  
