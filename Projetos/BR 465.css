@@ -561,7 +561,13 @@ body {
         font-size: x-large;
     }
 }
-
+@media (max-width) {
+    #accessibility-container
+    {
+        display: none;
+    }
+    
+}
 @media (max-width:900px)
 {
     .h2
