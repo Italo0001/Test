@@ -20,16 +20,15 @@
 <body>
     <div id="home"></div>
     <header id="header">
-        <a href="javascript:history.back()">
+        <a href="https://v3construtora.com.br/">
             <img src="../Imagens/LogoSemFundo.png" class="logo">
         </a>
         <nav id="desktop-menu">
                 
             <ul>
                 <li><a href="#home">Início</a></li>
-                <!-- <li><a href="#contact">Contato</a></li> -->
                 <li><a href="../Empresa.html">Empresa</a></li>
-                <li><a href="javascript:history.back()">Página inicial</a></li>
+                <li><a href="https://v3construtora.com.br/">Página inicial</a></li>
             </ul>
         </nav>
         <button id="open-menu" class="open-btn">☰</button>
@@ -39,13 +38,26 @@
         <nav>
             <ul>
                 <li><a href="#home">Início</a></li>
-                <!-- <li><a href="#contact">Contato</a></li> -->
                 <li><a href="../Empresa.html">Empresa</a></li>
-                <li><a href="javascript:history.back()">Página inicial</a></li>
+                <li><a href="https://v3construtora.com.br/">Página inicial</a></li>
             </ul>
         </nav>
     </div>
 
+<!-- Botão acessebilidade aumenta a font -->
+<div id="accessibility-container">
+    <button id="accessibility-btn" aria-label="Acessibilidade">
+        <i class="fas fa-eye"></i> <!-- Ícone de olho -->
+        <div id="tooltip" class="tooltip hidden">Acessibilidade</div>
+    </button>
+
+    <div id="text-size-controls" class="hidden">
+        <a id="increase-font" aria-label="Aumentar Tamanho do Texto">+</a>
+        <a id="decrease-font" aria-label="Diminuir Tamanho do Texto">-</a>
+    </div>
+</div>
+
+<script src="../Acessinilidade.js"></script>
 
     <h1 class="Corredor">Corredor Expresso Transolímpica</h1>
 
@@ -106,27 +118,7 @@
         </ul>
 
     </ul>
-    <!-- <div class="Contatos" id="contact">
-        <ul id="contact-header"><h1>Entre em contato</h1></ul> 
-        <ul>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=v3@v3construtora.com.br" target="_blank">Enviar E-mail</a>
-            <a href="https://wa.me/552137998249?text=Olá,%20preciso%20de%20mais%20informações.">WhatsApp</a>
-        </ul>
-        <ul>
-            <h4>Email: v3@v3construtora.com.br</h4> 
-        </ul>
-  
-        <ul>
-            <h4>Telefone: (21) 3799-8249</h4>
-        </ul>
-        <ul id="curriculum-header"><h1>Trabalhe Conosco</h1></ul>
-        <ul>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=v3@v3construtora.com.br&su=Contato%20V3%20Construções&body=Olá,%20gostaria%20de%20mais%20informações." target="_blank">Enviar e-mail</a>
-            <a href="https://wa.me/552137998249?text=Olá,%20vim%20pelo%20site.">WhatsApp</a>
-        </ul>
-    </div>
-     -->
-    <!-- // Reponsividade da div de contatos -->
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const buttons = document.querySelectorAll('.btn');
@@ -185,21 +177,6 @@
         
         </script>  
 
-        
-<!-- // Reponsividade da div de contatos -->
-<script>
-    function updateContactHeader() {
-        const contactHeader = document.getElementById('contact-header');
-        if (window.innerWidth < 1100) {
-            contactHeader.innerHTML = '<h2>Contatos para o envio de currículos e mais detalhes sobre nossos serviços.</h2>';
-        } else {
-            contactHeader.innerHTML = '<h1>Entre em contato</h1>';
-        }
-    }
-
-    window.addEventListener('resize', updateContactHeader);
-    window.addEventListener('load', updateContactHeader); // Atualiza no carregamento
-</script>
 
     </div>
 
