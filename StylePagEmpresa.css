@@ -50,6 +50,7 @@ html{
     width: 100%;
     justify-content: center;
     flex-direction: column;
+    z-index: 1000000000;
 }
 
 /* Exibe os controles quando o botão de acessibilidade for clicado */
@@ -127,8 +128,8 @@ html{
     left: 100%;
     position: relative;
     left: 80px;
-    width: 50px;
-    height: 35px;
+    width: 20px;
+    height: 20px;
      
 }
 

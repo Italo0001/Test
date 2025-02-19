@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuBurguer = document.getElementById('menu-burguer');
   const body = document.body;
 
+
   // Função para abrir o menu
   openMenuBtn.addEventListener('click', function() {
       menuBurguer.classList.add('show');
@@ -16,8 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
       menuBurguer.classList.remove('show');
       body.classList.remove('menu-open'); // Remove a classe do body para restaurar a opacidade do conteúdo
   });
-  
-
 
   // Controle da rotação do botão
   let isAdditionalContentVisible = false;
@@ -82,3 +81,5 @@ function redirigirPagina() {
         window.location.href = valorSelecionado + '.html'; // Exemplo: maca.html
     }
 }
+
+
