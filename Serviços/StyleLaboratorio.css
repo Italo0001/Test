@@ -69,6 +69,131 @@ body {
     z-index: 11;
     
 }
+
+/* Estilo para o botão de acessibilidade */
+#accessibility-btn {
+    position: fixed;
+    top: 200px;
+    left: 1%;
+    background-color: #008CBA;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Estilo de hover e foco para o botão de acessibilidade */
+#accessibility-btn:hover {
+    background-color: #005f73;
+}
+
+#accessibility-btn:focus {
+    outline: none;
+}
+
+/* O div com os controles de texto começa invisível */
+#text-size-controls {
+    display: none; /* Inicialmente oculto */
+    gap: 10px;
+    position: fixed;
+    top: 10px; /* Posiciona os controles acima do botão */
+    left: 0;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 50;
+
+}
+
+/* Exibe os controles quando o botão de acessibilidade for clicado */
+#accessibility-btn.active + #text-size-controls {
+    display: flex; /* Torna os controles visíveis */
+}
+
+/* Estilo para os botões de aumentar e diminuir o tamanho */
+#text-size-controls a {
+    background-color: #007BFF; /* Cor de fundo azul */
+    color: white; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+    text-align: center; /* Alinha o texto no centro */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 10px 20px; /* Adiciona espaço interno para o texto */
+    text-decoration: none; /* Remove o sublinhado */
+    cursor: pointer; /* Aparece como uma mãozinha ao passar o mouse */
+    margin: -1px -2px; /* Espaçamento entre os botões */
+    transition: all 0.3s ease; /* Animação suave para efeitos de hover */
+    white-space: nowrap; /* Impede o texto de quebrar em várias linhas */
+    z-index: 50;
+}
+
+/* Estilo de hover para os botões de aumentar/diminuir */
+#text-size-controls a:hover {
+    background-color: #005f73;
+}
+
+/* Estilo para a caixa de mensagem (tooltip) */
+.tooltip {
+    display: none;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -30px; /* Alinhar abaixo do botão */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* Tooltip oculto */
+.tooltip.hidden {
+    display: none;
+}
+
+/* Exibe o tooltip quando o mouse passa sobre o botão de acessibilidade */
+#accessibility-btn:hover #tooltip {
+    display: block;
+}
+
+/* Esconde o tooltip quando o mouse passa sobre os botões de aumentar/diminuir */
+#text-size-controls a:hover ~ #tooltip {
+    display: none;
+}
+#increase-font, #decrease-font {
+    position: fixed;
+    top: 170px;
+    display: block; /* Faz com que os botões fiquem em blocos separados */
+    width: auto; /* Largura ajustável para acomodar o texto completo */
+    padding: 50px 100px; /* Adiciona espaço interno para o texto */
+    background-color: #007BFF; /* Cor de fundo azul */
+    color: white; /* Cor do texto */
+    text-align: center; /* Alinha o texto no centro */
+    border-radius: 8px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+    text-decoration: none; /* Remove o sublinhado */
+    cursor: pointer; /* Aparece como uma mãozinha ao passar o mouse */
+    margin: -1px -2px; /* Espaçamento entre os botões */
+    transition: all 0.3s ease; /* Animação suave para efeitos de hover */
+    white-space: nowrap; /* Impede o texto de quebrar em várias linhas */
+    left: 100%;
+    position: relative;
+    left: 80px;
+    width: 20px;
+    height: 20px;
+    z-index: 50;
+     
+}
+
 .Introducao
 {
     text-align: justify;
@@ -466,13 +591,17 @@ body {
 
 @media  (orientation: portrait) , (max-width:900px)
 {
+    .Introducao
+    {
+        font-size: large;
+    }
     .logo
     {
         height: 100%;
     }
     .Equipamentos
     {
-        top: 120vh;
+        top: 130vh;
         margin-bottom: 80vh;
     }
     .Equipamentos ul
@@ -513,7 +642,7 @@ body {
     }
     .Equipamentos
     {
-        top: 130vh;
+        top: 140vh;
         margin-bottom: 100vh;
     }
     .Equipamentos ul {
@@ -541,12 +670,17 @@ body {
       
 
 }
-
+@media (max-width:600px) {
+    .Equipamentos
+    {
+        top: 160vh;
+    }
+}
 @media (max-width:500px)
 {
     .Equipamentos
     {
-        top: 280vh;
+        top: 325vh;
         margin-bottom: 180vh;
     }
     .Equipamentos ul {
@@ -580,14 +714,21 @@ body {
       {
         font-size: x-small;
       }
-      @media (max-width:400px)
-{
+    }
+
+@media (max-width:400px) {
     .Equipamentos
     {
-        top: 330vh;
-        margin-bottom: 250vh;
+        top: 400vh;
     }
+    
 }
+@media (max-width:325px) {
+    .Equipamentos
+    {
+        top: 475vh;
+    }
+    
 }
 @media only screen and (orientation: landscape) and (max-width:1300px)
 {
