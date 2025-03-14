@@ -118,7 +118,7 @@ h4
 #desktop-menu ul li 
 {
 
-    margin: 0 1vw; /* Ajusta a margem com base na largura da viewport */
+    margin: 0 0.5vw; /* Ajusta a margem com base na largura da viewport */
 }
 
 #desktop-menu ul li a 
@@ -160,7 +160,7 @@ h4
 
 #menu-burguer nav ul li
 {
-    margin: 2vh 0; /* Ajusta a margem com base na altura da viewport */
+    margin: 1.5vh 0; /* Ajusta a margem com base na altura da viewport */
     transition: background-color 0.3s;
 }
 #menu-burguer nav ul li:hover 
