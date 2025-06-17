@@ -28,10 +28,9 @@
 
 html
 {
-    background-image: url('Imagens/background.jpg');
     background-attachment: fixed; 
     background-size: cover;
-    background-color: rgba(0, 0, 0, 0.4);  /* Cor preta com opacidade */
+    background-color: black; /* Cor preta com opacidade */
     scroll-behavior: smooth;
     background-blend-mode: overlay; /* Faz a imagem de fundo misturar com a cor */
     transform: none; /* Verifique se transformações não estão sendo aplicadas */
@@ -194,6 +193,12 @@ h4
     margin: 0 ; /* Centraliza a imagem horizontalmente */
     padding: 0;
     position: relative; /* Permite que o logo se posicione sobre a imagem */
+        background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+      /* Aplica um gradiente como máscara de visibilidade */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+   object-fit: cover;
+  display: block;
 }
 /* Estilo para o logo sobre a imagem */
 .LogoSemFundo {
@@ -201,15 +206,28 @@ h4
     border-width: 1px;
     position: absolute;
     top: 40%; /* Centraliza verticalmente */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta a posição para o centro */
-    width: 50vw; /* Ajusta a largura conforme necessário */
-    max-width: 500px; /* Limita o tamanho máximo do logo */
+    left: 30%; /* Centraliza horizontalmente */
+    transform: translate(-40%, -50%); /* Ajusta a posição para o centro */
+    width: 75vw; /* Ajusta a largura conforme necessário */
+    max-width: 900px; /* Limita o tamanho máximo do logo */
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9; /* Garante que o logo fique sobre a imagem */
+    font-size: larger;
+    
+}
+.LogoSemFundo h1
+{
+    margin-top: 25px;
+    color: white;
+
+}
+.LogoSemFundo h2
+{
+    color: #e7d800;
+
 }
 .LogoSemFundo img 
 {
@@ -348,56 +366,124 @@ h4
 
 
 /* Regras para dispositivos móveis */
-.servico
-{
-    display: block; /* Inicialmente escondido */
-    position: absolute;
-    margin-top: 50vh;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
-    width: 100vw; /* Ajusta a largura conforme necessário */
-    height: auto; 
-    background-color: transparent; /* Cor de fundo */
-    text-align: center;
-    z-index: 11;  
-    border: none; 
-    color: rgb(251, 255, 0);
-
+.servico {
+    position: relative; /* Necessário para o ::before funcionar corretamente */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    width: 100vw;
+    height: 110vh;
+    padding: 60px 40px;
+    background-image: url('Imagens/FundoClientes.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    z-index: 1; /* base */
+    border: none;
+    border-top-left-radius: 250px;
+    overflow: hidden; /* garante que ::before não ultrapasse os limites */
+    margin-top: -70vh;
 }
 
+/* CAMADA DE COR SEMI-TRANSPARENTE SOBRE A IMAGEM */
+.servico::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* atalho para top: 0; right: 0; bottom: 0; left: 0; */
+    background-color: rgba(255, 217, 0, 0.75); /* Amarelo claro com transparência */
+    z-index: 0; /* Fica atrás do conteúdo */
+}
+
+/* TITULO – ocupa 50% à esquerda */
+.servico .titulo {
+    position: absolute;
+    width: 47%;
+    min-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 79.2vh;
+    right: 55%;
+    margin-top: -3.2%;
+    border-top-left-radius:350px ;
+    color: rgb(0, 0, 0);
+    left: -115px;
+
+}
 
 .servico ul
 {
     padding: 0; /* Remove o preenchimento interno da lista */
     list-style-type: none; /* Remove os marcadores padrão */
     display: inline-block;
-    width: 15%;
+    width: 10%;
     padding-left:1%;
     transition: filter 0.3s ease;
     border: 0;
     border: none; 
 }
-.servico h1
-{   
-    margin-top: 5%;
+.servico .titulo h1 {
+    font-size: 2.5rem;
+    margin: 0;
     text-align: center;
-    font-size:250%;
-    margin-bottom: 10vh;
-
+    width: 100%; /* para não grudar na borda esquerda */
 }
 .servico h4 {
     width: 100%;
     font-size: 20px;
     font-weight: normal; /* Adiciona o negrito */
 }
-.servico ul .servicopar
-{
-    margin-bottom: 5vh;
+
+.iconsdeservicos {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 60%;
+    margin-left: 40%;
+    margin-top: -4%;
+    background-color: rgb(255, 255, 255); /* texto amarelo */
+    height: 100%;
+
 }
+
+.linha {
+    display: flex;
+    justify-content: center; /* Centraliza os <ul> horizontalmente */
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 5vh;
+}
+
+.linha ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 180px;
+    text-align: center; /* Centraliza o conteúdo dentro do <ul> */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3%;
+}
+
+.linha ul h4 {
+    font-size: 12px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    text-align: center; /* Centraliza o texto */
+}
+
 
 
 .servico ul img
 {
+    
     border-radius: 15px;
     width: 100%;
     display: block; /* Remove o espaço abaixo da imagem */
@@ -467,6 +553,11 @@ body {
     padding: 20px;
     padding-bottom: 60px; /* Espaço para o header fixo */
     text-align: center;
+    background-image: url(Imagens/FundoClientes.png);
+    background-size: cover; /* Faz com que a imagem cubra toda a <div> */
+    margin-top: 0;
+    border-top-left-radius: 250px;
+
 }
 
 /* Estilo do header fixo na parte inferior */
@@ -505,28 +596,37 @@ body {
 {
     color: #ffffff;
     position: relative;;
-    margin-top: 35vh; /* Centraliza verticalmente */
+    margin-top: 10vh; /* Centraliza verticalmente */
     left: 50%;
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
     width: 100%; /* Ajusta a largura conforme necessário */
     background-size: cover; /* Faz com que a imagem cubra toda a <div> */
-    background-image: url(Imagens/FundoClientes.png);
+    /* background-image: url(Imagens/FundoClientes.png); */
+    background-color: #000;
     text-align: center;
     z-index: 11; /* Garante que o texto fique sobre outros conteúdos */
     height: auto;
-    min-height: 450px;
+    min-height: 550px;
     display: flex;
     flex-direction: column;   /* Coloca os itens na vertical */
     justify-content: center;  /* Centraliza verticalmente */
     align-items: center;      /* Centraliza horizontalmente */
     text-align: center;       /* Alinha o conteúdo do texto ao centro */
+    border-top-right-radius:350px ;
+
 }
 
 .clientes h1
 {
+    transform: translateX(125%);
+
+    position: relative;
     display: block;
     padding: 0;
     margin: 0;
+    border-bottom: 4px solid #fffb00; /* Linha sublinhada com 2px de espessura e cor preta */
+    width: 25%;
+
 }
 .clientes ul
 {
