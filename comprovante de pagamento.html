@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sistema de Comprovante de Pagamento — v2</title>
+  <style>
+    :root{
+      --bg:#0b1020; --card:#121830; --muted:#8ea0c0; --text:#e7edff; --brand:#4f7cff; --ok:#29c48a; --warn:#ffb020; --danger:#ff5d5d; --radius:18px;
+    }
+    *{ box-sizing:border-box }
+    body{ margin:0; font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial; background:linear-gradient(145deg,#0a0f1e,#0e1630 60%,#0a0f1e); color:var(--text) }
+    .wrap{ max-width:1100px; margin:32px auto; padding:0 16px }
+    header{ display:flex; justify-content:space-between; align-items:center; margin-bottom:20px }
+    h1{ font-size:clamp(20px, 2.4vw, 30px); margin:0; letter-spacing:.3px }
+    .sub{ color:var(--muted); font-size:14px }
+
+    .grid{ display:grid; gap:18px; grid-template-columns: 1.25fr .9fr }
+    @media (max-width: 960px){ .grid{ grid-template-columns: 1fr } }
+
+    .card{ background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)); border:1px solid rgba(255,255,255,.08); box-shadow:0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.06); border-radius:var(--radius); padding:18px }
+    .card h2{ margin:0 0 10px 0; font-size:18px }
+
+    label{ display:block; font-size:13px; color:var(--muted); margin:10px 0 6px }
+    input, select, textarea{ width:100%; padding:12px; border-radius:12px; border:1px solid rgba(255,255,255,.14); outline:none; background:rgba(255,255,255,.03); color:var(--text) }
+    input:focus, select:focus, textarea:focus{ border-color:var(--brand); box-shadow:0 0 0 3px rgba(79,124,255,.25) }
+
+    .row{ display:grid; grid-template-columns:1fr 1fr; gap:12px }
+    @media (max-width: 640px){ .row{ grid-template-columns:1fr } }
+
+    .actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:14px }
+    button{ padding:10px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.14); background:rgba(79,124,255,.12); color:var(--text); cursor:pointer; transition:transform .04s ease, background .2s ease, box-shadow .2s ease }
+    button:hover{ background:rgba(79,124,255,.22) }
+    button:active{ transform:translateY(1px) }
+    .primary{ background:linear-gradient(180deg, #5f89ff, #4f7cff); border-color:#4f7cff; color:white }
+    .ghost{ background:transparent }
+    .success{ background:rgba(41,196,138,.15); border-color:rgba(41,196,138,.3) }
+    .danger{ background:rgba(255,93,93,.18); border-color:rgba(255,93,93,.35) }
+
+    .list{ display:flex; flex-direction:column; gap:10px; max-height:560px; overflow:auto; padding-right:6px }
+    .item{ background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:12px; display:flex; justify-content:space-between; gap:8px; align-items:center }
+    .item strong{ font-weight:600 }
+    .item .meta{ color:var(--muted); font-size:12px }
+    .pill{ font-size:12px; border:1px solid rgba(255,255,255,.14); border-radius:999px; padding:4px 8px; }
+
+    .receipt{ background:white; color:#111827; border-radius:16px; padding:22px; width:100%; border:1px dashed #d1d5db }
+    .r-head{ display:flex; align-items:center; gap:12px; border-bottom:1px dashed #e5e7eb; padding-bottom:12px; margin-bottom:12px }
+    .r-head img{ width:44px; height:44px; object-fit:cover; border-radius:8px; border:1px solid #e5e7eb }
+    .r-title{ font-size:18px; margin:0 }
+    .r-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px }
+    @media (max-width: 640px){ .r-grid{ grid-template-columns:1fr } }
+    .r-row{ display:flex; justify-content:space-between; gap:10px }
+    .r-row div:first-child{ color:#6b7280 }
+    .r-amount{ font-size:26px; font-weight:700; text-align:right }
+    .r-footer{ border-top:1px dashed #e5e7eb; margin-top:10px; padding-top:10px; display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap }
+    .r-qr{ width:92px; height:92px; border:1px solid #e5e7eb; border-radius:8px; display:grid; place-items:center; overflow:hidden }
+    .r-small{ font-size:12px; color:#6b7280 }
+
+    .muted{ color:var(--muted) }
+    .right{ text-align:right }
+    .hidden{ display:none !important }
+
+    @media print{ body{ background:white; color:black } header, .grid > .card:first-child, .actions, .list, section.card + section.card{ display:none !important } .wrap{ max-width:700px } .receipt{ border:1px solid #d1d5db; box-shadow:none } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Comprovantes de Pagamento</h1>
+        <div class="sub">Gere, salve (localmente), compartilhe e baixe em PDF. Todos os botões validados.</div>
+      </div>
+      <div class="actions">
+        <button class="ghost" id="btnExportJSON" title="Exportar todos (JSON)">Exportar</button>
+        <button class="ghost danger" id="btnImportJSON" title="Importar arquivo JSON">Importar</button>
+        <input type="file" id="inputImport" accept="application/json" class="hidden" />
+      </div>
+    </header>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Novo comprovante</h2>
+        <div class="row">
+          <div>
+            <label>Pagador / Cliente</label>
+            <input id="pagador" placeholder="Nome do cliente" autocomplete="off" />
+          </div>
+          <div>
+            <label>Recebedor / Empresa</label>
+            <input id="recebedor" placeholder="Sua empresa ou seu nome" autocomplete="off" />
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label>Valor (R$)</label>
+            <input id="valor" inputmode="decimal" placeholder="0,00" />
+          </div>
+          <div>
+            <label>Data do pagamento</label>
+            <input id="data" type="date" />
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label>Método</label>
+            <select id="metodo">
+              <option>Pix</option>
+              <option>Cartão de crédito</option>
+              <option>Cartão de débito</option>
+              <option>Dinheiro</option>
+              <option>Boleto</option>
+              <option>Transferência</option>
+            </select>
+          </div>
+          <div>
+            <label>ID da transação (opcional)</label>
+            <input id="txid" placeholder="Ex.: 3F9A-92BC-..." />
+          </div>
+        </div>
+        <div>
+          <label>Descrição / Referência</label>
+          <textarea id="descricao" rows="3" placeholder="Ex.: Serviço de limpeza, NF 1234"></textarea>
+        </div>
+        <div class="row">
+          <div>
+            <label>Logo (opcional)</label>
+            <input id="logo" type="file" accept="image/*" />
+          </div>
+          <div>
+            <label>Observações para o rodapé (opcional)</label>
+            <input id="obs" placeholder="CNPJ, endereço, contato etc." />
+          </div>
+        </div>
+        <div class="actions">
+          <button class="primary" id="btnGerar">Gerar comprovante</button>
+          <button class="success" id="btnSalvar">Salvar</button>
+          <button class="ghost" id="btnImprimir">Imprimir / PDF</button>
+          <button class="ghost" id="btnBaixarPDF">Baixar PDF (direto)</button>
+          <button class="ghost" id="btnLimpar">Limpar</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Prévia</h2>
+        <div id="receipt" class="receipt">
+          <div class="r-head">
+            <img id="logoPreview" src="" alt="Logo" class="hidden" />
+            <div>
+              <p class="r-title"><strong id="r-recebedor">—</strong></p>
+              <div class="r-small" id="r-obs">—</div>
+            </div>
+            <div style="margin-left:auto; text-align:right">
+              <div class="r-small">Número</div>
+              <div id="r-numero"><em>—</em></div>
+            </div>
+          </div>
+
+          <div class="r-grid">
+            <div class="r-row"><div>Pagador</div><div id="r-pagador" class="right">—</div></div>
+            <div class="r-row"><div>Data</div><div id="r-data" class="right">—</div></div>
+            <div class="r-row"><div>Método</div><div id="r-metodo" class="right">—</div></div>
+            <div class="r-row"><div>Transação</div><div id="r-txid" class="right">—</div></div>
+            <div class="r-row" style="grid-column:1 / -1"><div>Descrição</div><div id="r-descricao" class="right">—</div></div>
+          </div>
+
+          <div class="r-footer">
+            <div>
+              <div class="r-small">Valor pago</div>
+              <div class="r-amount" id="r-valor">R$ 0,00</div>
+            </div>
+          </div>
+        </div>
+        <div class="actions" style="margin-top:12px">
+          <button id="btnCopiar" class="ghost">Copiar texto</button>
+          <a id="waLink" href="#" target="_blank" rel="noopener"><button class="ghost">Compartilhar no WhatsApp</button></a>
+        </div>
+      </section>
+    </div>
+
+    <section class="card" style="margin-top:18px">
+      <h2>Histórico (armazenado no seu navegador)</h2>
+      <div class="list" id="lista"></div>
+      <div class="sub" style="margin-top:6px">Os dados ficam apenas no seu dispositivo (localStorage). Exporte para backup.</div>
+    </section>
+  </div>
+
+  <!-- Dependências -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+
+  <script>
+    const $ = (sel) => document.querySelector(sel);
+
+    // Feature detection para garantir que botões se comportem mesmo offline
+    const deps = {
+      qr: () => typeof QRCode !== 'undefined',
+      html2pdf: () => typeof html2pdf !== 'undefined'
+    };
+
+    const inputs = {
+      pagador: $('#pagador'), recebedor: $('#recebedor'), valor: $('#valor'), data: $('#data'),
+      metodo: $('#metodo'), txid: $('#txid'), descricao: $('#descricao'), obs: $('#obs'), logo: $('#logo')
+    };
+
+    const preview = {
+      recebedor: $('#r-recebedor'), obs: $('#r-obs'), numero: $('#r-numero'), pagador: $('#r-pagador'),
+      data: $('#r-data'), metodo: $('#r-metodo'), txid: $('#r-txid'), descricao: $('#r-descricao'), valor: $('#r-valor'),
+      logo: $('#logoPreview'), qr: $('#qr')
+    };
+
+    const waLink = $('#waLink');
+
+    const pad = (n) => n.toString().padStart(2,'0');
+    const toBRL = (v) => (isNaN(v)?0:v).toLocaleString('pt-BR', { style:'currency', currency:'BRL' });
+    const todayISO = () => { const d = new Date(); return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`; };
+
+    // Máscara de moeda BR
+    inputs.valor.addEventListener('input', (e) => {
+      let val = e.target.value.replace(/[^\d]/g,'');
+      if(!val) { e.target.value = ''; atualizar(); return; }
+      val = (parseInt(val)/100).toFixed(2).replace('.', ',');
+      e.target.value = val.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+      atualizar();
+    });
+
+    // Logo preview
+    inputs.logo.addEventListener('change', (e) => {
+      const file = e.target.files?.[0]; if(!file) return;
+      const reader = new FileReader();
+      reader.onload = () => { preview.logo.src = reader.result; preview.logo.classList.remove('hidden'); };
+      reader.readAsDataURL(file);
+    });
+
+    // Estado
+    let numeroAtual = gerarNumero();
+    inputs.data.value = todayISO();
+
+    function gerarNumero(){
+      const d = new Date();
+      return `${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}-${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}-${Math.random().toString(36).slice(2,6).toUpperCase()}`;
+    }
+
+    function parseValor(){
+      const raw = inputs.valor.value.replace(/\./g,'').replace(',','.');
+      return parseFloat(raw || '0');
+    }
+
+    function atualizar(){
+      preview.numero.textContent = numeroAtual;
+      preview.recebedor.textContent = inputs.recebedor.value || '—';
+      preview.obs.textContent = inputs.obs.value || '—';
+      preview.pagador.textContent = inputs.pagador.value || '—';
+      preview.data.textContent = inputs.data.value ? new Date(inputs.data.value + 'T12:00:00').toLocaleDateString('pt-BR') : '—';
+      preview.metodo.textContent = inputs.metodo.value || '—';
+      preview.txid.textContent = inputs.txid.value || '—';
+      preview.descricao.textContent = inputs.descricao.value || '—';
+      preview.valor.textContent = toBRL(parseValor());
+
+      // QRCode com fallback
+      try{
+        preview.qr.innerHTML = '';
+        if(deps.qr()){
+          new QRCode(preview.qr, { text: textoPlano().trim(), width: 92, height: 92 });
+        } else {
+          const ph = document.createElement('div');
+          ph.className = 'r-small'; ph.style.textAlign = 'center'; ph.style.padding = '6px'; ph.textContent = 'QR indisponível';
+          preview.qr.appendChild(ph);
+        }
+      }catch(e){ /* silencioso */ }
+
+      // WhatsApp
+      const msg = encodeURIComponent(textoPlano());
+      if (waLink) waLink.href = `https://wa.me/?text=${msg}`;
+    }
+
+    function validar(){
+      const erros = [];
+      if(!inputs.pagador.value.trim()) erros.push('Informe o pagador');
+      if(!inputs.recebedor.value.trim()) erros.push('Informe o recebedor');
+      if(parseValor() <= 0) erros.push('Informe um valor válido');
+      if(!inputs.data.value) erros.push('Informe a data');
+      return erros;
+    }
+
+    // Texto plano do comprovante (usado em QR e WhatsApp)
+    function textoPlano(item){
+      const o = item || serialize();
+      const dataBR = o.data ? new Date(o.data + 'T12:00:00').toLocaleDateString('pt-BR') : '-';
+      return (
+        `Comprovante ${o.numero}\n`+
+        `Pagador: ${o.pagador}\n`+
+        `Recebedor: ${o.recebedor}\n`+
+        `Valor: ${toBRL(o.valor)}\n`+
+        `Data: ${dataBR}\n`+
+        `Método: ${o.metodo}\n`+
+        (o.txid ? `Transação: ${o.txid}\n` : '')+
+        (o.descricao ? `Descrição: ${o.descricao}\n` : '')
+      );
+    }
+
+    // Persistência
+    function serialize(){
+      return {
+        numero: numeroAtual,
+        pagador: inputs.pagador.value, recebedor: inputs.recebedor.value, valor: parseValor(), data: inputs.data.value,
+        metodo: inputs.metodo.value, txid: inputs.txid.value, descricao: inputs.descricao.value, obs: inputs.obs.value,
+        logo: preview.logo.src || '', criadoEm: new Date().toISOString()
+      };
+    }
+    function saveAll(arr){ localStorage.setItem('comprovantes', JSON.stringify(arr)); }
+    function loadAll(){ return JSON.parse(localStorage.getItem('comprovantes') || '[]'); }
+
+    function renderList(){
+      const list = $('#lista');
+      const data = loadAll();
+      if(!data.length){ list.innerHTML = '<div class="muted">Nenhum comprovante salvo ainda.</div>'; return; }
+      list.innerHTML = '';
+      for(const o of data){
+        const item = document.createElement('div'); item.className='item';
+        item.innerHTML = `
+          <div>
+            <div><strong>${o.recebedor}</strong> <span class="meta">• ${new Date(o.criadoEm).toLocaleString('pt-BR')}</span></div>
+            <div class="meta">${o.pagador} — ${toBRL(o.valor)} — ${new Date(o.data+'T12:00:00').toLocaleDateString('pt-BR')}</div>
+          </div>
+          <div style="display:flex; gap:8px; align-items:center">
+            <span class="pill">${o.metodo}</span>
+            <button data-act="ver">Ver</button>
+            <button data-act="copiar">Copiar</button>
+            <button class="danger" data-act="excluir">Excluir</button>
+          </div>`;
+        item.querySelector('[data-act="ver"]').addEventListener('click', () => carregarNoPreview(o));
+        item.querySelector('[data-act="copiar"]').addEventListener('click', async () => { await navigator.clipboard.writeText(textoPlano(o)); alert('Copiado!') });
+        item.querySelector('[data-act="excluir"]').addEventListener('click', () => {
+          if(!confirm('Excluir este comprovante?')) return;
+          const rest = loadAll().filter(x => x.numero !== o.numero);
+          saveAll(rest); renderList();
+        });
+        list.appendChild(item);
+      }
+    }
+
+    function carregarNoPreview(o){
+      inputs.pagador.value = o.pagador;
+      inputs.recebedor.value = o.recebedor;
+      inputs.valor.value = (o.valor).toLocaleString('pt-BR', {minimumFractionDigits:2});
+      inputs.data.value = o.data;
+      inputs.metodo.value = o.metodo;
+      inputs.txid.value = o.txid;
+      inputs.descricao.value = o.descricao;
+      inputs.obs.value = o.obs;
+      numeroAtual = o.numero;
+      if(o.logo){ preview.logo.src = o.logo; preview.logo.classList.remove('hidden'); } else { preview.logo.classList.add('hidden') }
+      atualizar();
+      window.scrollTo({ top:0, behavior:'smooth' });
+    }
+
+    // Botões
+    $('#btnGerar').addEventListener('click', () => {
+      const erros = validar(); if(erros.length){ alert('Corrija antes de gerar:\n- ' + erros.join('\n- ')); return; }
+      numeroAtual = gerarNumero(); atualizar();
+    });
+
+    $('#btnSalvar').addEventListener('click', () => {
+      const erros = validar(); if(erros.length){ alert('Corrija antes de salvar:\n- ' + erros.join('\n- ')); return; }
+      const item = serialize(); const data = loadAll(); data.unshift(item); saveAll(data); renderList(); alert('Comprovante salvo!');
+    });
+
+    $('#btnImprimir').addEventListener('click', () => { window.print(); });
+
+    $('#btnBaixarPDF').addEventListener('click', () => {
+      const erros = validar(); if(erros.length){ alert('Corrija antes de baixar PDF:\n- ' + erros.join('\n- ')); return; }
+      atualizar(); const element = document.getElementById('receipt');
+      const opt = { margin:10, filename:`comprovante-${numeroAtual}.pdf`, image:{ type:'jpeg', quality:0.98 }, html2canvas:{ scale:2, useCORS:true }, jsPDF:{ unit:'mm', format:'a4', orientation:'portrait' } };
+      if(!deps.html2pdf()){ alert('Biblioteca de PDF não carregou. Verifique sua conexão com a internet.'); return; }
+      html2pdf().set(opt).from(element).save();
+    });
+
+    $('#btnLimpar').addEventListener('click', () => {
+      Object.values(inputs).forEach(input => { if(input.type === 'file') input.value=''; else input.value=''; });
+      preview.logo.classList.add('hidden'); numeroAtual = gerarNumero(); inputs.data.value = todayISO(); atualizar();
+    });
+
+    $('#btnCopiar').addEventListener('click', async () => { await navigator.clipboard.writeText(textoPlano()); alert('Dados do comprovante copiados!'); });
+
+    $('#btnExportJSON').addEventListener('click', () => {
+      const blob = new Blob([JSON.stringify(loadAll(), null, 2)], {type:'application/json'});
+      const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'comprovantes.json'; a.click(); URL.revokeObjectURL(url);
+    });
+
+    $('#btnImportJSON').addEventListener('click', () => $('#inputImport').click());
+    $('#inputImport').addEventListener('change', async (e) => {
+      const file = e.target.files?.[0]; if(!file) return;
+      const text = await file.text();
+      try{
+        const arr = JSON.parse(text); if(!Array.isArray(arr)) throw new Error('Formato inválido');
+        saveAll(arr.concat(loadAll())); renderList(); alert('Importado com sucesso!');
+      }catch(err){ alert('Falha ao importar: ' + err.message) }
+      e.target.value = '';
+    });
+
+    // WhatsApp: só abre se os dados obrigatórios estiverem ok
+    if (waLink) waLink.addEventListener('click', (e) => {
+      const erros = validar(); if(erros.length){ e.preventDefault(); alert('Preencha os dados obrigatórios antes de compartilhar no WhatsApp:\n- ' + erros.join('\n- ')); }
+    });
+
+    // Inicializa
+    atualizar();
+    renderList();
+  </script>
+</body>
+</html>
