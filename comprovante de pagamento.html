@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sistema de Comprovante de Pagamento — multi-itens</title>
+
+  <!-- === CSS que você mandou (copiado exatamente) === -->
+  <style>
+    :root{
+      --bg:#0b1020; --card:#121830; --muted:#8ea0c0; --text:#e7edff; --brand:#4f7cff; --ok:#29c48a; --warn:#ffb020; --danger:#ff5d5d; --radius:18px;
+    }
+    *{ box-sizing:border-box }
+    body{ margin:0; font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial; background:linear-gradient(145deg,#0a0f1e,#0e1630 60%,#0a0f1e); color:var(--text) }
+    .wrap{ max-width:1100px; margin:32px auto; padding:0 16px }
+    header{ display:flex; justify-content:space-between; align-items:center; margin-bottom:20px }
+    h1{ font-size:clamp(20px, 2.4vw, 30px); margin:0; letter-spacing:.3px }
+    .sub{ color:var(--muted); font-size:14px }
+
+    .grid{ display:grid; gap:18px; grid-template-columns: 1.25fr .9fr }
+    @media (max-width: 960px){ .grid{ grid-template-columns: 1fr } }
+
+    .card{ background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)); border:1px solid rgba(255,255,255,.08); box-shadow:0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.06); border-radius:var(--radius); padding:18px }
+    .card h2{ margin:0 0 10px 0; font-size:18px }
+
+    label{ display:block; font-size:13px; color:var(--muted); margin:10px 0 6px }
+    input, select, textarea{ width:100%; padding:12px; border-radius:12px; border:1px solid rgba(255,255,255,.14); outline:none; background:rgba(255,255,255,.03); color:var(--text) }
+    input:focus, select:focus, textarea:focus{ border-color:var(--brand); box-shadow:0 0 0 3px rgba(79,124,255,.25) }
+
+    .row{ display:grid; grid-template-columns:1fr 1fr; gap:12px }
+    @media (max-width: 640px){ .row{ grid-template-columns:1fr } }
+
+    .actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:14px }
+    button{ padding:10px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.14); background:rgba(79,124,255,.12); color:var(--text); cursor:pointer; transition:transform .04s ease, background .2s ease, box-shadow .2s ease }
+    button:hover{ background:rgba(79,124,255,.22) }
+    button:active{ transform:translateY(1px) }
+    .primary{ background:linear-gradient(180deg, #5f89ff, #4f7cff); border-color:#4f7cff; color:white }
+    .ghost{ background:transparent }
+    .success{ background:rgba(41,196,138,.15); border-color:rgba(41,196,138,.3) }
+    .danger{ background:rgba(255,93,93,.18); border-color:rgba(255,93,93,.35) }
+
+    .list{ display:flex; flex-direction:column; gap:10px; max-height:560px; overflow:auto; padding-right:6px }
+    .item{ background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:12px; display:flex; justify-content:space-between; gap:8px; align-items:center }
+    .item strong{ font-weight:600 }
+    .item .meta{ color:var(--muted); font-size:12px }
+    .pill{ font-size:12px; border:1px solid rgba(255,255,255,.14); border-radius:999px; padding:4px 8px; }
+
+    .receipt{ background:white; color:#111827; border-radius:16px; padding:22px; width:100%; border:1px dashed #d1d5db }
+    .r-head{ display:flex; align-items:center; gap:12px; border-bottom:1px dashed #e5e7eb; padding-bottom:12px; margin-bottom:12px }
+    .r-head img{ width:44px; height:44px; object-fit:cover; border-radius:8px; border:1px solid #e5e7eb }
+    .r-title{ font-size:18px; margin:0 }
+    .r-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px }
+    @media (max-width: 640px){ .r-grid{ grid-template-columns:1fr } }
+    .r-row{ display:flex; justify-content:space-between; gap:10px }
+    .r-row div:first-child{ color:#6b7280 }
+    .r-amount{ font-size:26px; font-weight:700; text-align:right }
+    .r-footer{ border-top:1px dashed #e5e7eb; margin-top:10px; padding-top:10px; display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap }
+    .r-qr{ width:92px; height:92px; border:1px solid #e5e7eb; border-radius:8px; display:grid; place-items:center; overflow:hidden }
+    .r-small{ font-size:12px; color:#6b7280 }
+
+    .muted{ color:var(--muted) }
+    .right{ text-align:right }
+    .hidden{ display:none !important }
+
+    @media print{ body{ background:white; color:black } header, .grid > .card:first-child, .actions, .list, section.card + section.card{ display:none !important } .wrap{ max-width:700px } .receipt{ border:1px solid #d1d5db; box-shadow:none } }
+
+    /* ADIÇÃO: forçar que apenas .receipt seja visível na impressão.
+       Isso garante que ao chamar window.print() o navegador imprima só o comprovante carregado. */
+    @media print {
+      /* esconde tudo */
+      body * { visibility: hidden !important; }
+      /* deixa visível apenas a receipt e seus filhos */
+      .receipt, .receipt * { visibility: visible !important; }
+      /* posiciona a receipt no topo da página impressa */
+      .receipt { position: absolute !important; top: 0; left: 0; width: 100% !important; box-shadow: none !important; }
+    }
+  </style>
+  <!-- === fim do CSS enviado === -->
+
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Comprovante de Pagamento</h1>
+        <div class="sub">Adicione serviços e gere o comprovante com total</div>
+      </div>
+      <div class="sub">Seu sistema</div>
+    </header>
+
+    <div class="grid">
+      <!-- FORMULÁRIO (coluna esquerda) -->
+      <section class="card">
+        <h2>Dados do Pagador</h2>
+
+        <label>Nome:</label>
+        <input type="text" id="nome" placeholder="Nome do pagador">
+
+        <!-- mantive o campo valor original (se quiser ocultar, adicione class hidden) -->
+        <label class="hidden">Valor pago:</label>
+        <input class="hidden" type="number" id="valor">
+
+        <div class="row" style="margin-top:8px;">
+          <div>
+            <label>Data:</label>
+            <input type="date" id="data">
+          </div>
+          <div>
+            <label>Método de pagamento:</label>
+            <!-- input com datalist: pode selecionar ou digitar livremente -->
+            <input list="metodosList" id="metodo" placeholder="Selecione ou digite...">
+            <datalist id="metodosList">
+              <option value="Pix"></option>
+              <option value="Dinheiro"></option>
+              <option value="Cartão de Crédito"></option>
+              <option value="Cartão de Débito"></option>
+              <option value="Transferência Bancária"></option>
+              <option value="Boleto"></option>
+              <option value="Cheque"></option>
+            </datalist>
+          </div>
+        </div>
+
+        <label style="margin-top:8px;">Transação:</label>
+        <input type="text" id="transacao" placeholder="ID/Referência">
+
+        <!-- NOVA ÁREA: adicionar itens -->
+        <h2 style="margin-top:16px;">Serviços / Itens</h2>
+        <div style="display:flex; gap:8px; align-items:center;">
+          <input type="text" id="descricaoItem" placeholder="Descrição do serviço">
+          <input type="text" id="valorItem" placeholder="Valor (ex: 120.50)" style="width:140px;">
+          <button id="btnAddItem" class="primary">Adicionar</button>
+        </div>
+        <div class="sub" style="margin-top:6px;">Use vírgula ou ponto para decimais (ex: 120,50 ou 120.50)</div>
+
+        <div style="margin-top:12px;">
+          <div class="actions">
+            <button id="btnGerar" class="ghost">Gerar</button>
+            <button id="btnSalvar" class="success">Salvar</button>
+            <button id="btnImprimir" class="ghost">Imprimir / PDF</button>
+            <button id="btnBaixarPDF" class="ghost">Baixar PDF</button>
+            <button id="btnLimpar" class="danger">Limpar</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- RECEIPT (coluna direita) -->
+      <aside class="card">
+        <h2>Resumo & Itens</h2>
+
+        <div class="list" id="itemsList" aria-live="polite" style="margin-top:8px; max-height:320px;">
+          <div class="item"><div><strong>Nenhum item</strong><div class="meta">Adicione serviços à esquerda</div></div><div class="pill">R$ 0,00</div></div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:12px;">
+          <div class="muted">Total</div>
+          <div class="pill" id="totalPill">R$ 0,00</div>
+        </div>
+
+        <div style="margin-top:14px;">
+          <div class="receipt" id="receipt">
+            <!-- preview do comprovante (para impressão/PDF) -->
+            <div class="r-head">
+              <div style="display:flex; flex-direction:column;">
+                <h3 class="r-title">Comprovante</h3>
+                <div class="r-small" id="r-nome">Nome: —</div>
+              </div>
+            </div>
+
+            <div class="r-grid" id="r-items" style="margin-bottom:12px;">
+              <!-- linhas de itens -->
+              <div style="grid-column: 1 / -1;" class="r-small">Nenhum item adicionado.</div>
+            </div>
+
+            <div class="r-row" style="margin-bottom:6px;">
+              <div class="r-small">Data</div>
+              <div class="r-small right" id="r-data">—</div>
+            </div>
+
+            <div class="r-row">
+              <div class="r-small">Método</div>
+              <div class="r-small right" id="r-metodo">—</div>
+            </div>
+
+            <div style="margin-top:12px; display:flex; justify-content:space-between; align-items:center;">
+              <div class="r-small">Transação: <span id="r-transacao">—</span></div>
+              <div class="r-amount" id="r-total">R$ 0,00</div>
+            </div>
+
+            <div class="r-footer" style="margin-top:12px;">
+              <div class="r-small">Comprovante gerado pelo sistema</div>
+              <div class="r-qr">QR</div>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+
+    <!-- NOVA SEÇÃO: BANCO DE DADOS LOCAL -->
+    <section class="card" style="margin-top:20px;">
+      <h2>Banco de Dados — Comprovantes Salvos</h2>
+      <div style="display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap;">
+        <button id="btnExport" class="ghost">Exportar JSON</button>
+        <button id="btnClearDB" class="danger">Limpar Banco</button>
+      </div>
+
+      <div style="max-height:300px; overflow:auto; border-top:1px solid rgba(255,255,255,.04); padding-top:10px;">
+        <div id="dbList" class="list">
+          <!-- registros aparecem aqui -->
+        </div>
+      </div>
+    </section>
+    <!-- fim banco de dados -->
+
+  </div>
+
+  <!-- html2pdf (mesma versão usada antes) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+
+  <script>
+    // Elementos
+    const nome = document.getElementById('nome');
+    const valorHidden = document.getElementById('valor'); // mantive pra compatibilidade
+    const dataEl = document.getElementById('data');
+    const metodo = document.getElementById('metodo');
+    const transacao = document.getElementById('transacao');
+
+    const descricaoItem = document.getElementById('descricaoItem');
+    const valorItem = document.getElementById('valorItem');
+    const btnAddItem = document.getElementById('btnAddItem');
+
+    const itemsList = document.getElementById('itemsList');
+    const totalPill = document.getElementById('totalPill');
+
+    const receipt = document.getElementById('receipt');
+    const rNome = document.getElementById('r-nome');
+    const rItems = document.getElementById('r-items');
+    const rData = document.getElementById('r-data');
+    const rMetodo = document.getElementById('r-metodo');
+    const rTransacao = document.getElementById('r-transacao');
+    const rTotal = document.getElementById('r-total');
+
+    const btnGerar = document.getElementById('btnGerar');
+    const btnSalvar = document.getElementById('btnSalvar');
+    const btnImprimir = document.getElementById('btnImprimir');
+    const btnBaixarPDF = document.getElementById('btnBaixarPDF');
+    const btnLimpar = document.getElementById('btnLimpar');
+
+    // DB UI
+    const dbList = document.getElementById('dbList');
+    const btnExport = document.getElementById('btnExport');
+    const btnClearDB = document.getElementById('btnClearDB');
+
+    // estado
+    let items = [];
+    let db = []; // array de comprovantes salvos
+
+    // keys
+    const DRAFT_KEY = 'comprovante_multi_css_v1';
+    const DB_KEY = 'comprovante_db_v1';
+
+    // Carregar do localStorage (draft + db)
+    function loadStorage(){
+      // draft (preenchimento atual)
+      const s = localStorage.getItem(DRAFT_KEY);
+      if(s){
+        try{
+          const obj = JSON.parse(s);
+          if(obj.nome) nome.value = obj.nome;
+          if(obj.data) dataEl.value = obj.data;
+          if(obj.metodo) metodo.value = obj.metodo;
+          if(obj.transacao) transacao.value = obj.transacao;
+          if(Array.isArray(obj.items)) items = obj.items;
+        }catch(e){ console.warn('erro ao ler draft', e); }
+      }
+
+      // db
+      const dbraw = localStorage.getItem(DB_KEY);
+      if(dbraw){
+        try{ db = JSON.parse(dbraw); } catch(e){ console.warn('erro ao ler db', e); db = []; }
+      }
+      renderAll();
+      renderDB();
+    }
+    loadStorage();
+
+    // Helpers
+    function parseValorRaw(v){
+      if(v === null || v === undefined || v === '') return 0;
+      const cleaned = String(v).replace(/\s/g,'').replace(',', '.').replace(/[^0-9.\-]/g,'');
+      const n = parseFloat(cleaned);
+      return isNaN(n) ? 0 : n;
+    }
+    function formatBRL(num){
+      return Number(num).toLocaleString('pt-BR', { style:'currency', currency:'BRL' });
+    }
+    function escapeHtml(text){
+      if(text === null || text === undefined) return '';
+      return String(text).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
+    }
+
+    // Adicionar item (no formulário)
+    btnAddItem.addEventListener('click', (e) => {
+      e.preventDefault();
+      const desc = descricaoItem.value.trim();
+      const raw = valorItem.value.trim();
+      const val = parseValorRaw(raw);
+      if(!desc){ alert('Informe a descrição do serviço.'); return; }
+      if(val <= 0){ alert('Informe um valor válido maior que zero.'); return; }
+      items.push({ id: Date.now(), descricao: desc, valor: val });
+      descricaoItem.value = '';
+      valorItem.value = '';
+      renderAll();
+      saveDraft();
+    });
+
+    // Render lista visual à direita
+    function renderList(){
+      itemsList.innerHTML = '';
+      if(items.length === 0){
+        itemsList.innerHTML = '<div class="item"><div><strong>Nenhum item</strong><div class="meta">Adicione serviços à esquerda</div></div><div class="pill">R$ 0,00</div></div>';
+        totalPill.textContent = formatBRL(0);
+        return;
+      }
+      items.forEach(it => {
+        const div = document.createElement('div');
+        div.className = 'item';
+        div.innerHTML = `<div><strong>${escapeHtml(it.descricao)}</strong><div class="meta">adicionado</div></div>
+                         <div style="display:flex; align-items:center; gap:8px;">
+                           <div class="pill">${formatBRL(it.valor)}</div>
+                           <button data-id="${it.id}" class="ghost" style="padding:6px 8px;">Remover</button>
+                         </div>`;
+        itemsList.appendChild(div);
+      });
+      const total = items.reduce((s,i) => s + Number(i.valor), 0);
+      totalPill.textContent = formatBRL(total);
+    }
+
+    // Delegation: remover item do righthand list
+    itemsList.addEventListener('click', (ev) => {
+      const btn = ev.target.closest('button[data-id]');
+      if(!btn) return;
+      const id = Number(btn.getAttribute('data-id'));
+      items = items.filter(i => i.id !== id);
+      renderAll();
+      saveDraft();
+    });
+
+    // Render do receipt (preview e PDF/print) — itens um abaixo do outro
+    function renderReceiptPreview(){
+      // nome, campos
+      rNome.textContent = 'Nome: ' + (nome.value ? escapeHtml(nome.value) : '—');
+      rData.textContent = dataEl.value || '—';
+      rMetodo.textContent = metodo.value || '—';
+      rTransacao.textContent = transacao.value || '—';
+
+      // itens — cada item ocupa toda a largura (um abaixo do outro)
+      rItems.innerHTML = '';
+      if(items.length === 0){
+        const none = document.createElement('div');
+        none.className = 'r-small';
+        none.style.gridColumn = '1 / -1';
+        none.textContent = 'Nenhum item adicionado.';
+        rItems.appendChild(none);
+        rTotal.textContent = formatBRL(0);
+      } else {
+        items.forEach(it => {
+          const row = document.createElement('div');
+          // garante que ocupe toda a largura da grid (1 linha por item)
+          row.style.gridColumn = '1 / -1';
+          row.style.display = 'flex';
+          row.style.justifyContent = 'space-between';
+          row.style.alignItems = 'center';
+          row.style.padding = '6px 0';
+          row.style.borderBottom = '1px solid #e5e7eb';
+          row.innerHTML = `<div style="font-weight:600">${escapeHtml(it.descricao)}</div><div style="font-weight:700">${formatBRL(it.valor)}</div>`;
+          rItems.appendChild(row);
+        });
+        const total = items.reduce((s,i) => s + Number(i.valor), 0);
+        rTotal.textContent = formatBRL(total);
+      }
+    }
+
+    // Render tudo
+    function renderAll(){
+      renderList();
+      renderReceiptPreview();
+    }
+
+    // SALVANDO: draft (preenchimento atual) e DB (registros)
+    function saveDraft(){
+      const payload = {
+        nome: nome.value,
+        data: dataEl.value,
+        metodo: metodo.value,
+        transacao: transacao.value,
+        items: items,
+        savedAt: new Date().toISOString()
+      };
+      localStorage.setItem(DRAFT_KEY, JSON.stringify(payload));
+    }
+
+    // Salva um registro no DB (botão Salvar)
+    function saveRecordToDB(){
+      if(!nome.value && items.length === 0){
+        alert('Preencha ao menos o nome ou adicione um item antes de salvar.');
+        return;
+      }
+      const total = items.reduce((s,i) => s + Number(i.valor), 0);
+      const record = {
+        id: Date.now(),
+        nome: nome.value || '—',
+        data: dataEl.value || '',
+        metodo: metodo.value || '',
+        transacao: transacao.value || '',
+        items: items,
+        total: total,
+        savedAt: new Date().toISOString()
+      };
+      db.unshift(record); // adiciona no topo
+      localStorage.setItem(DB_KEY, JSON.stringify(db));
+      saveDraft(); // também atualiza draft
+      renderDB();
+      alert('Comprovante salvo no banco local.');
+    }
+
+    // Render banco de dados (lista)
+    function renderDB(){
+      dbList.innerHTML = '';
+      if(!db || db.length === 0){
+        dbList.innerHTML = '<div class="item"><div><strong>Nenhum comprovante salvo</strong><div class="meta">Os comprovantes salvos aparecerão aqui</div></div></div>';
+        return;
+      }
+      db.forEach(rec => {
+        const div = document.createElement('div');
+        div.className = 'item';
+        const itemsCount = Array.isArray(rec.items) ? rec.items.length : 0;
+        div.innerHTML = `<div>
+                           <strong>${escapeHtml(rec.nome)}</strong>
+                           <div class="meta">${rec.data || '—'} · ${itemsCount} item(s) · ${new Date(rec.savedAt).toLocaleString()}</div>
+                         </div>
+                         <div style="display:flex; align-items:center; gap:8px;">
+                           <div class="pill">${formatBRL(rec.total || 0)}</div>
+                           <button data-view="${rec.id}" class="ghost" style="padding:6px 8px;">Ver</button>
+                           <button data-load="${rec.id}" class="ghost" style="padding:6px 8px;">Carregar</button>
+                           <button data-del="${rec.id}" class="ghost" style="padding:6px 8px;">Excluir</button>
+                         </div>`;
+        dbList.appendChild(div);
+      });
+    }
+
+    // Delegation para DB list (ver, carregar, excluir)
+    dbList.addEventListener('click', (ev) => {
+      const viewBtn = ev.target.closest('button[data-view]');
+      const loadBtn = ev.target.closest('button[data-load]');
+      const delBtn = ev.target.closest('button[data-del]');
+      if(viewBtn){
+        const id = Number(viewBtn.getAttribute('data-view'));
+        const rec = db.find(r => r.id === id);
+        if(rec) viewRecord(rec);
+      } else if(loadBtn){
+        const id = Number(loadBtn.getAttribute('data-load'));
+        const rec = db.find(r => r.id === id);
+        if(rec) loadRecordIntoForm(rec);
+      } else if(delBtn){
+        const id = Number(delBtn.getAttribute('data-del'));
+        if(!confirm('Excluir este comprovante do banco?')) return;
+        db = db.filter(r => r.id !== id);
+        localStorage.setItem(DB_KEY, JSON.stringify(db));
+        renderDB();
+      }
+    });
+
+    // Visualizar record (apenas mostra na área receipt)
+    function viewRecord(rec){
+      // mostra rec na receipt
+      rNome.textContent = 'Nome: ' + (rec.nome || '—');
+      rData.textContent = rec.data || '—';
+      rMetodo.textContent = rec.metodo || '—';
+      rTransacao.textContent = rec.transacao || '—';
+      rItems.innerHTML = '';
+      if(!rec.items || rec.items.length === 0){
+        const none = document.createElement('div');
+        none.className = 'r-small';
+        none.style.gridColumn = '1 / -1';
+        none.textContent = 'Nenhum item adicionado.';
+        rItems.appendChild(none);
+      } else {
+        rec.items.forEach(it => {
+          const row = document.createElement('div');
+          row.style.gridColumn = '1 / -1';
+          row.style.display = 'flex';
+          row.style.justifyContent = 'space-between';
+          row.style.alignItems = 'center';
+          row.style.padding = '6px 0';
+          row.style.borderBottom = '1px solid #e5e7eb';
+          row.innerHTML = `<div style="font-weight:600">${escapeHtml(it.descricao)}</div><div style="font-weight:700">${formatBRL(it.valor)}</div>`;
+          rItems.appendChild(row);
+        });
+      }
+      rTotal.textContent = formatBRL(rec.total || 0);
+    }
+
+    // Carrega record no formulário (para editar / salvar novamente)
+    function loadRecordIntoForm(rec){
+      nome.value = rec.nome || '';
+      dataEl.value = rec.data || '';
+      metodo.value = rec.metodo || '';
+      transacao.value = rec.transacao || '';
+      items = Array.isArray(rec.items) ? rec.items.map(i => ({ ...i })) : [];
+      renderAll();
+      saveDraft();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Exportar JSON
+    btnExport.addEventListener('click', () => {
+      if(!db || db.length === 0){ alert('Nenhum comprovante para exportar.'); return; }
+      const blob = new Blob([JSON.stringify(db, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'comprovantes.json';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    });
+
+    // Limpar banco
+    btnClearDB.addEventListener('click', () => {
+      if(!confirm('Apagar todos os comprovantes salvos no banco local?')) return;
+      db = [];
+      localStorage.removeItem(DB_KEY);
+      renderDB();
+    });
+
+    // Botões principais
+    btnGerar.addEventListener('click', () => {
+      renderAll();
+      alert('Comprovante gerado na área à direita.');
+    });
+
+    // Salvar: salva no DB e no draft
+    btnSalvar.addEventListener('click', () => {
+      saveRecordToDB();
+    });
+
+    btnImprimir.addEventListener('click', () => {
+      renderReceiptPreview();
+      // chama impressão — regras @media print garantem que só a .receipt será impressa
+      window.print();
+    });
+
+    btnBaixarPDF.addEventListener('click', () => {
+      renderReceiptPreview();
+      const opt = {
+        margin: 10,
+        filename: 'comprovante.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      // gera PDF somente da área .receipt
+      const element = document.querySelector('.receipt');
+      html2pdf().set(opt).from(element).save();
+    });
+
+    btnLimpar.addEventListener('click', () => {
+      if(!confirm('Limpar campos e itens?')) return;
+      nome.value = '';
+      valorHidden.value = '';
+      dataEl.value = '';
+      metodo.value = '';
+      transacao.value = '';
+      items = [];
+      renderAll();
+      localStorage.removeItem(DRAFT_KEY);
+    });
+
+    // Atualizar preview e salvar automaticamente quando campos mudam (opcional)
+    [nome, dataEl, metodo, transacao].forEach(el => {
+      el.addEventListener('input', () => {
+        renderReceiptPreview();
+        saveDraft();
+      });
+    });
+
+    // Inicial
+    renderAll();
+    renderDB();
+  </script>
+</body>
+</html>
