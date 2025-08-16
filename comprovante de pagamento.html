@@ -137,11 +137,12 @@
           <div class="row" style="gap:12px; align-items:center;">
             <div>
               <label>Status:</label>
-              <select id="status">
+                <input list="metodosList" id="status" placeholder="Selecione ou digite...">
+                <datalist id="metodosList">
                 <option value="andamento">Em andamento</option>
                 <option value="pago">Pago</option>
                 <option value="cancelado">Cancelado</option>
-              </select>
+              </datalist>
             </div>
           </div>
         </div>
@@ -608,4 +609,5 @@
   </script>
 </body>
 </html>
+
 
